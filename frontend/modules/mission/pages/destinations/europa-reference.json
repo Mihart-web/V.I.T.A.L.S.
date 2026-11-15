@@ -1,0 +1,45 @@
+{
+  "schema": "vitals.destination.reference.v1",
+  "body": "europa",
+  "displayName": "Europa",
+  "referenceOnly": true,
+  "liveTelemetry": false,
+  "personalDoseComputed": false,
+  "gravity": {
+    "value": 1.31,
+    "unit": "m/s2",
+    "basis": "mean surface reference",
+    "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/galileanfact_table.html"
+  },
+  "surfaceTemperature": {
+    "minimumC": -223,
+    "maximumC": -133,
+    "meaning": "illustrative range; not a live reading",
+    "source": "https://science.nasa.gov/mission/europa-clipper/mission-faq/"
+  },
+  "atmosphere": {
+    "type": "extremely tenuous oxygen exosphere",
+    "breathable": false,
+    "source": "https://science.nasa.gov/jupiter/jupiter-moons/europa/europa-facts/"
+  },
+  "radiation": {
+    "qualitative": "high energetic particle environment in Jupiter magnetosphere",
+    "astronautDose": null,
+    "source": "https://science.nasa.gov/jupiter/jupiter-moons/europa/europa-facts/"
+  },
+  "surface": {
+    "composition": "predominantly water ice, fractures, ridges and bands",
+    "source": "https://science.nasa.gov/mission/europa-clipper/mission-faq/"
+  },
+  "ocean": {
+    "evidence": "strong evidence for global subsurface saltwater ocean",
+    "lifeDetected": false,
+    "source": "https://science.nasa.gov/mission/europa-clipper/mission-faq/"
+  },
+  "consumerModules": [
+    "mission-configuration",
+    "environmental-risk",
+    "medical"
+  ],
+  "note": "Do not interpret planetary environmental facts as individual crew exposure."
+}

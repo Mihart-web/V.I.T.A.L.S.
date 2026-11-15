@@ -1,0 +1,618 @@
+{
+  "schema": "vitals.alerts.ruleCatalog.v1",
+  "classification": "training_only",
+  "rules": [
+    {
+      "id": "ALR-001",
+      "category": "Cardiovascular",
+      "name": "Heart rate above training threshold",
+      "level": "yellow",
+      "action": "Request medical assessment under the mission medical protocol.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-002",
+      "category": "Cardiovascular",
+      "name": "Heart rate below training threshold",
+      "level": "yellow",
+      "action": "Request medical assessment under the mission medical protocol.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-003",
+      "category": "Cardiovascular",
+      "name": "Systolic pressure elevated",
+      "level": "yellow",
+      "action": "Request medical assessment under the mission medical protocol.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-004",
+      "category": "Cardiovascular",
+      "name": "Systolic pressure reduced",
+      "level": "yellow",
+      "action": "Request medical assessment under the mission medical protocol.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-005",
+      "category": "Cardiovascular",
+      "name": "Diastolic pressure elevated",
+      "level": "yellow",
+      "action": "Request medical assessment under the mission medical protocol.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-006",
+      "category": "Cardiovascular",
+      "name": "Irregular rhythm reported",
+      "level": "yellow",
+      "action": "Request medical assessment under the mission medical protocol.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-007",
+      "category": "Cardiovascular",
+      "name": "Reduced exercise tolerance",
+      "level": "yellow",
+      "action": "Request medical assessment under the mission medical protocol.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-008",
+      "category": "Cardiovascular",
+      "name": "Chest discomfort reported",
+      "level": "yellow",
+      "action": "Request medical assessment under the mission medical protocol.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-009",
+      "category": "Cardiovascular",
+      "name": "Circulatory instability scenario",
+      "level": "red",
+      "action": "Request medical assessment under the mission medical protocol.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-010",
+      "category": "Cardiovascular",
+      "name": "Cardiovascular sample missing",
+      "level": "blue",
+      "action": "Request medical assessment under the mission medical protocol.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-011",
+      "category": "Respiratory",
+      "name": "Oxygen saturation below training threshold",
+      "level": "yellow",
+      "action": "Request immediate breathing/airway assessment and review habitat life-support status.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-012",
+      "category": "Respiratory",
+      "name": "Respiration rate elevated",
+      "level": "yellow",
+      "action": "Request immediate breathing/airway assessment and review habitat life-support status.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-013",
+      "category": "Respiratory",
+      "name": "Respiration rate reduced",
+      "level": "yellow",
+      "action": "Request immediate breathing/airway assessment and review habitat life-support status.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-014",
+      "category": "Respiratory",
+      "name": "Cabin oxygen fraction low",
+      "level": "yellow",
+      "action": "Request immediate breathing/airway assessment and review habitat life-support status.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-015",
+      "category": "Respiratory",
+      "name": "Respiratory distress reported",
+      "level": "red",
+      "action": "Request immediate breathing/airway assessment and review habitat life-support status.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-016",
+      "category": "Respiratory",
+      "name": "Possible airway issue reported",
+      "level": "yellow",
+      "action": "Request immediate breathing/airway assessment and review habitat life-support status.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-017",
+      "category": "Respiratory",
+      "name": "Elevated cabin CO2",
+      "level": "yellow",
+      "action": "Request immediate breathing/airway assessment and review habitat life-support status.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-018",
+      "category": "Respiratory",
+      "name": "CO2 removal system degraded",
+      "level": "yellow",
+      "action": "Request immediate breathing/airway assessment and review habitat life-support status.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-019",
+      "category": "Respiratory",
+      "name": "Respiratory telemetry interrupted",
+      "level": "blue",
+      "action": "Request immediate breathing/airway assessment and review habitat life-support status.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-020",
+      "category": "Respiratory",
+      "name": "Low oxygen delivery reserve",
+      "level": "red",
+      "action": "Request immediate breathing/airway assessment and review habitat life-support status.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-021",
+      "category": "Musculoskeletal",
+      "name": "Muscle activation reduced",
+      "level": "yellow",
+      "action": "Review workload and consult the approved rehabilitation procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-022",
+      "category": "Musculoskeletal",
+      "name": "Strength index trend decreased",
+      "level": "yellow",
+      "action": "Review workload and consult the approved rehabilitation procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-023",
+      "category": "Musculoskeletal",
+      "name": "Left-right asymmetry elevated",
+      "level": "yellow",
+      "action": "Review workload and consult the approved rehabilitation procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-024",
+      "category": "Musculoskeletal",
+      "name": "Motion stability reduced",
+      "level": "yellow",
+      "action": "Review workload and consult the approved rehabilitation procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-025",
+      "category": "Musculoskeletal",
+      "name": "Exercise workload interrupted",
+      "level": "blue",
+      "action": "Review workload and consult the approved rehabilitation procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-026",
+      "category": "Musculoskeletal",
+      "name": "Simulated adaptive load fault",
+      "level": "yellow",
+      "action": "Review workload and consult the approved rehabilitation procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-027",
+      "category": "Musculoskeletal",
+      "name": "Bone density assessment overdue",
+      "level": "blue",
+      "action": "Review workload and consult the approved rehabilitation procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-028",
+      "category": "Musculoskeletal",
+      "name": "Fatigue after EVA scenario",
+      "level": "yellow",
+      "action": "Review workload and consult the approved rehabilitation procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-029",
+      "category": "Cognitive & Behavioral",
+      "name": "Focus task performance decreased",
+      "level": "yellow",
+      "action": "Offer a wellbeing check and review the crew-support procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-030",
+      "category": "Cognitive & Behavioral",
+      "name": "Reaction time task performance decreased",
+      "level": "yellow",
+      "action": "Offer a wellbeing check and review the crew-support procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-031",
+      "category": "Cognitive & Behavioral",
+      "name": "Memory task performance decreased",
+      "level": "yellow",
+      "action": "Offer a wellbeing check and review the crew-support procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-032",
+      "category": "Cognitive & Behavioral",
+      "name": "Cognitive flexibility task declined",
+      "level": "yellow",
+      "action": "Offer a wellbeing check and review the crew-support procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-033",
+      "category": "Cognitive & Behavioral",
+      "name": "Wellbeing check-in indicates distress",
+      "level": "red",
+      "action": "Offer a wellbeing check and review the crew-support procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-034",
+      "category": "Cognitive & Behavioral",
+      "name": "Reported severe stress",
+      "level": "orange",
+      "action": "Offer a wellbeing check and review the crew-support procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-035",
+      "category": "Cognitive & Behavioral",
+      "name": "Sleep duration reduced",
+      "level": "yellow",
+      "action": "Offer a wellbeing check and review the crew-support procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-036",
+      "category": "Cognitive & Behavioral",
+      "name": "Sleep quality reduced",
+      "level": "yellow",
+      "action": "Offer a wellbeing check and review the crew-support procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-037",
+      "category": "Cognitive & Behavioral",
+      "name": "Isolation support requested",
+      "level": "yellow",
+      "action": "Offer a wellbeing check and review the crew-support procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-038",
+      "category": "Cognitive & Behavioral",
+      "name": "Cognitive task data missing",
+      "level": "blue",
+      "action": "Offer a wellbeing check and review the crew-support procedure.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-039",
+      "category": "Radiation & EVA",
+      "name": "Solar particle event scenario",
+      "level": "orange",
+      "action": "Review shelter, exposure controls and EVA return procedures under mission command.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-040",
+      "category": "Radiation & EVA",
+      "name": "Cumulative radiation scenario limit approached",
+      "level": "yellow",
+      "action": "Review shelter, exposure controls and EVA return procedures under mission command.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-041",
+      "category": "Radiation & EVA",
+      "name": "EVA exposure scenario elevated",
+      "level": "yellow",
+      "action": "Review shelter, exposure controls and EVA return procedures under mission command.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-042",
+      "category": "Radiation & EVA",
+      "name": "Dosimeter telemetry lost",
+      "level": "blue",
+      "action": "Review shelter, exposure controls and EVA return procedures under mission command.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-043",
+      "category": "Radiation & EVA",
+      "name": "Radiation shelter review required",
+      "level": "yellow",
+      "action": "Review shelter, exposure controls and EVA return procedures under mission command.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-044",
+      "category": "Radiation & EVA",
+      "name": "Suit integrity issue reported",
+      "level": "red",
+      "action": "Review shelter, exposure controls and EVA return procedures under mission command.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-045",
+      "category": "Radiation & EVA",
+      "name": "EVA communication interrupted",
+      "level": "blue",
+      "action": "Review shelter, exposure controls and EVA return procedures under mission command.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-046",
+      "category": "Radiation & EVA",
+      "name": "EVA return route compromised",
+      "level": "orange",
+      "action": "Review shelter, exposure controls and EVA return procedures under mission command.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-047",
+      "category": "Habitat & Resources",
+      "name": "Electrical shortfall projected",
+      "level": "orange",
+      "action": "Inspect the affected subsystem and preserve life-support priority.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-048",
+      "category": "Habitat & Resources",
+      "name": "Battery reserve crossed",
+      "level": "yellow",
+      "action": "Inspect the affected subsystem and preserve life-support priority.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-049",
+      "category": "Habitat & Resources",
+      "name": "Water inventory below plan",
+      "level": "yellow",
+      "action": "Inspect the affected subsystem and preserve life-support priority.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-050",
+      "category": "Habitat & Resources",
+      "name": "Oxygen inventory below plan",
+      "level": "yellow",
+      "action": "Inspect the affected subsystem and preserve life-support priority.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-051",
+      "category": "Habitat & Resources",
+      "name": "Food inventory below plan",
+      "level": "yellow",
+      "action": "Inspect the affected subsystem and preserve life-support priority.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-052",
+      "category": "Habitat & Resources",
+      "name": "Cabin pressure loss scenario",
+      "level": "red",
+      "action": "Inspect the affected subsystem and preserve life-support priority.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-053",
+      "category": "Habitat & Resources",
+      "name": "Cabin temperature elevated",
+      "level": "yellow",
+      "action": "Inspect the affected subsystem and preserve life-support priority.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-054",
+      "category": "Habitat & Resources",
+      "name": "Cabin temperature reduced",
+      "level": "yellow",
+      "action": "Inspect the affected subsystem and preserve life-support priority.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-055",
+      "category": "Habitat & Resources",
+      "name": "Humidity outside training band",
+      "level": "yellow",
+      "action": "Inspect the affected subsystem and preserve life-support priority.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-056",
+      "category": "Habitat & Resources",
+      "name": "Air quality index elevated",
+      "level": "yellow",
+      "action": "Inspect the affected subsystem and preserve life-support priority.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-057",
+      "category": "Habitat & Resources",
+      "name": "Solar generation reduced",
+      "level": "yellow",
+      "action": "Inspect the affected subsystem and preserve life-support priority.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-058",
+      "category": "Habitat & Resources",
+      "name": "Thermal regulation capacity warning",
+      "level": "yellow",
+      "action": "Inspect the affected subsystem and preserve life-support priority.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-059",
+      "category": "Devices & Mission",
+      "name": "Wearable link disconnected",
+      "level": "blue",
+      "action": "Inspect device status and follow the relevant mission operations checklist.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-060",
+      "category": "Devices & Mission",
+      "name": "Wearable battery depleted",
+      "level": "orange",
+      "action": "Inspect device status and follow the relevant mission operations checklist.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-061",
+      "category": "Devices & Mission",
+      "name": "BioLoad link unavailable",
+      "level": "blue",
+      "action": "Inspect device status and follow the relevant mission operations checklist.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-062",
+      "category": "Devices & Mission",
+      "name": "Red Box readiness review",
+      "level": "yellow",
+      "action": "Inspect device status and follow the relevant mission operations checklist.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-063",
+      "category": "Devices & Mission",
+      "name": "Drone communications unavailable",
+      "level": "blue",
+      "action": "Inspect device status and follow the relevant mission operations checklist.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-064",
+      "category": "Devices & Mission",
+      "name": "Medical supply check needed",
+      "level": "yellow",
+      "action": "Inspect device status and follow the relevant mission operations checklist.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-065",
+      "category": "Devices & Mission",
+      "name": "Mission communications delayed",
+      "level": "blue",
+      "action": "Inspect device status and follow the relevant mission operations checklist.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-066",
+      "category": "Devices & Mission",
+      "name": "Crew member unaccounted for",
+      "level": "yellow",
+      "action": "Inspect device status and follow the relevant mission operations checklist.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-067",
+      "category": "Devices & Mission",
+      "name": "Console operator unavailable",
+      "level": "blue",
+      "action": "Inspect device status and follow the relevant mission operations checklist.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    },
+    {
+      "id": "ALR-068",
+      "category": "Devices & Mission",
+      "name": "Emergency review requested",
+      "level": "yellow",
+      "action": "Inspect device status and follow the relevant mission operations checklist.",
+      "source": "Manual training trigger / connected synthetic source when available",
+      "threshold": "Scenario-defined training rule; not a validated clinical or NASA threshold"
+    }
+  ]
+}

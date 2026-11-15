@@ -1,0 +1,52 @@
+/* VITALS MISSION DESTINATION PHOTOS V2 */
+
+.destination-honeycomb a.hex::after {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.destination-honeycomb a.hex[data-destination="earth"]::after {
+    background-image:
+        linear-gradient(#06121c55,#06121c99),
+        url("../../../../assets/Destinations/Earth%20south%20pole%20-hero.png") !important;
+}
+
+.destination-honeycomb a.hex[data-destination="moon"]::after {
+    background-image:
+        linear-gradient(#06121c55,#06121c99),
+        url("../../../../assets/Destinations/Moon-hero.png") !important;
+}
+
+.destination-honeycomb a.hex[data-destination="mars"]::after {
+    background-image:
+        linear-gradient(#06121c55,#06121c99),
+        url("../../../../assets/Destinations/Mars-hero.png") !important;
+}
+
+.destination-honeycomb a.hex[data-destination="titan"]::after {
+    background-image:
+        linear-gradient(#06121c55,#06121c99),
+        url("../../../../assets/Destinations/Titan-hero.png") !important;
+}
+
+.destination-honeycomb a.hex[data-destination="europa"]::after {
+    background-image:
+        linear-gradient(#06121c55,#06121c99),
+        url("../../../../assets/Destinations/Europa-hero.png") !important;
+}
+
+.destination-honeycomb a.hex .hex-inner {
+    position: relative;
+    z-index: 3;
+    text-shadow: 0 2px 9px #000;
+}
+
+.destination-honeycomb a.hex:hover,
+.destination-honeycomb a.hex:focus-visible {
+    filter:
+        drop-shadow(0 0 10px #ffd18bbb)
+        drop-shadow(0 0 22px #ec9b58aa) !important;
+}
+
+/* END VITALS MISSION DESTINATION PHOTOS V2 */

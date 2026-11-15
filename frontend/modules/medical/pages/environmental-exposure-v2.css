@@ -1,0 +1,11 @@
+/* V.I.T.A.L.S. V2: added projection section only, no changes to original V1 styling */
+.dailyplot{max-width:100%;border:1px solid #2e7b61;background:#071e26;border-radius:9px;padding:8px;overflow:hidden;margin-top:16px}
+.dailyplot svg{width:100%;height:auto;display:block}
+.daily-legend{display:flex;gap:18px;flex-wrap:wrap;color:#bdd6d1;font-size:12px;margin:8px 0 16px}
+.daily-legend strong{font-weight:700;color:#53ff8c}.daily-legend .prior{color:#e6b072}
+.daily-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+.daily-table th,.daily-table td{border-bottom:1px solid #326b60;padding:10px 12px;text-align:left}
+.daily-table th{color:#71fca0}.daily-table td{color:#d9f0e8}
+.daily-note{color:#a3c9c2;font-size:12px;line-height:1.65}
+.daily-summary{padding:14px;border-left:3px solid #53ff8c;background:#092c2a;color:#e6ffea;margin-top:10px}
+@media(max-width:640px){.daily-table th,.daily-table td{padding:8px 5px;font-size:11px}}

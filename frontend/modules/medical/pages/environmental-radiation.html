@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V.I.T.A.L.S. | Environmental &amp; Radiation</title>
+<link rel="stylesheet" href="./environmental-radiation.css">
+<script src="./environmental-radiation.js" defer></script><link rel="stylesheet" href="./environmental-exposure-v2.css">
+<script src="./environmental-exposure-v2.js" defer></script>
+<link rel="stylesheet" href="./environmental-crew-v3.css">
+<script src="./environmental-crew-v3.js" defer></script>
+</head><body>
+<main class="shell">
+<nav class="topbar"><a href="../medical.html">&#8592; MEDICAL MODULE</a><a href="../../../dashboard.html">DASHBOARD</a><a href="../../mission/pages/mission-configuration.html">MISSION CONFIGURATION</a><span>V.I.T.A.L.S. / MEDICAL</span></nav>
+<header class="hero"><div class="eyebrow">07 / MEDICAL SYSTEMS</div><h1>ENVIRONMENTAL <span>&amp; RADIATION</span></h1><p>Mission-specific environmental reference, exposure scenarios and crew health context</p><div class="pills"><span>NASA / CSA / DESTINATION REFERENCES</span><span class="amber">SYNTHETIC SCENARIO — NOT LIVE TELEMETRY</span></div></header>
+<section class="panel"><div class="section-head"><div><small>01 — ACTIVE CONTEXT</small><h2>Mission &amp; Astronaut</h2></div><button class="button" id="refresh" type="button">REFRESH DATA</button></div>
+<div class="context-grid"><div><label for="destination">DESTINATION REFERENCE</label><select id="destination"></select><p class="hint" id="missionStatus"></p></div><div><label for="region">EARTH REGION</label><select id="region"></select><p class="hint">Changing the reference view does not change the saved mission.</p></div><div><label for="astronaut">ASTRONAUT PROFILE</label><select id="astronaut"></select><p class="hint" id="crewStatus"></p></div></div>
+<div class="summary" id="missionSummary" aria-live="polite"></div></section>
+<section class="panel"><div class="section-head"><div><small>02 — DESTINATION SCIENTIFIC REFERENCE</small><h2>Environmental Conditions</h2></div><span class="tag">STATIC REFERENCE</span></div><div id="environmentCards" class="metric-grid"></div><p class="note" id="referenceNote"></p><div class="source-grid" id="destinationSources"></div></section>
+<section class="panel"><div class="section-head"><div><small>03 — RADIATION SYSTEMS</small><h2>Radiation Assessment</h2></div><span class="tag">GCR / SEP / TRAPPED PARTICLES</span></div><div class="radiation-grid"><article><h3>Radiation types</h3><p><b>GCR:</b> persistent galactic cosmic rays; <b>SEP:</b> intermittent solar energetic particles; <b>trapped particles:</b> environment-dependent, notably in planetary magnetospheres.</p><p>The presence of radiation does not determine an astronaut's dose without a detector, shielding and a defined exposure history.</p></article><article><h3>Detection &amp; protection</h3><p>Personal dosimetry, area monitors and particle detectors can provide different measurements. Instrument readings must retain quantity, units, location and calibration context.</p><p>Radiation protection follows the ALARA principle. EVA decisions and shelter actions require operational procedures and authorized personnel.</p></article></div><div class="source-grid" id="radiationSources"></div></section>
+<section class="panel"><div class="section-head"><div><small>04 — EDUCATIONAL EXPOSURE SCENARIO</small><h2>Mission Dose Calculator</h2></div><span class="tag amber">MANUALLY ENTERED DEMO INPUTS</span></div><p class="intro">Enter hypothetical <strong>equivalent-dose rate inputs in &micro;Sv/h</strong> for two operating locations. Calculations use only inputs supplied here; they do not convert planetary absorbed dose (Gy) to personal equivalent dose (Sv). No radiation source is assumed from a planet's environmental facts.</p>
+<div class="context-grid"><div><label for="days">MISSION DURATION (DAYS)</label><input id="days" type="number" min="0" max="3650" step="0.01"><p class="hint">Pre-filled from saved mission when available</p></div><div><label for="evaHours">TOTAL EVA HOURS</label><input id="evaHours" type="number" min="0" step="0.01"><p class="hint">Pre-filled from planned EVA sessions</p></div><div><label for="habitatRate">INSIDE HABITAT (&micro;Sv/h)</label><input id="habitatRate" type="number" min="0" step="any" placeholder="Enter simulated rate"></div><div><label for="evaRate">DURING EVA (&micro;Sv/h)</label><input id="evaRate" type="number" min="0" step="any" placeholder="Enter simulated rate"></div></div>
+<div class="button-row"><button class="button primary" type="button" id="calculate">CALCULATE DEMO EXPOSURE</button><button class="button" type="button" id="exportScenario" disabled>EXPORT SCENARIO JSON</button></div><div class="result" id="doseResult" role="status" aria-live="polite">No exposure calculated. Enter a personal equivalent-dose rate scenario to begin.</div><p class="note">Demo arithmetic: dose = (non-EVA hours &times; habitat rate + EVA hours &times; EVA rate) / 1000, in mSv. This is not a biological risk forecast, organ dose estimate, alarm threshold or validated dosimetry model.</p></section>
+<section class="panel"><div class="section-head"><div><small>05 — PERSONAL BASELINE &amp; HEALTH CONNECTIONS</small><h2>Individual Health Context</h2></div><span class="tag">READ ONLY</span></div><div id="healthContext" class="health-grid"></div><p class="note">Individual physiological baselines and health history are displayed only if saved in the astronaut profile. This module does not infer cancer probability, acute radiation syndrome, bone loss or medication decisions from reference values.</p></section>
+<footer>V.I.T.A.L.S. RESEARCH PROTOTYPE / SYNTHETIC DATA ENVIRONMENT · NO REAL-TIME ALERTS OR CLINICAL DECISIONS</footer>
+<!-- VITALS DAILY EXPOSURE V2 -->
+<section class="panel" id="dailyExposureV2" aria-label="Individual hypothetical daily radiation exposure">
+  <div class="section-head"><div><small>06 â€” EDUCATIONAL DAILY PROJECTION</small><h2>Daily Exposure &amp; Crew Context</h2></div><span class="tag amber">NOT A HEALTH RISK PREDICTION</span></div>
+  <p class="intro">This projection uses the manually entered V1 dose-rate scenario. Planned EVA exposure is distributed evenly over time for illustration only. No actual dosimetry is read and no planetary reference is converted to an astronaut dose.</p>
+  <div id="dailySummaryV2" class="daily-summary" role="status" aria-live="polite"></div>
+  <div class="daily-legend"><span><strong>GREEN</strong> &nbsp; Mission scenario</span><span><strong class="prior">AMBER</strong> &nbsp; Scenario plus prior synthetic baseline, when recorded</span></div>
+  <div id="dailyPlotV2" class="dailyplot"></div>
+  <table id="dailyTableV2" class="daily-table" aria-label="Daily dose projections at five sample dates"></table>
+  <p class="daily-note" id="individualNoticeV2"></p>
+  <button type="button" class="button" id="exportDailyV2" disabled>EXPORT DAILY SCENARIO JSON</button>
+  <p class="daily-note">No estimate of cancer risk, acute radiation syndrome, organ exposure, bone loss or muscle loss is provided. Screening and operational radiation decisions require validated physical models, measured dosimetry and authorized personnel.</p>
+</section>
+<!-- END VITALS DAILY EXPOSURE V2 -->
+<!-- VITALS CREW MONITORING V3 -->
+<section class="panel" id="crewExposureV3" aria-label="Assigned crew environmental exposure scenarios">
+  <div class="section-head">
+    <div><small>07 â€” ASSIGNED CREW MONITORING</small><h2>Mission Crew &amp; Individual Exposure</h2></div>
+    <button type="button" class="button" id="crewRefreshV3">REFRESH CREW</button>
+  </div>
+  <p class="intro">Crew members are read from saved Crew Assignment data for the active mission, not from the full astronaut archive. Select VIEW IN INDIVIDUAL MONITORING to inspect a member's stored baseline without changing your confirmed login identity.</p>
+  <div class="summary" id="crewMissionV3"></div>
+  <p class="note" id="crewNoticeV3" role="status"></p>
+  <p class="note" id="crewCountV3"></p>
+  <div class="crew-v3-list" id="crewCardsV3"></div>
+  <p class="note">Enter individual planned EVA hours. The habitat and EVA equivalent-dose rates are taken from the manual hypothetical inputs in section 04. For this simplified scenario, a console operator is modeled as remaining aboard (zero EVA hours); actual duty schedules are not known. No crew assignment or EVA schedule is saved by this page.</p>
+  <div class="button-row">
+    <button type="button" class="button primary" id="crewCalculateV3">CALCULATE CREW DEMO EXPOSURE</button>
+    <button type="button" class="button" id="crewExportV3" disabled>EXPORT CREW SCENARIO JSON</button>
+  </div>
+  <div class="crew-v3-result" id="crewResultV3" aria-live="polite">Enter individual EVA hours and hypothetical dose-rate inputs to calculate the crew scenario.</div>
+  <div class="crew-v3-table-wrap"><table class="crew-v3-table" id="crewCompareV3" aria-label="Synthetic crew exposure comparison"></table></div>
+  <p class="note">All values are educational scenario arithmetic, not live dosimetry, estimates of organ dose, biological outcome, or permission for medication/EVA decisions. Missing readings are never replaced with NASA planetary averages.</p>
+</section>
+<!-- END VITALS CREW MONITORING V3 -->
+</main></body></html>

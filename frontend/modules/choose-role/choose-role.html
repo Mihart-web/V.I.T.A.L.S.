@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>V.I.T.A.L.S. | Crew Identity & Mission Role</title><link rel="stylesheet" href="./choose-role.css"><script src="./choose-role.js" defer></script><script defer src="./choose-role-alert-v1.js"></script><link rel="stylesheet" href="./choose-role-station-v3.css"><script defer src="./choose-role-station-v3.js"></script></head>
+<body><main class="layout"><nav class="top">
+  <a href="../../dashboard.html">&larr; BACK TO DASHBOARD</a>
+  <a href="../mission/mission.html">MISSION MODULE</a>
+  <a href="../crew-on-board/crew-on-board.html">CREW ON BOARD</a>
+  <span>V.I.T.A.L.S. / ROLE SELECTION</span>
+</nav><header><p class="eyebrow">IDENTITY AND MISSION ACCESS</p><h1>CREW IDENTITY &amp; MISSION ROLE</h1><p>Select your astronaut in SELECT ASTRONAUT, confirm here that it is you, then choose one of 16 operational roles. Your identity and role persist until changed explicitly.</p></header>
+<section class="panel" id="identityPanel"><div class="head"><div><h2>01 — CONFIRM YOUR ASTRONAUT</h2><p>The astronaut chosen with SELECT ASTRONAUT on the dashboard is loaded here automatically.</p></div><a class="role-link" href="../astronaut-profile/select-astronaut.html">CHANGE ASTRONAUT</a></div>
+<div id="identityPreview" class="identity-preview" aria-live="polite"><p>Loading selected astronaut...</p></div>
+<div id="currentIdentity" class="summary" role="status">No confirmed identity.</div>
+<div id="identityQuestion" class="notice" role="status">Are you sure this is your astronaut?</div>
+<div class="actions"><button type="button" id="confirmIdentity" class="primary">YES, THIS IS ME</button><a class="role-link" href="../astronaut-profile/select-astronaut.html">NO — CHANGE ASTRONAUT</a><p id="identityMessage" role="status"></p></div>
+<p class="fineprint">Your identity comes from SELECT ASTRONAUT. Changing it later requires selecting and confirming another profile.</p></section>
+<section class="panel" id="rolePanel"><div class="head"><div><h2>02 — CHOOSE YOUR ROLE</h2><p>Explore 16 roles. Save your role only after explicit confirmation.</p></div><button id="allRoles" type="button">ALL 16 ROLES</button></div><div id="roleCurrent" class="summary">No role confirmed.</div><div class="roleTabs" role="group" aria-label="Role categories"><button type="button" class="tab active" data-category="flight">FLIGHT &amp; OPERATIONS</button><button type="button" class="tab" data-category="medical">MEDICAL &amp; PERFORMANCE</button><button type="button" class="tab" data-category="science">SCIENCE &amp; EXPLORATION</button></div><div id="roles" class="roles"></div><div class="actions"><button class="primary" type="button" id="confirmRole" disabled>SAVE ROLE FOR THIS SESSION</button><button type="button" id="resetRole">CLEAR ROLE</button><p id="roleMessage" role="status"></p></div></section>
+<!-- VITALS_STATION_V3 -->
+<section class="panel" id="vitalsStationPanel" data-console="false">
+  <h2>03 — MISSION DUTY STATION / CONSOLE ACCESS</h2>
+  <div class="station-status" id="vitalsStationStatus">CHECKING ASSIGNMENT</div>
+  <div id="vitalsStationRole" class="station-note">Checking mission role...</div>
+  <p id="vitalsStationReason" class="station-note">Checking mission roster...</p>
+  <div class="station-implications"><strong>ONBOARD CONSOLE DUTY</strong><p>Console duty is assigned in Crew Assignment, not by selecting a role on this page. While assigned to the onboard console, EVA participation is unavailable. Only one crew member can hold console duty in the saved roster.</p></div>
+  <div class="station-implications" id="vitalsStationAlerts">ALERTS: checking role and permissions...</div>
+  <a class="station-action" href="../mission/pages/crew-assignment.html">REQUEST / UPDATE CONSOLE ASSIGNMENT</a>
+  <a class="role-link" href="../alerts/alerts.html" style="margin-left:10px">OPEN ALERTS</a>
+  <p class="fineprint">Training authorization only. Browser identity is not professional certification. No medical devices or medication delivery are controlled here.</p>
+</section>
+<section class="panel"><h2>04 — MISSION MEMBERSHIP AND PERMISSIONS</h2><p id="missionInfo">No active mission found.</p><div id="membership" class="notice" role="status"></div><div id="permissions" class="permission-grid"></div><p class="fineprint">DEMONSTRATION: These permissions inform the interface; browser localStorage is not secure authentication. No medication delivery or clinical authorization is enabled. Clinical decisions and medication administration require separate verified human authorization and appropriate system safeguards.</p></section></main></body></html>

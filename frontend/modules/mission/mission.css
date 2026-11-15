@@ -1,0 +1,151 @@
+﻿@font-face {
+  font-family: "Fauna";
+  src: url("../../../assets/fonts/fauna/Fauna%20Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+:root {
+  --w: clamp(116px, 22vw, 250px);
+  --h: calc(var(--w) * .8660254);
+  --bronze: #efa85c;
+  --bronze-glow: #f7aa54;
+  --text: #f5fcfa;
+  --turquoise: #3be9d5;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 28%, #123b42 0%, #03151e 74%);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+.module {
+  width: min(96%, 1250px);
+  margin: 18px auto;
+  padding: 24px 24px 40px;
+  border: 3px solid #dba155;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #dba15577;
+  background: rgba(2, 24, 33, .58);
+}
+.module-header { text-align: center; }
+h1 {
+  font-family: "Fauna", Arial, sans-serif;
+  font-size: clamp(42px, 6vw, 78px);
+  font-weight: 400;
+  letter-spacing: .1em;
+  margin: 5px 0 15px;
+  text-shadow: 0 0 16px #29e8f2b0;
+}
+.module-header p { color: var(--turquoise); letter-spacing: .2em; font-size: 13px; }
+.navigation { margin: 25px 0; }
+.navigation a, .back-links a {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 2px solid #dba155;
+  border-radius: 10px;
+  color: #ffd18d;
+  background: #082936;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 0 12px #dba15580;
+}
+.navigation a:hover, .back-links a:hover { box-shadow: 0 0 23px #e9a45ba9; }
+.mission-intro {
+  margin: 4px auto 16px;
+  width: min(100%, 490px);
+  display: grid;
+  justify-items: center;
+  gap: 9px;
+}
+.mission-intro label { color: #ffd08d; font-weight: 800; letter-spacing: .14em; font-size: 12px; }
+.mission-intro select {
+  background: #072330;
+  border: 1px solid #efa85c;
+  color: #f8fffc;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 11px 15px;
+  width: min(100%, 330px);
+  min-height: 46px;
+  box-shadow: 0 0 12px #efa85c3d;
+}
+.mission-note { color: #aadbd4; font-size: 12px; margin: 0; text-align: center; }
+.honeycomb {
+  position: relative;
+  width: calc(var(--w) * 2.55);
+  height: calc(var(--h) * 3.08);
+  margin: 23px auto 0;
+}
+.hex {
+  position: absolute;
+  width: var(--w);
+  height: var(--h);
+  border: 0;
+  padding: 0;
+  color: #f8fffa;
+  text-decoration: none;
+  filter: drop-shadow(0 0 9px #e99b59b0) drop-shadow(0 0 20px #f6ab6280);
+  transition: filter .22s, scale .22s;
+  cursor: pointer;
+}
+.hex::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ffe0a0, #f2a654 50%, #b97232);
+  clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);
+}
+.hex-inner {
+  position: absolute;
+  inset: 4px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  background: linear-gradient(145deg, #18444a, #061d28);
+  clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);
+}
+.hex strong {
+  font-size: clamp(10px, 1.35vw, 16px);
+  letter-spacing: .03em;
+  font-weight: 800;
+  line-height: 1.2;
+  text-shadow: 0 0 10px #f8ad70ac;
+}
+.hex small { color: #ffcf97; font-size: clamp(8px, 0.8vw, 10px); line-height: 1.2; }
+.hex:hover, .hex:focus-visible {
+  filter: drop-shadow(0 0 14px #ffc276) drop-shadow(0 0 28px #ffa957cb);
+  scale: 1.025;
+  z-index: 5;
+}
+.hex:focus-visible { outline: 2px solid #fff1c2; outline-offset: 6px; }
+.hex.center strong { color: #ffdea7; font-size: clamp(12px, 1.55vw, 19px); }
+.top { left: calc(var(--w) * .775); top: calc(var(--h) * .04); }
+.top-left { left: calc(var(--w) * .025); top: calc(var(--h) * .54); }
+.top-right { left: calc(var(--w) * 1.525); top: calc(var(--h) * .54); }
+.center { left: calc(var(--w) * .775); top: calc(var(--h) * 1.04); z-index: 3; }
+.bottom-left { left: calc(var(--w) * .025); top: calc(var(--h) * 1.54); }
+.bottom-right { left: calc(var(--w) * 1.525); top: calc(var(--h) * 1.54); }
+.bottom { left: calc(var(--w) * .775); top: calc(var(--h) * 2.04); }
+.placeholder-page { width: min(96%, 980px); margin: 18px auto; padding: 28px; border: 3px solid #dba155; border-radius: 20px; box-shadow: 0 0 20px #dba15577; }
+.placeholder-content { margin: 50px auto; max-width: 680px; padding: 28px; border: 2px solid #dba155; border-radius: 15px; background: #062431; text-align: center; box-shadow: 0 0 24px #efa85c33; }
+.placeholder-content h2 { color: #ffca85; letter-spacing: .1em; }
+.placeholder-content p { color: #b5ded5; line-height: 1.65; }
+.back-links { display: flex; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 700px) { .module { padding: 10px; } .hex strong { letter-spacing: 0; } .hex small { display: none; } }
+
+
+/* VITALS MISSION DESTINATION HEX V1 — adds one connected hex above top */
+.honeycomb { margin-top: calc(var(--h) + 23px); }
+.honeycomb .destination-hex {
+  left: calc(var(--w) * .775);
+  top: calc(var(--h) * -.96);
+  z-index: 2;
+}
+

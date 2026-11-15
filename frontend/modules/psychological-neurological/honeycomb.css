@@ -1,0 +1,168 @@
+﻿@font-face {
+  font-family: "Fauna";
+  src: url("../../../assets/fonts/fauna/Fauna%20Thin.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --w: clamp(116px, 22vw, 250px);
+  --h: calc(var(--w) * .8660254);
+  --cyan: #29e8f2;
+  --bronze: #dba155;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 30%, #103640, #03151f 75%);
+  color: #e8ffff;
+  font-family: Arial, sans-serif;
+}
+
+.module {
+  width: min(96%, 1250px);
+  margin: 18px auto;
+  padding: 24px;
+  border: 3px solid var(--bronze);
+  border-radius: 20px;
+  box-shadow: 0 0 20px #dba15577;
+}
+
+header { text-align: center; }
+
+h1 {
+  font-family: "Fauna", Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(42px, 6vw, 78px);
+  letter-spacing: .1em;
+  margin: 5px 0 15px;
+  text-shadow: 0 0 16px #29e8f2b0;
+}
+
+header p {
+  color: var(--cyan);
+  letter-spacing: .2em;
+  font-size: 13px;
+}
+
+.navigation { margin: 25px 0; }
+
+.navigation a {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 2px solid var(--bronze);
+  border-radius: 10px;
+  color: #ffd18d;
+  background: #082936;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 0 12px #dba15580;
+}
+
+.honeycomb {
+  position: relative;
+  width: calc(var(--w) * 2.55);
+  height: calc(var(--h) * 3.08);
+  margin: 20px auto 0;
+}
+
+.hex {
+  position: absolute;
+  width: var(--w);
+  height: var(--h);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #e8ffff;
+  cursor: pointer;
+  filter:
+    drop-shadow(0 0 9px #19d6edbd)
+    drop-shadow(0 0 20px #28c9eb8c);
+  transition: filter .22s, scale .22s;
+}
+
+.hex::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--cyan);
+  clip-path: polygon(
+    25% 0, 75% 0, 100% 50%,
+    75% 100%, 25% 100%, 0 50%
+  );
+}
+
+.hex-inner {
+  position: absolute;
+  inset: 4px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: linear-gradient(145deg, #124752, #061c27);
+  clip-path: polygon(
+    25% 0, 75% 0, 100% 50%,
+    75% 100%, 25% 100%, 0 50%
+  );
+}
+
+.hex strong {
+  font-size: clamp(10px, 1.4vw, 17px);
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px #29e8f2c0;
+}
+
+.hex:hover,
+.hex:focus-visible {
+  filter:
+    drop-shadow(0 0 10px #55eaf4)
+    drop-shadow(0 0 23px #28c9ebaa);
+  scale: 1.025;
+  z-index: 5;
+}
+
+.hex.center {
+  filter:
+    drop-shadow(0 0 9px #19d6edbd)
+    drop-shadow(0 0 20px #28c9eb8c);
+}
+
+.top {
+  left: calc(var(--w) * .775);
+  top: calc(var(--h) * .04);
+}
+.top-left {
+  left: calc(var(--w) * .025);
+  top: calc(var(--h) * .54);
+}
+.top-right {
+  left: calc(var(--w) * 1.525);
+  top: calc(var(--h) * .54);
+}
+.center {
+  left: calc(var(--w) * .775);
+  top: calc(var(--h) * 1.04);
+  z-index: 3;
+}
+.bottom-left {
+  left: calc(var(--w) * .025);
+  top: calc(var(--h) * 1.54);
+}
+.bottom-right {
+  left: calc(var(--w) * 1.525);
+  top: calc(var(--h) * 1.54);
+}
+.bottom {
+  left: calc(var(--w) * .775);
+  top: calc(var(--h) * 2.04);
+}
+
+@media (max-width: 700px) {
+  .module { padding: 10px; }
+  .hex strong { letter-spacing: 0; }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "vitals.destination.moon.v1",
+  "destination": "moon",
+  "displayName": "Moon",
+  "dataType": "planetary_reference",
+  "liveTelemetry": false,
+  "medicalDecisionReady": false,
+  "missionStatus": "not_started",
+  "indicators": {
+    "gravity": {
+      "value": 1.62,
+      "unit": "m/s²",
+      "kind": "mean_surface_gravity",
+      "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+    },
+    "sunlitTemperature": {
+      "value": 127,
+      "unit": "°C",
+      "kind": "illustrative_extreme",
+      "note": "location/solar exposure dependent; not a global daily temperature",
+      "source": "https://science.nasa.gov/moon/facts/"
+    },
+    "darkTemperature": {
+      "value": -173,
+      "unit": "°C",
+      "kind": "illustrative_extreme",
+      "note": "not the polar cold-trap minimum",
+      "source": "https://science.nasa.gov/moon/facts/"
+    },
+    "atmosphere": {
+      "value": "tenuous exosphere",
+      "unit": null,
+      "kind": "qualitative",
+      "source": "https://science.nasa.gov/moon/lunar-atmosphere/"
+    },
+    "radiation": {
+      "value": null,
+      "unit": null,
+      "kind": "qualitative_hazard",
+      "hazards": [
+        "galactic_cosmic_rays",
+        "solar_energetic_particles"
+      ],
+      "note": "no universal astronaut dose; mission-dependent",
+      "source": "https://science.nasa.gov/moon/weather-on-the-moon/"
+    },
+    "regolith": {
+      "value": "abrasive fine regolith",
+      "unit": null,
+      "kind": "qualitative_hazard",
+      "note": "equipment and potential health exposure risk; no concentration model",
+      "source": "https://science.nasa.gov/biological-physical/what-hazards-are-caused-by-lunar-regolith/"
+    }
+  },
+  "missionLinks": {
+    "configuration": "../../mission-configuration.html",
+    "destinationKey": "vitals.mission.destination.v1"
+  },
+  "references": [
+    "https://science.nasa.gov/moon/facts/",
+    "https://science.nasa.gov/moon/weather-on-the-moon/",
+    "https://www.nasa.gov/directorates/esdmd/hhp/risk-of-adverse-health-performance-effects-of-celestial-dust-exposure/"
+  ]
+}

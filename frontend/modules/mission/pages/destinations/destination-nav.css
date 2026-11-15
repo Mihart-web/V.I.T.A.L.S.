@@ -1,0 +1,51 @@
+﻿/* VITALS DESTINATION NAV V1 */
+
+nav.vitals-destination-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 22px;
+    width: 100%;
+    min-height: 54px;
+    padding: 12px clamp(18px, 4vw, 70px);
+    background: #07111b;
+    border-bottom: 1px solid rgba(220, 157, 83, .35);
+    box-sizing: border-box;
+}
+
+nav.vitals-destination-nav > a {
+    display: inline-block;
+    width: auto;
+    padding: 3px 0;
+    border: 0;
+    background: transparent;
+    color: #e4a260;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color .2s, text-shadow .2s;
+}
+
+nav.vitals-destination-nav > a:hover,
+nav.vitals-destination-nav > a:focus-visible {
+    color: #ffcf95;
+    text-shadow: 0 0 10px rgba(255, 170, 88, .8);
+}
+
+nav.vitals-destination-nav > a:focus-visible {
+    outline: 1px solid #ffcf95;
+    outline-offset: 5px;
+}
+
+@media (max-width: 600px) {
+    nav.vitals-destination-nav {
+        gap: 10px 18px;
+        padding: 12px 16px;
+    }
+}

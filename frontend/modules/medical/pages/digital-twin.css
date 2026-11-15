@@ -1,0 +1,48 @@
+@font-face{font-family:Fauna;src:url('../../../../assets/fonts/fauna/Fauna%20Thin.ttf')}*{box-sizing:border-box}body{margin:0;background:#04111b;color:#d6eff4;font:14px/1.55 Arial,sans-serif}button,select{font:inherit}a{color:#7eead5}.top{background:#061522;border-bottom:1px solid #a27b4c;display:flex;align-items:center;gap:22px;padding:14px max(22px,calc((100vw - 1700px)/2));font-size:11px;letter-spacing:1.2px}.top a{color:#ffc38d;text-decoration:none;font-weight:bold}.top span{margin-left:auto;color:#8bcbd2}.disclaimer{text-align:center;border-bottom:1px solid #195263;background:#08212c;padding:7px;color:#83bccc;letter-spacing:1.2px;font-size:10px}.hero{max-width:1700px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:end;padding:29px 25px 23px}.eyebrow{font-size:10px;letter-spacing:1.8px;font-weight:800;color:#65eac6;margin:0 0 12px}.hero h1{font:400 clamp(33px,3.8vw,60px)/1.12 Fauna,Arial,sans-serif;letter-spacing:2px;color:#ffd0ad;margin:0}.hero h1 em{color:#76f6cb;font-style:normal}.hero p{color:#9bc8d4}.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end;font-size:10px;letter-spacing:0.7px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;box-shadow:0 0 8px currentColor}.blue{background:#4dc6ed;color:#4dc6ed}.amber{background:#f1bd62;color:#f1bd62}.red{background:#ef6075;color:#ef6075}.layout{max-width:1700px;margin:auto;display:grid;grid-template-columns:minmax(245px,310px) minmax(0,1fr) minmax(245px,310px);gap:15px;padding:0 20px}.panel{background:#071d2b;border:1px solid #1c6071;border-radius:12px;padding:19px;margin-bottom:15px;box-shadow:0 0 20px #02101688}.panel h2{font-weight:400;color:#fbd0ad;font-size:25px;margin:0 0 16px}.sectionline{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.sectionline .eyebrow{margin:0 0 4px}.sectionline h2{margin:0 0 14px}.field label,.label{display:block;font-size:10px;font-weight:bold;letter-spacing:1px;color:#79dce5;margin:7px 0}.field select{background:#0c2d40;color:#e3fff5;border:1px solid #437b87;border-radius:5px;padding:12px;width:100%}button{border:1px solid #bb8d59;border-radius:6px;padding:10px 13px;color:#ffcf9a;background:#08283a;cursor:pointer;font-size:11px;font-weight:bold;letter-spacing:0.5px}button:hover{box-shadow:0 0 12px #53dfc955}.full{width:100%;margin-top:12px}.outline{border-color:#3d7880;color:#a9e8f3}.note{font-size:11px;color:#95b9c4}.mission{padding:15px 0;color:#a5d8db;white-space:pre-line;font-size:12px;border-bottom:1px solid #235162}.info{font-size:11px;color:#80f0c3;padding:10px 0}.pill{border:1px solid #218b81;color:#79f5da;font-size:10px;letter-spacing:.7px;padding:7px}.stageframe{height:min(650px,69vh);min-height:465px;position:relative;border:1px solid #246a7f;border-radius:10px;background:radial-gradient(circle at center,#0b4051 0%,#09263b 42%,#03101f 83%);overflow:hidden}.stageframe:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 49px,#5ae4e508 50px),linear-gradient(90deg,#0bd6b110,transparent 20%,transparent 80%,#0bd6b110);pointer-events:none}.scanrings{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:min(63%,440px);aspect-ratio:1;border-radius:50%;border:1px solid #2cabc65c;box-shadow:0 0 0 44px #14adc10b,0 0 0 85px #14adc107;pointer-events:none}model-viewer{position:absolute;inset:0;width:100%;height:100%;--poster-color:transparent}.metricpanel{position:absolute;top:10%;width:25%;min-width:126px;padding:14px;background:#021b29dd;border:1px solid #2ea8bf;border-radius:7px;display:grid;gap:5px;pointer-events:none;box-shadow:0 0 15px #011724bb}.metricpanel.left{left:11px}.metricpanel.right{right:11px}.metricpanel small{font-size:9px;color:#78dce6;letter-spacing:.5px}.metricpanel strong{color:#f3e3c7;font-size:22px;font-weight:400}.metricpanel span{font-size:9px;color:#79aebb;border-bottom:1px solid #1c5265;padding-bottom:9px}.markers{pointer-events:none;position:absolute;inset:0}.marker{position:absolute;border:1px solid #fff;border-radius:50%;width:17px;height:17px;box-shadow:0 0 0 6px currentColor,0 0 22px 13px currentColor;opacity:.9;animation:blink 2s infinite alternate}.marker.blue{left:52%;top:23%}.marker.amber{left:52%;top:45%}.marker.red{left:52%;top:67%}@keyframes blink{to{opacity:.5;transform:scale(.85)}}.viewercontrols{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 0}.viewercontrols span{flex:1}.gauge{display:flex;justify-content:center;margin:20px auto}.ring{--percent:0%;height:156px;width:156px;border-radius:50%;background:conic-gradient(#49d5b6 var(--percent),#123a48 var(--percent));display:grid;place-items:center}.ring>div{height:125px;width:125px;border-radius:50%;background:#072433;display:flex;align-items:center;justify-content:center;flex-direction:column}.ring strong{font-size:33px;color:#f8d0ad}.ring small{color:#a6d9dc;font-size:9px}.centered{text-align:center}.domains>div,.coverage>div{padding:10px 0;border-bottom:1px solid #225063;display:flex;justify-content:space-between;gap:12px;font-size:12px}.domains strong,.coverage strong{color:#bcefe6;text-align:right}.alerts .alert{border-left:3px solid #4dc6ed;background:#0c2c39;padding:10px;margin:9px 0}.alerts .alert.yellow{border-color:#f1bd62}.alerts .alert.red{border-color:#ef6075}.alerts strong{display:block;font-size:12px}.alerts p{margin:4px 0 0;font-size:11px;color:#b0cbd3}.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.charts>div,.cogcards>div{background:#0b2a38;border:1px solid #295b67;border-radius:8px;padding:13px}.charts h3{color:#ffd3a7;font-weight:400;margin:0 0 10px}.charts h3 small{color:#84bfc5;font-size:10px}.charts svg{width:100%;min-height:120px}.cogcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cogcards strong{display:block;font-size:20px;color:#7cefd5}.cogcards small{display:block;color:#8fbec7;font-size:10px}.cogcards span{font-size:11px;color:#ffd4ad}.textlink{font-size:11px;display:block;margin-top:15px}.crewPanel{max-width:1660px;margin:15px auto}.crewCards{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:12px}.crewCards article{border:1px solid #2c7275;padding:15px;border-radius:8px;background:#0c2c37}.crewCards article p{font-size:12px}.crewCards button{margin-top:8px}footer{text-align:center;color:#678f9f;letter-spacing:1.5px;font-size:10px;padding:30px}@media(max-width:1220px){.layout{grid-template-columns:250px minmax(0,1fr)}.layout>.side:last-child{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.layout>.side:last-child .panel{margin-bottom:0}.metricpanel{min-width:110px;width:27%;padding:9px}.metricpanel strong{font-size:16px}}@media(max-width:780px){.layout{grid-template-columns:1fr}.layout>.side:last-child{grid-column:auto;display:block}.hero{display:block}.legend{justify-content:start}.stageframe{height:500px}.metricpanel{width:28%;min-width:95px}.metricpanel strong{font-size:14px}.charts{grid-template-columns:1fr}.cogcards{grid-template-columns:1fr 1fr}.hero h1{font-size:36px}}
+
+/* VITALS DIGITAL TWIN CUSTOM BACKGROUND */
+.stageframe {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2,18,28,0.20),
+            rgba(3,18,28,0.35)
+        ),
+        url("../../../../assets/box%20digital%20twin.png")
+        center center / cover no-repeat !important;
+
+    box-shadow:
+        inset 0 0 80px rgba(53,241,224,0.08),
+        0 0 40px rgba(25,214,214,0.08);
+}
+
+/* DIGITAL TWIN SINGLE LINE TITLE */
+@media (min-width: 981px) {
+    .hero h1 {
+        font-size: clamp(28px, 3vw, 48px);
+        white-space: nowrap;
+        letter-spacing: 1.5px;
+    }
+}
+
+
+/* VITALS DIGITAL TWIN PAGE BACKGROUND V1 */
+body {
+    background-color: #04111b;
+    background-image:
+        linear-gradient(
+            rgba(2, 12, 21, 0.30),
+            rgba(2, 12, 21, 0.50)
+        ),
+        url("../../../../assets/background%20per%20digital%20twin.png");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Slightly transparent panels reveal the page background */
+.layout > .side .panel,
+.layout > .main .panel {
+    background-color: rgba(7, 29, 43, 0.91);
+}

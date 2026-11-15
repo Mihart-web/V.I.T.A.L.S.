@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V.I.T.A.L.S. | Create Astronaut</title>
+
+  <link rel="stylesheet" href="./astronaut-create.css">
+  <script src="./astronaut-create.js" defer></script>
+</head>
+
+<body>
+  <main class="profile-page">
+
+    <header class="page-header">
+      <a href="../../dashboard.html" class="back-button">
+        &#8592; BACK TO DASHBOARD
+      </a>
+      <span class="page-label">ASTRONAUT PROFILE SYSTEM</span>
+    </header>
+
+    <section class="profile-frame">
+
+      <div class="page-heading">
+        <h1>V.I.T.A.L.S.</h1>
+        <p>CREATE NEW ASTRONAUT</p>
+      </div>
+
+      <form id="astronautForm">
+
+        <section class="profile-section avatar-section">
+          <h2>01 / ASTRONAUT AVATAR</h2>
+
+          <div class="avatar-selector">
+            <button type="button" id="previousAvatar"
+                    aria-label="Previous avatar">&#10094;</button>
+
+            <div class="avatar-display">
+              <img id="avatarImage"
+                   src="../../../assets/astronaut-profile/portraits/av1.png"
+                   alt="Astronaut avatar">
+              <span id="avatarCounter">01 / 28</span>
+            </div>
+
+            <button type="button" id="nextAvatar"
+                    aria-label="Next avatar">&#10095;</button>
+          </div>
+
+          <button type="button" id="confirmAvatar"
+                  class="secondary-button">
+            CONFIRM AVATAR
+          </button>
+
+          <p id="avatarStatus" role="status">
+            Select an astronaut avatar
+          </p>
+        </section>
+
+        <section class="profile-section">
+          <h2>02 / IDENTITY &amp; ANTHROPOMETRICS</h2>
+
+          <div class="fields-grid">
+            <label>Astronaut ID
+              <input name="astronautId" type="text" required>
+            </label>
+
+            <label>Full Name
+              <input name="fullName" type="text" required>
+            </label>
+
+            <label>Age (years)
+              <input name="age" type="number" min="18" max="100">
+            </label>
+
+            <label>Height (cm)
+              <input name="height" type="number" step="0.1">
+            </label>
+
+            <label>Weight (kg)
+              <input name="weight" type="number" step="0.1">
+            </label>
+
+            <label>Blood Type
+              <select name="bloodType">
+                <option value="">Select</option>
+                <option>A+</option><option>A-</option>
+                <option>B+</option><option>B-</option>
+                <option>AB+</option><option>AB-</option>
+                <option>O+</option><option>O-</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="profile-section">
+          <h2>03 / PERSONAL PHYSIOLOGICAL BASELINES</h2>
+          <p class="section-description">
+            Individual reference ranges for health monitoring.
+          </p>
+
+          <div id="baselineFields" class="baseline-grid"></div>
+        </section>
+
+        <section class="profile-section">
+          <h2>04 / MEDICAL HISTORY</h2>
+
+          <p class="section-description">
+            Import a medical history document.
+            Clinical data processing will be enabled later.
+          </p>
+
+          <input id="medicalHistory"
+                 type="file"
+                 accept=".pdf,.json,.csv,.txt">
+
+          <p id="medicalFileStatus" role="status">
+            No document selected
+          </p>
+        </section>
+
+        <section class="profile-section">
+          <h2>05 / CLINICAL CONDITIONS</h2>
+
+          <div id="clinicalConditions"></div>
+
+          <label class="full-width">
+            Additional Clinical Information
+            <textarea name="clinicalNotes" rows="4"></textarea>
+          </label>
+        </section>
+
+        <section class="profile-section save-section">
+          <h2>06 / PROFILE ACTIONS</h2>
+
+          <button type="submit"
+                  class="primary-button"
+                  id="saveAstronaut">
+            SAVE ASTRONAUT PROFILE
+          </button>
+
+          <p id="saveStatus" role="status">
+            Profile has not been saved
+          </p>
+        </section>
+
+      </form>
+    </section>
+  </main>
+</body>
+</html>
+

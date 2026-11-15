@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V.I.T.A.L.S. | Mission Destination</title>
+  <link rel="stylesheet" href="../mission.css">
+  <link rel="stylesheet" href="./mission-destination.css">
+  <script src="./mission-destination.js" defer></script>
+</head>
+<body>
+  <main class="module destination-module">
+    <header class="module-header"><h1>V.I.T.A.L.S.</h1><p>MISSION MODULE / MISSION DESTINATION</p></header>
+    <nav class="navigation" aria-label="Return navigation">
+      <a href="../../../dashboard.html">BACK TO DASHBOARD</a>
+      <a href="../mission.html">BACK TO MISSION MODULE</a>
+    </nav>
+    <section class="destination-honeycomb" aria-label="Select a mission destination">
+      <a class="hex top-left" href="./destinations/earth.html" data-destination="earth"><span class="hex-inner"><strong>EARTH</strong><small>Remote regions</small></span></a>
+      <a class="hex top-right" href="./destinations/moon.html" data-destination="moon"><span class="hex-inner"><strong>MOON</strong><small>Lunar missions</small></span></a>
+      <a class="hex center" href="./destinations/mars.html" data-destination="mars"><span class="hex-inner"><strong>MARS</strong><small>Martian missions</small></span></a>
+      <a class="hex bottom-left" href="./destinations/titan.html" data-destination="titan"><span class="hex-inner"><strong>TITAN</strong><small>Saturn moon</small></span></a>
+      <a class="hex bottom-right" href="./destinations/europa.html" data-destination="europa"><span class="hex-inner"><strong>EUROPA</strong><small>Jupiter moon</small></span></a>
+    </section>
+    <p class="destination-status" id="destinationStatus" role="status" aria-live="polite">Choose a destination. Mission not started.</p>
+  </main>
+</body>
+</html>
+
+

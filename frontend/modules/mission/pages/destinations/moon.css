@@ -1,0 +1,327 @@
+@font-face{font-family:Fauna;src:url('../../../../../assets/fonts/fauna/Fauna%20Thin.ttf') format('truetype');font-display:swap}
+:root{--bg:#070e18;--amber:#ffb36b;--amber-soft:#ef9e54;--teal:#57e9e6;--ink:#f4e8dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#dce5f3;font:16px/1.5 Arial,sans-serif}
+a{color:inherit}button,select{font:inherit}.topbar{display:flex;align-items:center;gap:14px;min-height:52px;padding:8px clamp(15px,3vw,55px);background:#081421;border-bottom:1px solid #b67d4c;position:relative;z-index:3}.topbar label,.brand{font-size:11px;letter-spacing:.16em;color:var(--amber);font-weight:700}.topbar select{background:#0e2233;color:#f3c38f;border:1px solid var(--amber);border-radius:8px;padding:9px;max-width:330px;min-width:200px}.brand{margin-left:auto;color:#e4c4a2}.shell{width:min(1515px,100%);margin:auto}.hero{position:relative;min-height:570px;padding:52px clamp(24px,5vw,76px) 42px;background:linear-gradient(90deg,rgba(6,13,22,.77),rgba(6,13,22,.10) 80%),linear-gradient(0deg,rgba(6,13,22,.15),rgba(6,13,22,.32) 80%),url('../../../../../assets/Destinations/Moon-hero.png') center center/cover no-repeat;display:flex;flex-direction:column;justify-content:space-between;isolation:isolate}.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:34px}.hero-heading{flex:1 0 300px;min-width:0}.eyebrow{font-size:11px;letter-spacing:.22em;font-weight:700;color:var(--amber);margin:0 0 22px}.hero h1{font-family:Fauna,Arial,sans-serif;font-size:clamp(68px,9vw,132px);font-weight:500;line-height:1;letter-spacing:.08em;color:#ffe0c2;text-shadow:0 0 28px #ca5d303f;margin:0 0 22px}.tagline{color:#ffc48d;letter-spacing:.35em;font-size:12px}.status-pill{display:inline-flex;margin-top:30px;padding:12px 14px;border:1px solid #f5b177;background:#0a1019a8;color:#ffd2ae;font-size:11px;letter-spacing:.14em}.planet-nav{display:flex;gap:clamp(8px,1.4vw,21px);justify-content:center;align-items:flex-start;flex-wrap:wrap}.planet{text-decoration:none;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center;font-size:11px;letter-spacing:.17em;color:#f4b47c;transition:transform .2s ease}.planet img{width:clamp(75px,7.4vw,112px);aspect-ratio:1;object-fit:contain;border-radius:50%;border:2px solid #bc7443;background:#06121abd;box-shadow:0 0 0 5px #09111ca9,0 0 15px #b9744652;transition:box-shadow .2s ease}.planet[aria-current="page"] img,.planet:hover img,.planet:focus-visible img{box-shadow:0 0 0 5px #09111ca9,0 0 21px #ffaf67,0 0 38px #ff9e5782}.planet:hover{transform:translateY(-4px)}.hero-bottom{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.choose-btn,.export-btn{background:#0c2731dd;color:#ffe0bc;border:1.5px solid #f0ac67;border-radius:9px;padding:12px 17px;cursor:pointer;font-weight:700;font-size:12px;letter-spacing:.1em;box-shadow:0 0 14px #f7a65b55}.choose-btn:hover,.export-btn:hover{box-shadow:0 0 20px #ffb36b99}.selection-state{font-size:12px;color:#fff1d9;background:#06111ac9;padding:8px 12px;border-radius:6px}.overview,.references,.future{padding:50px clamp(24px,5vw,76px)}.overview{border-bottom:1px solid #8b5c404f}.overview h2,.references h2,.future h2{font-size:clamp(23px,2.2vw,33px);font-weight:400;color:#ffdfc4;margin:0 0 22px}.overview>p:last-child{max-width:970px;line-height:1.9;color:#ced9ea}.reference-title{display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.metric{position:relative;display:flex;align-items:stretch;justify-content:center;text-decoration:none;aspect-ratio:1.22;min-height:210px;filter:drop-shadow(0 0 4px #cf854b73);transition:filter .2s,transform .2s}.metric:before,.metric:after{content:"";position:absolute;inset:0;clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0 50%)}.metric:before{background:linear-gradient(130deg,#f4b06c,#aa683b)}.metric:after{inset:2px;background:linear-gradient(155deg,#1a2b3a,#111e2e)}.metric:hover,.metric:focus-visible{filter:drop-shadow(0 0 12px #ffc17c);transform:translateY(-3px)}.metric-content{position:relative;z-index:1;align-self:stretch;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;padding:25px 14%;text-align:center}.metric small{font-size:11px;letter-spacing:.11em;color:#ffb06a}.metric strong{font-size:clamp(17px,2.05vw,29px);color:#ffe4cb;line-height:1.18}.metric em{font-style:normal;font-size:11px;color:#b1bdc8}.metric .source{color:#ffb774;font-size:10px;letter-spacing:.08em;font-weight:700}.science-note{margin-top:30px;padding:17px 22px;border-left:3px solid var(--amber);color:#c7d1e3;background:#101c2c;font-size:13px}.future{border-top:1px solid #8b5c404f}.future h2{font-size:20px;letter-spacing:.16em}.future p{max-width:1050px;line-height:1.8;color:#cbd9e8}.future code{color:#ffc48d}footer{text-align:center;color:#d09d75;padding:22px;font-size:11px;letter-spacing:.12em;background:#07111c}@media(max-width:1100px){.hero-top{flex-direction:column}.planet-nav{justify-content:flex-start}.hero{min-height:650px}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.hero{padding:32px 17px;min-height:670px}.hero-heading{flex-basis:auto}.metric-grid{grid-template-columns:1fr}.metric{max-width:400px;width:100%;margin:auto}.planet img{width:65px}.topbar{flex-wrap:wrap}.brand{margin-left:0;width:100%}.overview,.references,.future{padding:32px 17px}}@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Moon-specific content sections: consistent with the approved Mars layout */
+.detail-sections,.archive,.gallery{padding:48px clamp(24px,5vw,76px);border-top:1px solid #8b5c404f}
+.detail-section{padding:28px 0 34px;border-bottom:1px solid #8b5c4036}
+.detail-section:last-child{border:0}
+.detail-section h2,.archive h2,.gallery h2{color:#ffdfc4;font-weight:400;font-size:clamp(23px,2.4vw,34px);margin:0 0 20px}
+.detail-section p:not(.eyebrow),.archive p,.gallery p{max-width:1030px;line-height:1.85;color:#cbd9e8}
+.archive-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.archive-card{display:flex;flex-direction:column;min-height:300px;gap:13px;padding:26px;border:1px solid #94603d;border-radius:6px;background:linear-gradient(135deg,#1d2b3a,#121e2c)}
+.archive-card h3{margin:0;color:#ffe2c4;font-size:22px}.archive-card .year{color:#ffad6c;font-size:11px;letter-spacing:.2em}
+.archive-card p{flex:1;font-size:14px;line-height:1.7}.archive-card a,.gallery a{display:inline-flex;align-self:flex-start;padding:12px 17px;color:#ffcb95;font-size:11px;font-weight:700;letter-spacing:.1em;border:1px solid #ed9b54;border-radius:5px;text-decoration:none;box-shadow:0 0 10px #ffad6c30}
+.archive-card a:hover,.gallery a:hover{box-shadow:0 0 20px #ffad6c99}.gallery-preview{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;align-items:center;margin-top:24px}.gallery-preview img{display:block;width:100%;aspect-ratio:16/8;object-fit:cover;border:1px solid #815b48;border-radius:5px}.gallery-preview a{margin-top:15px}
+@media(max-width:850px){.archive-grid{grid-template-columns:1fr}.gallery-preview{grid-template-columns:1fr}}
+
+
+/* VITALS UNIFIED DESTINATION HERO V1 */
+@media (min-width:1101px) {
+    .hero {
+        width:100%;
+        max-width:1600px;
+        height:620px;
+        min-height:620px;
+        margin-left:auto;
+        margin-right:auto;
+        background-size:cover;
+        background-position:center center;
+    }
+
+    .shell {
+        max-width:1600px;
+    }
+
+    .hero-inner,
+    .hero-top {
+        padding-top:68px;
+    }
+
+    .hero-inner {
+        min-height:620px;
+    }
+
+    .hero h1 {
+        max-width:100%;
+    }
+}
+
+@media (max-width:1100px) {
+    .hero {
+        height:auto;
+        min-height:650px;
+    }
+}
+/* END VITALS UNIFIED DESTINATION HERO V1 */
+
+/* VITALS IDENTICAL HERO FRAME V2 */
+
+/* Same external frame for every destination */
+.shell,
+.page {
+    width: 100% !important;
+    max-width: 1600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Same hero dimensions and photograph fitting */
+.hero {
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    width: 100% !important;
+    max-width: 1600px !important;
+
+    height: 620px !important;
+    min-height: 620px !important;
+    max-height: 620px !important;
+
+    margin: 0 auto !important;
+    overflow: hidden !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Prevent inner wrappers from enlarging the frame */
+.hero-inner,
+.hero-top {
+    box-sizing: border-box !important;
+    min-height: 0 !important;
+}
+
+/* Same dimensions at intermediate screen widths */
+@media (min-width: 701px) and (max-width: 1250px) {
+    .hero {
+        height: 760px !important;
+        min-height: 760px !important;
+        max-height: 760px !important;
+    }
+
+    .hero-top,
+    .hero-inner {
+        flex-direction: column !important;
+    }
+}
+
+/* Same dimensions on small screens */
+@media (max-width: 700px) {
+    .hero {
+        height: 850px !important;
+        min-height: 850px !important;
+        max-height: 850px !important;
+    }
+
+    .hero-top,
+    .hero-inner {
+        flex-direction: column !important;
+    }
+}
+
+/* END VITALS IDENTICAL HERO FRAME V2 */
+
+/* VITALS HERO ALIGNMENT V3 */
+
+/* One identical panoramic frame */
+@media (min-width:1251px) {
+    .shell,
+    .page {
+        width:100% !important;
+        max-width:1600px !important;
+        margin:0 auto !important;
+    }
+
+    .hero {
+        position:relative !important;
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-start !important;
+        align-items:stretch !important;
+
+        width:100% !important;
+        max-width:1600px !important;
+        height:620px !important;
+        min-height:620px !important;
+        max-height:620px !important;
+
+        padding:0 !important;
+        margin:0 auto !important;
+        overflow:hidden !important;
+
+        background-size:cover !important;
+        background-position:center center !important;
+        background-repeat:no-repeat !important;
+    }
+
+    /* Same vertical position for all destinations */
+    .hero > .hero-top,
+    .hero > .hero-inner {
+        box-sizing:border-box !important;
+        position:relative !important;
+
+        display:flex !important;
+        flex-direction:row !important;
+        align-items:flex-start !important;
+        justify-content:space-between !important;
+
+        width:100% !important;
+        max-width:none !important;
+        height:auto !important;
+        min-height:0 !important;
+
+        flex:0 0 auto !important;
+
+        margin:0 !important;
+        padding:65px 72px 0 !important;
+        gap:24px !important;
+    }
+
+    .hero-heading,
+    .hero-copy {
+        flex:1 1 0 !important;
+        min-width:0 !important;
+        max-width:none !important;
+        margin:0 !important;
+    }
+
+    /* Title can shrink, planet buttons cannot */
+    .hero h1 {
+        font-size:clamp(60px,6.2vw,106px) !important;
+        line-height:1.08 !important;
+        max-width:100% !important;
+    }
+
+    .hero .planet-nav {
+        display:flex !important;
+        flex:0 0 auto !important;
+        flex-wrap:nowrap !important;
+        align-items:flex-start !important;
+        justify-content:flex-start !important;
+
+        width:auto !important;
+        max-width:none !important;
+        min-width:0 !important;
+        gap:12px !important;
+
+        margin:0 !important;
+        padding:0 !important;
+    }
+
+    .hero .planet-nav .planet {
+        box-sizing:border-box !important;
+        flex:0 0 112px !important;
+        width:112px !important;
+        min-width:112px !important;
+        max-width:112px !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:center !important;
+        justify-content:flex-start !important;
+        gap:9px !important;
+
+        margin:0 !important;
+        text-align:center !important;
+    }
+
+    .hero .planet-nav .planet img {
+        box-sizing:border-box !important;
+        display:block !important;
+        flex:none !important;
+        width:112px !important;
+        height:112px !important;
+        min-width:112px !important;
+        max-width:112px !important;
+
+        object-fit:contain !important;
+        border-radius:50% !important;
+    }
+
+    .hero .planet-nav .planet span {
+        display:block !important;
+        margin:0 !important;
+        line-height:1.4 !important;
+        text-align:center !important;
+    }
+}
+
+/* Shared layout for medium and small screens */
+@media (max-width:1250px) {
+    .hero {
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-start !important;
+        height:760px !important;
+        min-height:760px !important;
+        max-height:760px !important;
+        padding:0 !important;
+        overflow:hidden !important;
+    }
+
+    .hero > .hero-top,
+    .hero > .hero-inner {
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        justify-content:flex-start !important;
+
+        flex:0 0 auto !important;
+        width:100% !important;
+        min-height:0 !important;
+        margin:0 !important;
+        padding:42px 32px 0 !important;
+        gap:30px !important;
+    }
+
+    .hero-heading,
+    .hero-copy {
+        flex:0 0 auto !important;
+        min-width:0 !important;
+        width:100% !important;
+    }
+
+    .hero .planet-nav {
+        display:flex !important;
+        flex:0 0 auto !important;
+        flex-wrap:nowrap !important;
+        justify-content:flex-start !important;
+        gap:12px !important;
+
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:auto !important;
+        padding:4px 4px 14px !important;
+        margin:0 !important;
+    }
+
+    .hero .planet-nav .planet {
+        flex:0 0 100px !important;
+        width:100px !important;
+        min-width:100px !important;
+        max-width:100px !important;
+        text-align:center !important;
+    }
+
+    .hero .planet-nav .planet img {
+        width:96px !important;
+        height:96px !important;
+        min-width:96px !important;
+        max-width:96px !important;
+        object-fit:contain !important;
+    }
+}
+
+@media (max-width:700px) {
+    .hero {
+        height:850px !important;
+        min-height:850px !important;
+        max-height:850px !important;
+    }
+}
+
+/* END VITALS HERO ALIGNMENT V3 */

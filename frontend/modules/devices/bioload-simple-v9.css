@@ -1,0 +1,23 @@
+/* V.I.T.A.L.S. BioLoad V9 - presentation layer only */
+.bl9-console{margin:16px 0;padding:20px;border:1px solid #35877f;border-radius:12px;background:linear-gradient(125deg,#0b2d36,#081f2e);color:#e3f5ef}
+.bl9-overview{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}
+.bl9-overview>div:first-child>span{font-size:10px;letter-spacing:1.5px;color:#58f2c2;font-weight:800}
+.bl9-overview strong{display:block;font-size:25px;color:#ffd6b2;font-weight:400;margin:5px 0}
+.bl9-overview p{color:#a7cbd0;font-size:12px;margin:3px 0 13px;max-width:520px}
+.bl9-indicators{display:flex;flex-direction:column;gap:7px;align-items:flex-end;min-width:115px}
+.bl9-indicators span{font-size:10px;letter-spacing:.7px;color:#8cead4;border:1px solid #34787c;border-radius:5px;padding:5px 9px;white-space:nowrap}
+.bl9-main-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:5px 0 12px}
+#bl9-toggle{background:#104a43;border-color:#5cf8c4;color:#d4fff1;font-size:12px;padding:13px 19px}
+#bl9-toggle.bl9-active{background:#563522;border-color:#e4a76a;color:#ffe0bb}
+.bl9-message{font-size:12px;min-height:21px;color:#8fe5d3;margin:0}
+.bl9-options,.bl9-export,.bl9-advanced{border:1px solid #345e65;border-radius:8px;background:#0b2532;margin:12px 0;padding:9px 13px}
+.bl9-options summary,.bl9-export summary,.bl9-advanced summary{cursor:pointer;font-size:12px;color:#92d6d3;user-select:none}
+.bl9-options[open],.bl9-export[open],.bl9-advanced[open]{padding-bottom:15px}
+.bl9-options .bl8-actions{padding-top:14px}.bl9-options .bl8-status{margin-top:9px}
+.bl9-advanced{margin:20px clamp(16px,4vw,65px)}.bl9-advanced>.panel{margin:15px 0 0;width:auto}
+.bl9-hidden-region,.bl9-original-control{display:none!important}
+.bl9-region-note{font-size:12px;color:#9ad4ce;align-self:center;margin:0}
+.bl9-monitor>.bl6-heading .btn{display:none}
+.bl9-monitor .bl6-controls{gap:12px;align-items:center}
+.bl9-export{margin:8px 0 17px}.bl9-export button{margin:13px 9px 0 0}
+@media(max-width:700px){.bl9-overview{flex-direction:column}.bl9-indicators{flex-direction:row;flex-wrap:wrap;align-items:center}.bl9-advanced{margin:15px 10px}}

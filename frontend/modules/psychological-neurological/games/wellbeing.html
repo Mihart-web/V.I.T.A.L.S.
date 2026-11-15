@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V.I.T.A.L.S. | Psychological Wellbeing</title>
+<link rel="stylesheet" href="./wellbeing.css">
+<script src="./wellbeing.js" defer></script>
+</head>
+<body>
+<main class="shell">
+<header class="hero"><h1>PSYCHOLOGICAL WELLBEING</h1><p>V.I.T.A.L.S. / BEHAVIORAL HEALTH &amp; MISSION JOURNAL</p></header>
+<nav class="backbar" aria-label="Navigation"><label for="backTo">BACK TO</label><select id="backTo"><option value="">Select destination...</option><option value="../../../dashboard.html">Dashboard</option><option value="../psychological-health.html">Psychological &amp; Neurological Module</option></select></nav>
+<section class="main-panel">
+<div class="hud">
+  <div><small>ENTRY</small><strong id="entryCount">0</strong></div>
+  <div><small>MOOD</small><strong id="moodCurrent">—</strong></div>
+  <div><small>STRESS</small><strong id="stressCurrent">—</strong></div>
+  <div><small>FATIGUE</small><strong id="fatigueCurrent">—</strong></div>
+  <div><small>SLEEP QUALITY</small><strong id="sleepCurrent">—</strong></div>
+</div>
+<div class="intro"><h2>MISSION WELLBEING CHECK-IN</h2><p>Rate how you feel <strong>right now</strong>. 1 is very low and 10 is very high for the named feeling. For stress, fatigue, loneliness and difficulties, higher means more of that experience. These are self-reports, not a clinical test.</p></div>
+<form id="checkinForm">
+<div class="scale-grid" id="scaleGrid"></div>
+<div class="action-row"><button type="submit" id="saveCheckin">SAVE CHECK-IN</button><button type="button" id="resetCheckin">RESET RATINGS</button><button type="button" id="showHistory">VIEW HISTORY</button></div>
+<label class="consent"><input type="checkbox" id="shareTwin"> Share <strong>numeric ratings only</strong> with the future Cognitive Twin summary. Journal text is never included.</label>
+<p id="checkinStatus" class="status" role="status" aria-live="polite">No check-in saved in this session.</p>
+</form>
+<section class="journal">
+<div class="journal-heading"><div><h2>MISSION JOURNAL</h2><p>Write about today's mission, workload, isolation, concerns or anything you want to remember.</p></div><button type="button" id="toggleJournal">OPEN JOURNAL</button></div>
+<div id="journalEditor" hidden><label for="journalTitle">ENTRY TITLE (OPTIONAL)</label><input id="journalTitle" maxlength="100" placeholder="Mission day, event or personal note"><label for="journalText">PRIVATE JOURNAL ENTRY</label><textarea id="journalText" rows="9" maxlength="6000" placeholder="What happened today? What is worrying you? What helped?"></textarea><label class="consent"><input type="checkbox" id="localJournalConfirm"> I understand this demo stores my journal as <strong>unencrypted text in this browser</strong>. Do not enter real sensitive personal or medical information.</label><div class="action-row"><button type="button" id="saveJournal">SAVE JOURNAL LOCALLY</button><button type="button" id="viewJournal">VIEW SAVED ENTRIES</button><button type="button" id="exportJournal">EXPORT JOURNAL</button></div><p id="journalStatus" class="status" role="status" aria-live="polite">Journal is private to this browser profile, but browser storage is not secure or suitable for real clinical data.</p></div>
+</section>
+<section id="history" class="results" hidden><h2>RECORDED CHECK-INS</h2><div id="historyList"></div><button type="button" id="exportRatings">EXPORT RATINGS JSON</button></section>
+<section id="journalHistory" class="results" hidden><h2>PRIVATE JOURNAL ENTRIES</h2><div id="journalList"></div><button type="button" id="clearJournal">DELETE ALL LOCAL JOURNAL ENTRIES</button></section>
+</section>
+<footer><p>Research prototype inspired by NASA's isolation and confinement research. Ratings do not diagnose mental health conditions. Local browser storage is not encrypted; do not use for real astronaut medical records.</p><p><a href="https://www.nasa.gov/hrp/hazard-isolation-and-confinement/" target="_blank" rel="noopener noreferrer">NASA: Isolation &amp; Confinement</a></p></footer>
+</main>
+</body>
+</html>

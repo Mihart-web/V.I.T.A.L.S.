@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071821">
+<title>V.I.T.A.L.S. | Crew On Board</title>
+<link rel="stylesheet" href="./crew-on-board.css">
+<script src="./crew-on-board.js" defer></script>
+</head>
+<body>
+<main class="shell">
+<header class="header">
+<nav class="links" aria-label="Navigation"><a href="../../dashboard.html">&larr; DASHBOARD</a><a href="../mission/mission.html">MISSION MODULE</a><a href="../mission/pages/crew-assignment.html">CREW ASSIGNMENT</a><a href="../mission/pages/mission-configuration.html">MISSION CONFIGURATION</a></nav>
+<div class="heading"><div><div class="eyebrow">V.I.T.A.L.S. / FLIGHT CREW REGISTRY</div><h1>CREW <em>ON BOARD</em></h1><p>Registered astronaut profiles and the crew assigned to the active mission.</p></div><button type="button" id="refresh" class="btn">REFRESH DATA</button></div>
+</header>
+<section class="mission-card" aria-label="Active mission"><div><div class="eyebrow">ACTIVE MISSION</div><h2 id="missionName">NO ACTIVE MISSION</h2><p id="missionDetails">Activate a saved mission in Mission Configuration.</p></div><div class="status"><span>CREW ASSIGNED</span><strong id="rosterCount">0</strong><small id="capacity">CAPACITY NOT SET</small></div></section>
+<div id="notice" role="status" aria-live="polite" class="notice"></div>
+<section class="section" aria-labelledby="assignedTitle"><div class="section-head"><div><div class="eyebrow">MISSION ROSTER</div><h2 id="assignedTitle">ASSIGNED CREW</h2><p>Members saved through Crew Assignment for the active mission. Console duties are clearly identified.</p></div><span class="count" id="assignedCount">0</span></div><div class="cards" id="assignedCrew"></div></section>
+<section class="section" aria-labelledby="allTitle"><div class="section-head"><div><div class="eyebrow">ASTRONAUT DATABASE</div><h2 id="allTitle">ALL REGISTERED ASTRONAUTS</h2><p>Protected default profiles and user-created astronauts. Mission assignment is shown on each card.</p></div><span class="count" id="allCount">0</span></div><div class="filter"><label for="search">SEARCH NAME OR ID</label><input id="search" type="search" autocomplete="off" placeholder="Search astronauts..."></div><div class="cards" id="allCrew"></div></section>
+<footer><span>Local browser data &middot; Read-only crew overview &middot; No clinical authorizations granted</span></footer>
+</main>
+</body></html>

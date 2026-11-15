@@ -1,0 +1,15 @@
+/* BioLoad V8: simple 8-region interface; no 20-piece mapping form */
+.bl8-compact{padding:15px 16px;margin:10px 0 15px;background:linear-gradient(120deg,#0b2730,#0c1f2b);border:1px solid #337b7f;border-radius:11px;color:#c9f3ed}
+.bl8-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.bl8-head strong{font-size:15px;color:#74ffe0;letter-spacing:.4px}
+.bl8-head p{font-size:12px;color:#91bdc4;margin:5px 0 13px;line-height:1.55}
+#bl8-count{font-size:11px;white-space:nowrap;color:#8be0d0}
+.bl8-regions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:0 0 13px}
+.bl8-regions button{min-width:0;letter-spacing:0;text-transform:uppercase;font-size:10px;padding:10px 4px;border:1px solid #366b75;background:#0a2634;color:#a2c8d0;box-shadow:none}
+.bl8-regions button.bl8-calibrated:not(.bl8-current){border-color:#348c7f;color:#8bead4}
+.bl8-regions button.bl8-current{border-color:#61ffda;color:#d3fff4;background:#14504e;box-shadow:0 0 11px #4dfddd55}
+.bl8-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.bl8-actions strong{margin-right:auto;color:#f0c6a2;font-size:12px}
+.bl8-actions button{padding:9px 10px;font-size:10px}.bl8-status{font-size:11px;color:#94dcd0;min-height:16px;margin:10px 0 0}
+model-viewer .bl8-hotspot{display:block;padding:0;min-width:0;width:18px;height:18px;border-radius:50%;border:2px solid #c5fff2;background:#49fbd3;box-shadow:0 0 0 6px #39ffd02b,0 0 19px 9px #21eeb8a8;cursor:pointer;animation:bl8-pulse 1.7s ease-in-out infinite}
+@keyframes bl8-pulse{0%,100%{box-shadow:0 0 0 5px #39ffd024,0 0 12px 5px #22f5bd80}50%{box-shadow:0 0 0 9px #39ffd03f,0 0 23px 11px #22f5bdc0}}
+@media(max-width:680px){.bl8-regions{grid-template-columns:repeat(2,minmax(0,1fr))}.bl8-head{flex-wrap:wrap}}

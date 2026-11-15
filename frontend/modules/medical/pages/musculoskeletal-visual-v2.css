@@ -1,0 +1,38 @@
+/* V.I.T.A.L.S. MUSCULOSKELETAL V2 - UI-only enhancement.
+   Does not modify calculations, scientific data, models, or storage. */
+@font-face{font-family:'VitalsFauna';src:url('../../../../assets/fonts/fauna/Fauna%20Thin.ttf') format('truetype');font-weight:300;font-display:swap}
+:root{--v2-bg:#06121b;--v2-panel:#0a202b;--v2-panel-alt:#102e39;--v2-border:rgba(74,194,179,.30);--v2-bronze:#efbf98;--v2-mint:#69f4bf;--v2-copy:#def1ed;--v2-muted:#a6cbd1}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.68;background:var(--v2-bg);color:var(--v2-copy)}
+.topbar{min-height:48px;gap:22px;background:#06131e;border-bottom:1px solid rgba(214,151,90,.45)}
+.topbar a{transition:color .2s ease}.topbar a:hover{color:#69f4bf}
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:55px clamp(22px,5vw,80px) 49px;background:radial-gradient(ellipse at 83% 15%,rgba(22,119,105,.38),transparent 52%),linear-gradient(112deg,#07141f 4%,#0b3034 100%)}
+.hero:after{content:'';position:absolute;z-index:-1;right:6%;top:7%;width:240px;height:240px;border:1px solid rgba(106,241,198,.12);border-radius:50%;box-shadow:0 0 0 55px rgba(77,206,176,.018),0 0 0 100px rgba(77,206,176,.012);pointer-events:none}
+.hero h1{font-family:'VitalsFauna','Century Gothic',Arial,sans-serif;font-size:clamp(39px,5.5vw,77px);line-height:1.16;font-weight:300;letter-spacing:2.8px;margin:19px 0 22px;text-wrap:balance}
+.hero h1 em{color:#76f5be}.hero>p:not(.eyebrow){font-size:16px;max-width:790px;color:#d4eae8}
+.eyebrow{font-size:10px;letter-spacing:2.1px;color:#73f4bd}
+.tags span{border-radius:4px;background:rgba(6,36,42,.45)}
+.v2-section-nav{display:flex;flex-wrap:wrap;align-items:center;gap:9px 12px;margin:0 clamp(12px,4vw,65px);padding:15px 15px 15px 20px;background:#091b26;border:1px solid rgba(98,201,181,.24);border-top:0;border-radius:0 0 12px 12px}
+.v2-section-nav>strong{margin-right:8px;font-size:10px;letter-spacing:1.3px;color:#75e8bb;white-space:nowrap}
+.v2-section-nav a{font-size:11px;font-weight:700;letter-spacing:.4px;text-decoration:none;color:#b8dbe2;border:1px solid #315a63;border-radius:6px;padding:7px 11px;background:#0d2732;transition:border-color .2s,background .2s}
+.v2-section-nav a:hover,.v2-section-nav a:focus-visible{border-color:#69e8c5;color:#d9fff5;background:#16403f;outline-offset:3px}
+.panel{position:relative;background:linear-gradient(155deg,rgba(10,32,43,.99),rgba(7,26,36,.99));border:1px solid rgba(190,140,91,.64);border-radius:15px;box-shadow:0 10px 35px rgba(0,0,0,.12);padding:clamp(20px,3vw,34px);margin-top:22px;margin-bottom:22px;scroll-margin-top:18px}
+.panel>h2{font-family:'VitalsFauna','Century Gothic',Arial,sans-serif;font-size:clamp(27px,3.1vw,39px);font-weight:300;line-height:1.25;color:#ffd0b0;letter-spacing:.3px;margin:12px 0 17px}
+.panel>.eyebrow{margin:0 0 9px}.panel>.muted{max-width:1030px}
+.metricgrid{gap:13px;margin:18px 0}.metric{background:#102e39;border-color:rgba(103,188,183,.45);padding:16px;min-height:113px;border-radius:10px;min-width:0;overflow-wrap:anywhere}
+.metric strong{font:600 clamp(18px,1.6vw,23px)/1.35 Arial,sans-serif;color:#ffd0a7;margin-top:9px;overflow-wrap:anywhere}.metric small{font-size:10px;line-height:1.65;letter-spacing:1.1px}
+.muted{font-size:13px;line-height:1.75;color:#adced3}.notice{border-left:3px solid #5ff5b4;border-radius:0 5px 5px 0;line-height:1.65;background:#113b39}
+.controls{gap:12px;margin-top:19px}.controls3 label{min-width:175px;flex:1 1 185px}label{font-size:10px;letter-spacing:1.15px;line-height:1.6;color:#eeb88d}
+select,input{border-color:#477985;background:#0f303d;min-height:43px;outline-offset:2px;transition:border-color .2s,box-shadow .2s}
+select:focus-visible,input:focus-visible{border-color:#66edc4;box-shadow:0 0 0 3px rgba(103,233,188,.13)}
+button,.button{min-height:42px;padding:11px 15px;border-radius:7px;transition:background .2s,border-color .2s;color:#ffddb5}
+button:hover,.button:hover{border-color:#f7c98c}button:focus-visible,.button:focus-visible{outline:2px solid #6ce7bd;outline-offset:3px}
+#trend{height:auto;max-height:330px;min-height:235px;aspect-ratio:900/285;display:block;background:linear-gradient(180deg,#081a25,#091e29);margin:23px 0 16px;border-color:#325866}
+.researchgrid{gap:15px}.tile{background:#102d38;border:1px solid #396a71;border-radius:10px;padding:22px;min-width:0}.tile>strong{display:block;font-size:17px;color:#71f3c3;margin-bottom:9px}.tile p{line-height:1.7}
+#geneChart{padding-top:10px}.gene-bars{min-height:170px;gap:7px}.gene-bar{min-width:38px}.gene-labels{gap:7px;min-height:49px}.gene-labels small{min-width:38px;font-size:10px;transform:rotate(-33deg)}
+.details{background:#0c2732;border-color:#3b656e}.details summary{padding:5px 0;font-size:13px;letter-spacing:.2px}
+table{font-size:12px}.scroller{max-width:100%}.ref{font-size:13px}.ref a{color:#77f4bf;text-underline-offset:3px}
+#bioLink{margin-top:17px}footer{line-height:1.7}
+@media(max-width:930px){.researchgrid{grid-template-columns:1fr}.hero{padding-top:42px}.panel{margin-left:18px;margin-right:18px}.v2-section-nav{margin-left:18px;margin-right:18px}}
+@media(max-width:620px){.hero h1{font-size:clamp(33px,8vw,45px);letter-spacing:1px;overflow-wrap:anywhere}.hero p{font-size:14px}.panel{margin-left:10px;margin-right:10px;padding:18px}.v2-section-nav{margin-left:10px;margin-right:10px;padding:13px}.v2-section-nav>strong{width:100%}.metricgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.metric{min-height:105px;padding:12px}.metric strong{font-size:18px}.controls3 label{min-width:100%;flex-basis:100%}#trend{min-height:190px}.tile{padding:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}

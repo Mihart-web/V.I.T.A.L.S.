@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V.I.T.A.L.S. | Reaction Time</title>
+  <link rel="stylesheet" href="./reaction.css">
+  <script src="./reaction.js" defer></script>
+</head>
+<body>
+<main class="shell">
+  <header class="hero"><h1>REACTION TIME</h1><p>PSYCHOLOGICAL &amp; NEUROLOGICAL / ADAPTIVE RESPONSE CONTROL</p></header>
+  <nav class="backbar" aria-label="Navigation">
+    <label for="backTo">BACK TO</label>
+    <select id="backTo" aria-label="Choose destination">
+      <option value="">Select destination...</option>
+      <option value="../../../dashboard.html">Dashboard</option>
+      <option value="../psychological-health.html">Psychological &amp; Neurological Module</option>
+    </select>
+  </nav>
+  <section class="main-panel" aria-label="Reaction game">
+    <div class="hud">
+      <div><small>LEVEL</small><strong id="level">1 / 10</strong></div>
+      <div><small>TRIAL</small><strong id="trial">0 / 6</strong></div>
+      <div><small>POINTS</small><strong id="score">0</strong></div>
+      <div><small>CORRECT</small><strong id="hits">0</strong></div>
+      <div><small>ERRORS</small><strong id="errors">0</strong></div>
+      <div><small>MEAN RT</small><strong id="meanRt">—</strong></div>
+    </div>
+    <div class="rule-bar"><div><small>CURRENT RULE</small><strong id="rule">GO / STOP</strong></div><p id="ruleHelp">Press GO for green. Do nothing for red. Ignore the other buttons.</p></div>
+    <div class="arena-wrap">
+      <canvas id="arena" width="840" height="430" aria-label="Visual stimulus area"></canvas>
+      <div class="overlay" id="overlay" aria-live="polite"><strong>REACTION TIME</strong><span>10 adaptive levels · 6 trials per level</span><span>Press START to begin</span></div>
+    </div>
+    <p class="status" id="status" aria-live="polite">Ready. Respond only when the stimulus appears.</p>
+    <div class="response-controls" role="group" aria-label="Response buttons">
+      <button type="button" class="response" data-response="LEFT">◀ LEFT <kbd>A</kbd></button>
+      <button type="button" class="response" data-response="GO">● GO <kbd>SPACE</kbd></button>
+      <button type="button" class="response" data-response="RIGHT">RIGHT ▶ <kbd>D</kbd></button>
+    </div>
+    <p class="small-note">RED = withhold response whenever a stop signal appears. Premature presses and incorrect choices are recorded. Flicker is limited to 2 Hz.</p>
+    <div class="controls" role="group" aria-label="Game controls">
+      <button id="start" type="button">START</button>
+      <button id="pause" type="button" disabled>PAUSE</button>
+      <button id="restart" type="button">RESTART</button>
+      <button id="retry" type="button" disabled>RETRY LEVEL</button>
+      <button id="stop" type="button" disabled>STOP SESSION</button>
+    </div>
+    <section class="report" id="report" hidden>
+      <h2>SESSION REPORT</h2>
+      <p id="reportText"></p>
+      <div class="controls">
+        <button id="review" type="button">REVIEW ERRORS</button>
+        <button id="export" type="button">EXPORT RESULTS</button>
+      </div>
+      <div id="reviewList" hidden></div>
+    </section>
+  </section>
+  <footer>Experimental performance game. Scores are not clinical diagnoses. Session data is stored only in this browser.</footer>
+</main>
+</body>
+</html>

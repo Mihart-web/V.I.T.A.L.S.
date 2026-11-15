@@ -1,0 +1,67 @@
+/* V.I.T.A.L.S. Mission Destinations v1: five regular hexagons */
+.destination-honeycomb {
+  position: relative;
+  width: calc(var(--w) * 2.55);
+  height: calc(var(--h) * 3.08);
+  margin: 32px auto 0;
+}
+.destination-honeycomb .top-left { left: calc(var(--w) * .025); top: calc(var(--h) * .54); }
+.destination-honeycomb .top-right { left: calc(var(--w) * 1.525); top: calc(var(--h) * .54); }
+.destination-honeycomb .center { left: calc(var(--w) * .775); top: calc(var(--h) * 1.04); }
+.destination-honeycomb .bottom-left { left: calc(var(--w) * .025); top: calc(var(--h) * 1.54); }
+.destination-honeycomb .bottom-right { left: calc(var(--w) * 1.525); top: calc(var(--h) * 1.54); }
+.destination-honeycomb .hex strong { font-size: clamp(14px, 2vw, 22px); }
+.destination-status { color: #b5ded5; text-align: center; margin: 12px auto 25px; font-size: 13px; }
+.destination-details { margin: 46px auto 32px; max-width: 760px; border: 2px solid #dba155; border-radius: 16px; padding: 35px; background: #07232e; box-shadow: 0 0 18px #efa85c44; text-align: center; }
+.destination-details h2 { font-size: clamp(36px, 5vw, 62px); font-family: "Fauna", Arial, sans-serif; color: #ffd6a1; font-weight: 400; margin: 0 0 12px; }
+.destination-details p { color: #c5e9e4; line-height: 1.7; }
+.destination-details .status { color: #ffca85; font-weight: bold; letter-spacing: .08em; }
+
+
+/* VITALS DESTINATION HEX PHOTOS V3 */
+
+/* Preserve the original bronze border and hexagon shape.
+   Apply each photograph ONLY to the internal surface. */
+
+.destination-honeycomb .hex .hex-inner {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Earth */
+.destination-honeycomb .hex[data-destination="earth"] .hex-inner {
+    background-image:
+        linear-gradient(rgba(3,12,22,.35),rgba(3,12,22,.65)),
+        url("../../../../assets/Destinations/Earth%20south%20pole%20-hero.png");
+}
+
+/* Moon */
+.destination-honeycomb .hex[data-destination="moon"] .hex-inner {
+    background-image:
+        linear-gradient(rgba(3,12,22,.35),rgba(3,12,22,.65)),
+        url("../../../../assets/Destinations/Moon-hero.png");
+}
+
+/* Mars */
+.destination-honeycomb .hex[data-destination="mars"] .hex-inner {
+    background-image:
+        linear-gradient(rgba(3,12,22,.35),rgba(3,12,22,.65)),
+        url("../../../../assets/Destinations/Mars-hero.png");
+}
+
+/* Titan */
+.destination-honeycomb .hex[data-destination="titan"] .hex-inner {
+    background-image:
+        linear-gradient(rgba(3,12,22,.35),rgba(3,12,22,.65)),
+        url("../../../../assets/Destinations/Titan-hero.png");
+}
+
+/* Europa */
+.destination-honeycomb .hex[data-destination="europa"] .hex-inner {
+    background-image:
+        linear-gradient(rgba(3,12,22,.35),rgba(3,12,22,.65)),
+        url("../../../../assets/Destinations/Europa-hero.png");
+}
+
+/* END VITALS DESTINATION HEX PHOTOS V3 */

@@ -1,0 +1,22 @@
+"use strict";
+(()=>{
+ const STORE="vitals.astronauts.v1";
+ const $=id=>document.getElementById(id);
+ const read=()=>{try{const d=JSON.parse(localStorage.getItem(STORE)||"[]");return Array.isArray(d)?d.filter(p=>p&&p.isDefault&&p.protected&&/^VITALS-DEF-00[1-5]$/.test(p.astronautId)):[]}catch{return[]}};
+ const clean=s=>String(s??"");
+ const create=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=clean(txt);return e};
+ const panel=(title)=>{const s=create("section","panel");s.append(create("h2","",title));$("profile").append(s);return s};
+ const fact=(label,value)=>{const d=create("div","fact");d.append(create("small","",label),create("strong","",value));return d};
+ const list=(section,items,empty)=>{if(!items||!items.length){section.append(create("p","muted",empty||"Not specified in this synthetic dataset."));return}const ul=create("ul");for(const it of items){const li=create("li","",typeof it==="string"?it:JSON.stringify(it));ul.append(li)}section.append(ul)};
+ const render=()=>{const profiles=read();const id=$("astronaut").value;const p=profiles.find(x=>x.astronautId===id);$("profile").replaceChildren();if(!p){$("profile").append(create("p","notice","Default profile data unavailable. Open Select Astronaut to load the V2 synthetic seed."));return}
+  const intro=create("div","intro");const img=create("img");img.src=`../../../assets/astronaut-profile/portraits/${p.avatarFile}`;img.alt=`Avatar of ${p.fullName}`;const info=create("div");info.append(create("strong","",p.fullName),create("p","muted",`ID: ${p.astronautId} | Fictional demo | Protected`));intro.append(img,info);$("profile").append(intro);
+  const idSection=panel("IDENTITY / SIMULATION METADATA");const ident=create("div","grid");for(const [k,v] of [["Age (fictional)",p.age],["Height",`${p.height} cm`],["Mass",`${p.weight} kg`],["Blood group (fictional)",p.bloodType],["Body profile",p.physique],["Data provenance",p.dataProvenance]])ident.append(fact(k,v));idSection.append(ident);
+  const clinical=panel("SYNTHETIC MEDICAL HISTORY");clinical.append(create("p","",p.clinicalHistory?.summary));for(const c of p.clinicalHistory?.conditions||[]){clinical.append(create("h3","",`${c.name} — ${c.status}`),create("p","muted",c.observations))}clinical.append(create("h3","","Allergies"));list(clinical,(p.clinicalHistory?.allergies||[]).map(a=>`${a.substance}: ${a.reaction}`));clinical.append(create("h3","","Medications"));list(clinical,(p.clinicalHistory?.medications||[]).map(a=>`${a.name} — ${a.status}; ${a.dose}`));clinical.append(create("h3","","Injuries / surgery"));list(clinical,[...(p.clinicalHistory?.injuries||[]),...(p.clinicalHistory?.surgeries||[]).map(x=>x.procedure)]);clinical.append(create("p","muted",p.clinicalHistory?.clinicalNotes));
+  const base=panel("INDIVIDUAL PHYSIOLOGICAL BASELINE — 57 SIMULATED FIELDS");const g=create("div","grid");for(const [k,v] of Object.entries(p.metrics||{}))g.append(fact(k.replace(/([a-z])([A-Z])/g,"$1 $2"),v));base.append(g);
+  const lab=panel("SYNTHETIC LABORATORY BASELINE");const l=create("div","grid");for(const [k,v] of Object.entries(p.laboratoryBaselineSimulation||{}))l.append(fact(k.replace(/([a-z])([A-Z])/g,"$1 $2"),v));lab.append(l);
+  const history=panel("PREMISSION OBSERVATION HISTORY (SYNTHETIC)");const table=create("table","data-table");const head=create("tr");for(const t of ["Date","Resting HR (bpm)","Sleep (h)","Fatigue (0-10)"])head.append(create("th","",t));table.append(head);for(const o of p.observationsSimulation||[]){const row=create("tr");for(const val of [o.date,o.restingHeartRateBpm,o.sleepDurationH,o.fatigueScore10])row.append(create("td","",val));table.append(row)}history.append(table);
+  const risk=panel("SCENARIO MONITORING FOCUS / SAFETY");list(risk,p.clinicalHistory?.monitoringFocus);risk.append(create("p","notice","Clinical approval: NOT GRANTED. Environmental and mission-specific health outcomes are NOT calculated here. Human oversight required."));
+ };
+ const load=()=>{const profiles=read();const s=$("astronaut"),prev=s.value;s.replaceChildren();for(const p of profiles){const o=document.createElement("option");o.value=p.astronautId;o.textContent=`${p.fullName} (${p.astronautId})`;s.append(o)}if(profiles.some(p=>p.astronautId===prev))s.value=prev;render()};
+ $("astronaut").addEventListener("change",render);window.addEventListener("storage",e=>{if(e.key===STORE)load()});load();
+})();

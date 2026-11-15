@@ -1,0 +1,84 @@
+:root{color-scheme:dark;--bg:#04121b;--panel:#081e2a;--panel2:#0c2b38;--line:#29606b;--bronze:#f0b17d;--green:#64f6c9;--cyan:#62e6f0;--yellow:#f5c36c;--red:#ff758a;--text:#d7f6f9}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 55% 0%,#063d38 0%,transparent 35%),var(--bg);color:var(--text);font:15px/1.6 Arial,Helvetica,sans-serif}.top{height:46px;display:flex;gap:25px;align-items:center;border-bottom:1px solid #775e44;background:#04101b;padding:0 max(18px,calc((100vw - 1380px)/2));font-size:11px;font-weight:700;letter-spacing:1px}.top a{color:var(--bronze);text-decoration:none}.top span{margin-left:auto;color:var(--cyan)}.hero{padding:65px max(22px,calc((100vw - 1380px)/2)) 45px;background:linear-gradient(100deg,#04121b,#06332c);border-bottom:1px solid #ac8257}.eyebrow{color:var(--green);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(40px,6.2vw,84px);font-weight:300;letter-spacing:4px;line-height:1.1;margin:16px 0 20px;color:#ffd0aa}.hero h1 em{font-style:normal;color:#74ffd2}.hero p{font-size:17px}.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.hero-tags span,.status{border:1px solid #1f9b87;color:var(--green);padding:9px 13px;font-size:10px;font-weight:800;letter-spacing:1px}.hero-tags span:nth-child(2){color:var(--bronze);border-color:#ae8253}main{max-width:1430px;margin:0 auto;padding:24px 22px 65px}.panel{background:rgba(7,27,38,.94);border:1px solid #9c7548;border-radius:16px;padding:30px;margin-bottom:24px}.panel h2{font-size:clamp(26px,3vw,39px);font-weight:400;color:#ffbf95;margin:12px 0}.panel p{color:#bce5ee;margin:5px 0 22px}.head{display:flex;align-items:center;justify-content:space-between;gap:15px}.mission{display:grid;grid-template-columns:minmax(260px,38%) 1fr;gap:22px}.planet{position:relative;border:1px solid var(--line);border-radius:10px;min-height:230px;overflow:hidden;background:#061523}.planet img{width:100%;height:100%;position:absolute;object-fit:cover}.planet b{position:absolute;bottom:13px;left:17px;font-size:24px;color:white;text-shadow:0 2px 8px #000}.missionfacts,.metrics,.balance-grid,.resourcecards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.missionfacts{grid-template-columns:repeat(2,minmax(0,1fr))}.fact,.metric,.balancecard,.resourcecard{background:#102e3b;border:1px solid #316471;padding:16px;border-radius:9px;min-width:0}.fact small,.metric small,.balancecard small,.resourcecard small{display:block;color:var(--cyan);font-size:10px;letter-spacing:1px;text-transform:uppercase}.fact strong,.metric strong,.balancecard strong,.resourcecard strong{display:block;font-size:20px;color:#ffd0aa;margin-top:8px;overflow-wrap:anywhere}.metric strong{font-size:27px}.metric small.notevalue{font-size:10px;color:#a3cdd9}.metric.alert{border-color:#f3be65}.metric.critical{border-color:#ff657d}.toolbar{display:flex;align-items:end;gap:10px;flex-wrap:wrap;margin:20px 0}.toolbar label{min-width:230px;flex:1}.toolbar select{width:100%}button,select,input{font:inherit}button{cursor:pointer;border:1px solid #c8995a;color:#ffc68f;background:#092638;border-radius:7px;padding:12px 16px;font-weight:800;font-size:11px;letter-spacing:.6px}button:hover{border-color:#77ffe0;background:#12413f}button.secondary{border-color:#3d7988;color:#b0f7ff}button:disabled{opacity:.5;cursor:not-allowed}select,input{border:1px solid #447383;border-radius:6px;background:#102e3d;color:white;padding:11px;min-height:42px}.notice,.note{background:#103b3b;border-left:3px solid var(--green);padding:12px 15px;font-size:12px;margin:16px 0;color:#d7fffa}.note{border-color:#488b9b;background:#0c2a37}.metrics{grid-template-columns:repeat(3,minmax(0,1fr));margin:20px 0}.charts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.chart{background:#0c2a38;border:1px solid #306774;border-radius:9px;padding:12px;min-width:0}.chart header{display:flex;justify-content:space-between;font-size:11px;color:#c2fff1}.chart svg{display:block;width:100%;height:140px}.chart .units{font-size:10px;color:#97cfdb}.power-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:22px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.formgrid label{font-size:12px;color:#e8bb92;display:flex;flex-direction:column;gap:4px}.formgrid small{color:#99dfe2}.formgrid input{width:100%}.buttons{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.balance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.meter{margin-top:18px}.meter label{display:flex;justify-content:space-between;font-size:12px;color:#cfeef0}.meter .track{background:#173744;border-radius:8px;height:15px;margin-top:7px;overflow:hidden}.meter .fill{height:100%;background:linear-gradient(90deg,#1c9ea0,#6ff3bc);transition:width .3s}.meter .fill.warn{background:linear-gradient(90deg,#f0b161,#ff887e)}.resources{grid-template-columns:repeat(4,minmax(0,1fr));margin:18px 0}.resourcecards{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:18px}.recommendations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.advice{border:1px solid #347587;border-left:4px solid #4dcfe6;border-radius:7px;background:#0d2d3b;padding:15px}.advice.warn{border-left-color:#f3ba66}.advice.bad{border-left-color:#ff758a}.advice b{color:#ffe0bd}.advice p{font-size:13px;margin:6px 0 0}.connections{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.connections a{font-size:11px;color:#5af8d9;border:1px solid #327a7e;text-decoration:none;padding:10px 12px;border-radius:5px}footer{text-align:center;font-size:10px;letter-spacing:1px;color:#6eafc3;padding:20px}@media(max-width:950px){.mission,.power-layout{grid-template-columns:1fr}.metrics,.charts,.resourcecards{grid-template-columns:repeat(2,minmax(0,1fr))}.resources{grid-template-columns:repeat(2,minmax(0,1fr))}.head{align-items:start;flex-direction:column}}@media(max-width:580px){.top{gap:10px;font-size:9px}.top span{display:none}.hero{padding:36px 18px}.hero h1{font-size:36px}.panel{padding:16px}.metrics,.charts,.missionfacts,.balance-grid,.resourcecards,.formgrid,.resources,.recommendations{grid-template-columns:1fr}}
+
+
+/* VITALS ENVIRONMENT VISUAL V2 — page-level appearance only */
+body {
+  background-color: #04121b;
+  background-image:
+    linear-gradient(180deg, rgba(2, 12, 21, .43), rgba(2, 13, 21, .72)),
+    url("../../../assets/-ENVIROMENT%20E%20HABITAT.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.hero {
+  background: linear-gradient(100deg, rgba(3,19,30,.80), rgba(4,52,49,.58));
+  border-bottom: 1px solid rgba(224, 160, 93, .73);
+  backdrop-filter: blur(3px);
+}
+.hero h1 {
+  font-family: 'Segoe UI Light', 'Segoe UI', 'Arial Narrow', sans-serif;
+  font-size: clamp(28px, 4.1vw, 67px);
+  font-weight: 300;
+  line-height: 1.18;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+  color: #ffd0aa;
+  text-shadow: 0 0 22px rgba(240, 177, 125, .17);
+  white-space: nowrap;
+  margin: 17px 0 19px;
+}
+.hero h1 em {
+  color: #74ffd2;
+  text-shadow: 0 0 20px rgba(100, 246, 201, .27);
+}
+.hero .eyebrow { letter-spacing: .23em; }
+.hero p { text-shadow: 0 2px 10px rgba(0, 0, 0, .9); }
+.panel {
+  background: rgba(5, 22, 33, .88);
+  box-shadow: 0 10px 38px rgba(0, 0, 0, .24);
+  backdrop-filter: blur(4px);
+}
+@media (max-width: 1150px) {
+  .hero h1 { font-size: clamp(25px, 4vw, 48px); letter-spacing: .045em; }
+}
+@media (max-width: 720px) {
+  .hero h1 { white-space: normal; font-size: clamp(29px, 7vw, 44px); }
+  body { background-attachment: scroll; }
+  .panel { backdrop-filter: none; }
+}
+
+
+
+
+/* VITALS ENVIRONMENT FAUNA FINAL START */
+@font-face {
+    font-family: "Fauna";
+    src: url("../../../assets/fonts/fauna/Fauna%20Thin.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+.hero h1,
+.hero h1 em {
+    font-family: "Fauna", Arial, sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 4vw, 64px);
+    letter-spacing: 2px;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+@media (max-width: 1050px) {
+    .hero h1 {
+        white-space: normal;
+        font-size: clamp(28px, 5vw, 45px);
+    }
+}
+/* VITALS ENVIRONMENT FAUNA FINAL END */

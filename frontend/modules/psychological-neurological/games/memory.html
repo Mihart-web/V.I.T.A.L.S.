@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V.I.T.A.L.S. | Working Memory</title>
+  <link rel="stylesheet" href="./memory.css">
+  <script src="./memory.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="header">
+      <h1>WORKING MEMORY</h1>
+      <p>PSYCHOLOGICAL &amp; NEUROLOGICAL / ADAPTIVE MEMORY GRID</p>
+      <nav class="navigation" aria-label="Back to navigation">
+        <label for="backTo">BACK TO</label>
+        <select id="backTo" aria-label="Back to navigation">
+          <option value="">Select destination...</option>
+          <option value="../../../dashboard.html">Dashboard</option>
+          <option value="../psychological-health.html">Psychological &amp; Neurological Module</option>
+        </select>
+      </nav>
+    </header>
+
+    <section class="game-panel" aria-label="Working Memory game">
+      <div class="hud">
+        <div><span>LEVEL</span><strong id="level">1 / 5</strong></div>
+        <div><span>POINTS</span><strong id="score">0</strong></div>
+        <div><span>CORRECT ROUNDS</span><strong id="hits">0</strong></div>
+        <div><span>ERRORS</span><strong id="errors">0</strong></div>
+        <div><span>TIME</span><strong id="clock">00:00</strong></div>
+      </div>
+
+      <div class="target-instruction" id="taskInstruction">
+        <span>MEMORIZE THE PATTERN</span>
+        <strong class="target-color" id="levelInfo">3 × 3</strong>
+        <span>Watch the illuminated squares. Repeat their sequence in the same order.</span>
+      </div>
+
+      <div class="memory-wrap">
+        <div class="board-head">
+          <span id="phaseLabel">READY</span>
+          <span id="roundLabel">ROUND 1 / 3</span>
+          <span id="speedLabel">FLASH 820 ms</span>
+        </div>
+        <div class="memory-board" id="memoryBoard" role="group" aria-label="Working memory square grid"></div>
+        <div class="board-foot">
+          <span id="inputProgress">SEQUENCE: —</span>
+          <span id="timeRemaining">RESPONSE WINDOW: —</span>
+        </div>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite">Press START to begin the first memory challenge.</p>
+      <div class="controls">
+        <button id="start" type="button">START</button>
+        <button id="pause" type="button" disabled>PAUSE</button>
+        <button id="restart" type="button">RESTART</button>
+        <button id="next" type="button" hidden>NEXT LEVEL</button>
+        <button id="retry" type="button" hidden>RETRY LEVEL</button>
+        <button id="review" type="button" hidden>REVIEW ERRORS</button>
+        <button id="export" type="button" hidden>EXPORT RESULTS</button>
+      </div>
+
+      <section id="results" class="results" hidden aria-live="polite">
+        <h2>SESSION RESULTS</h2>
+        <div id="summary"></div>
+        <div id="mistakes" hidden></div>
+      </section>
+    </section>
+    <footer>V.I.T.A.L.S. / EXPERIMENTAL COGNITIVE TASK — NOT A MEDICAL DIAGNOSIS</footer>
+  </main>
+</body>
+</html>

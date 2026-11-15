@@ -1,0 +1,303 @@
+﻿/* V.I.T.A.L.S. - ASTRONAUT CREATE V1 */
+
+@font-face {
+  font-family: "Fauna";
+  src: url("../../../assets/fonts/fauna/Fauna%20Thin.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --bg: #04121b;
+  --panel: #092632;
+  --bronze: #c59651;
+  --gold: #f0c77f;
+  --turquoise: #29e8d1;
+  --text: #e4fff9;
+  --muted: #8abdbb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 25%,
+      #16424b 0%, #071e29 50%, #02080e 100%);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+.profile-page {
+  width: min(96%, 1250px);
+  margin: auto;
+  padding: 25px 0 70px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.back-button {
+  text-decoration: none;
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.back-button:hover {
+  color: var(--turquoise);
+}
+
+.page-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.profile-frame {
+  border: 4px solid var(--bronze);
+  border-radius: 22px;
+  background: linear-gradient(145deg,
+    rgba(9, 40, 49, 0.97),
+    rgba(3, 15, 24, 0.98));
+  padding: clamp(18px, 4vw, 48px);
+  box-shadow:
+    0 0 22px rgba(235, 177, 80, .48),
+    0 0 48px rgba(197, 137, 54, .2),
+    inset 0 0 24px rgba(225, 170, 87, .12);
+}
+
+.page-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-heading h1 {
+  font-family: "Fauna", Arial, sans-serif;
+  font-weight: normal;
+  font-size: clamp(42px, 6vw, 75px);
+  letter-spacing: .08em;
+  margin: 0 0 16px;
+  text-shadow:
+    0 0 15px rgba(0, 255, 225, .75),
+    0 0 35px rgba(0, 220, 210, .35);
+}
+
+.page-heading p {
+  color: var(--turquoise);
+  letter-spacing: 4px;
+  font-size: 13px;
+}
+
+.profile-section {
+  margin-bottom: 28px;
+  padding: 26px;
+  border: 2px solid rgba(197, 150, 81, .85);
+  border-radius: 15px;
+  background: rgba(5, 28, 38, .85);
+  box-shadow:
+    0 0 14px rgba(239, 185, 104, .2),
+    inset 0 0 18px rgba(32, 215, 202, .06);
+}
+
+.profile-section h2 {
+  margin: 0 0 25px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+
+.section-description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.avatar-section {
+  text-align: center;
+}
+
+.avatar-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 3vw, 32px);
+}
+
+.avatar-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+#avatarImage {
+  width: min(70vw, 265px);
+  height: 310px;
+  object-fit: contain;
+  border: 3px solid var(--bronze);
+  border-radius: 16px;
+  background: #04151e;
+  box-shadow:
+    0 0 22px rgba(35, 240, 216, .45),
+    0 0 16px rgba(238, 183, 90, .35);
+}
+
+#avatarCounter {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--turquoise);
+}
+
+#previousAvatar,
+#nextAvatar {
+  width: 58px;
+  height: 68px;
+  border: 2px solid var(--bronze);
+  border-radius: 12px;
+  background: #0a3841;
+  color: var(--gold);
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow:
+    0 0 16px rgba(229, 175, 87, .5),
+    0 0 25px rgba(31, 236, 208, .25);
+}
+
+#previousAvatar:hover,
+#nextAvatar:hover {
+  color: var(--turquoise);
+  box-shadow: 0 0 27px rgba(31, 236, 208, .7);
+}
+
+.fields-grid,
+.baseline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  color: #b3ddd5;
+  font-size: 12px;
+  letter-spacing: .5px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid rgba(197, 150, 81, .8);
+  border-radius: 7px;
+  outline: none;
+  background: #061b25;
+  color: #e5fff9;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--turquoise);
+  box-shadow: 0 0 15px rgba(41, 232, 209, .35);
+}
+
+input[type="file"] {
+  height: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.primary-button,
+.secondary-button {
+  border: 2px solid var(--gold);
+  border-radius: 10px;
+  padding: 16px 28px;
+  background: linear-gradient(130deg, #11605b, #082f3a);
+  color: var(--text);
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow:
+    0 0 20px rgba(239, 187, 99, .6),
+    0 0 30px rgba(31, 236, 208, .35);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  box-shadow:
+    0 0 28px rgba(239, 187, 99, .9),
+    0 0 46px rgba(31, 236, 208, .7);
+}
+
+.secondary-button {
+  margin-top: 24px;
+}
+
+.save-section {
+  text-align: center;
+}
+
+#saveStatus,
+#avatarStatus,
+#medicalFileStatus {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 18px;
+}
+
+@media (max-width: 850px) {
+  .fields-grid,
+  .baseline-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .fields-grid,
+  .baseline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-section {
+    padding: 18px;
+  }
+
+  #avatarImage {
+    height: 260px;
+    width: min(65vw, 220px);
+  }
+
+  #previousAvatar,
+  #nextAvatar {
+    width: 42px;
+    height: 55px;
+    font-size: 25px;
+  }
+
+  .page-label {
+    display: none;
+  }
+}
+

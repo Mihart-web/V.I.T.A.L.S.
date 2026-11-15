@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V.I.T.A.L.S. | Cognitive Flexibility</title>
+  <link rel="stylesheet" href="./flexibility.css">
+  <script src="./flexibility.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <h1>COGNITIVE FLEXIBILITY</h1>
+      <p>PSYCHOLOGICAL &amp; NEUROLOGICAL / RULE-SWITCHING ASSESSMENT</p>
+    </header>
+    <div class="return-row">
+      <label for="backTo">BACK TO</label>
+      <select id="backTo" aria-label="Back to navigation">
+        <option value="">Select destination...</option>
+        <option value="../../../dashboard.html">Dashboard</option>
+        <option value="../psychological-health.html">Psychological &amp; Neurological Module</option>
+      </select>
+    </div>
+
+    <section class="mission-frame" aria-label="Cognitive Flexibility game">
+      <div class="status-grid" aria-live="off">
+        <div class="stat"><small>LEVEL</small><strong id="levelValue">1 / 5</strong></div>
+        <div class="stat"><small>TRIAL</small><strong id="trialValue">0 / 5</strong></div>
+        <div class="stat"><small>POINTS</small><strong id="pointsValue">0</strong></div>
+        <div class="stat"><small>CORRECT</small><strong id="correctValue">0</strong></div>
+        <div class="stat"><small>ERRORS</small><strong id="errorsValue">0</strong></div>
+        <div class="stat"><small>TIME LEFT</small><strong id="timeValue">--</strong></div>
+      </div>
+
+      <div class="instruction" id="instruction" role="status" aria-live="polite">
+        Press START. Classify the stimulus according to the highlighted rule. The rule will change as you progress.
+      </div>
+      <div class="rule-row">
+        <div class="rule-pill"><span>ACTIVE RULE</span><strong id="ruleName">READY</strong></div>
+        <div class="rule-pill"><span>RULE SWITCHES</span><strong id="switchCount">0</strong></div>
+        <div class="rule-pill"><span>LEVEL PROGRESS</span><strong id="progressText">0 / 5</strong></div>
+      </div>
+
+      <section class="task-panel" aria-label="Stimulus">
+        <div class="stimulus-card" id="stimulusCard">
+          <div class="stimulus-meta" id="stimulusMeta">OBSERVE · COMPARE · RESPOND</div>
+          <div class="stimulus-visual" id="stimulusVisual" aria-label="Game shape"></div>
+          <div class="stimulus-caption" id="stimulusCaption">READY FOR TEST</div>
+          <div class="stimulus-symbol" id="stimulusSymbol"></div>
+        </div>
+        <div class="options-heading" id="optionsHeading">The choices will appear here when the game starts.</div>
+        <div id="answerOptions" class="answer-options" role="group" aria-label="Choose the correct attribute"></div>
+      </section>
+
+      <div class="feedback" id="feedback" role="status" aria-live="polite">Each level has five trials. Errors are recorded; progression is automatic.</div>
+      <div class="controls">
+        <button type="button" id="startBtn" class="btn btn-primary">START</button>
+        <button type="button" id="pauseBtn" class="btn" disabled>PAUSE</button>
+        <button type="button" id="restartBtn" class="btn">RESTART</button>
+        <button type="button" id="retryBtn" class="btn" disabled>RETRY LEVEL</button>
+        <button type="button" id="reviewBtn" class="btn" disabled>REVIEW ERRORS</button>
+        <button type="button" id="exportBtn" class="btn" disabled>EXPORT RESULTS</button>
+      </div>
+      <section id="reviewPanel" class="review-panel" hidden aria-label="Session error review">
+        <div class="review-heading"><h2>SESSION ERROR REVIEW</h2><button id="closeReviewBtn" type="button" class="btn btn-small">CLOSE</button></div>
+        <div id="reviewContent"></div>
+      </section>
+      <p class="disclaimer">Experimental cognitive performance exercise — not a validated medical diagnostic instrument. Results remain in this browser until connected to a V.I.T.A.L.S. backend.</p>
+    </section>
+  </main>
+</body>
+</html>

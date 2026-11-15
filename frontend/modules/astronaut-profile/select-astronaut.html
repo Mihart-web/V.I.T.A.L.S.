@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V.I.T.A.L.S. | Select Astronaut</title>
+<link rel="stylesheet" href="./select-astronaut.css">
+<script src="./vitals-default-astronauts.js" defer></script>
+<script src="./select-astronaut.js" defer></script>
+<style>.toolbar .back-button{display:inline-flex;align-items:center;min-height:44px;color:#ffd399;text-decoration:none;font-weight:700;font-size:12px;letter-spacing:1px}.toolbar .back-button:hover{color:#2be4ec;text-shadow:0 0 12px #2be4ec88}</style>
+</head>
+<body>
+<main class="shell">
+<header><h1>V.I.T.A.L.S.</h1><p>SELECT ASTRONAUT / PERSONAL & CREW HEALTH INTERFACE</p></header>
+<div class="toolbar"><a class="back-button" href="../../dashboard.html">&larr; BACK TO DASHBOARD</a><a class="btn" href="./astronaut-create.html">+ CREATE NEW ASTRONAUT</a><a class="btn" href="./default-medical-profiles.html">VIEW SYNTHETIC DEFAULT HEALTH PROFILES</a></div>
+<section class="panel"><div class="head"><div><h2>ASTRONAUT PROFILES</h2><p>Choose a registered astronaut. Default demo profiles are protected.</p></div><span id="count">0 profiles</span></div><label class="searchlabel" for="search">FIND ASTRONAUT</label><input id="search" type="search" placeholder="Search name or ID" autocomplete="off"><div id="profiles" class="profiles" role="radiogroup" aria-label="Select astronaut"></div></section>
+<section class="actions"><div><strong id="selectionText">NO ASTRONAUT SELECTED</strong><p id="feedback" role="status" aria-live="polite">Select a profile to continue.</p></div><div class="actionButtons"><button type="button" id="refresh" class="btn">REFRESH PROFILES</button><button type="button" id="confirm" class="btn primary" disabled>CONFIRM ASTRONAUT</button></div></section>
+<p class="disclaimer">All default health and performance values are synthetic training data, not real clinical records. This browser prototype does not provide clinical authorization.</p>
+</main>
+</body></html>

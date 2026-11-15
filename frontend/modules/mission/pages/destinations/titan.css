@@ -1,0 +1,310 @@
+@font-face{font-family:Fauna;src:url("../../../../../assets/fonts/fauna/Fauna Thin.ttf") format("truetype");font-display:swap}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#070e18;color:#e9d7cb;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.8}a{color:inherit;text-decoration:none}.page{min-height:100vh}.topbar{min-height:55px;padding:9px max(30px,3.5vw);background:#07111b;border-bottom:1px solid #9d69432e;display:flex;align-items:center;gap:26px;flex-wrap:wrap}.topbar a{font-weight:700;color:#dea268;font-size:11px;letter-spacing:1.2px;white-space:nowrap}.topbar a:hover,.topbar a:focus-visible{color:#ffe0ab;text-shadow:0 0 9px #ffb466}.topbar .brand{margin-left:auto;color:#cda274;font-size:10px;letter-spacing:2px}.hero{max-width:1570px;margin:0 auto;min-height:640px;background:linear-gradient(90deg,rgba(4,13,21,.65),transparent 72%),linear-gradient(180deg,rgba(4,10,17,.21),rgba(4,10,17,.5)),url("../../../../../assets/Destinations/Titan-hero.png") center/cover no-repeat;border-bottom:1px solid #ae704a;position:relative}.hero-inner{display:flex;gap:42px;justify-content:space-between;padding:77px clamp(28px,5vw,88px);align-items:flex-start}.hero-copy{min-width:0;flex:1 1 430px}.eyebrow{font-weight:700;font-size:10px;letter-spacing:3.2px;color:#e9a66c;text-transform:uppercase}.hero h1{font-family:Fauna,Arial,sans-serif;color:#ffdfc7;font-size:clamp(70px,8.2vw,138px);font-weight:400;letter-spacing:3px;line-height:1.04;margin:22px 0}.tagline{font-size:11px;color:#f7b775;letter-spacing:4px;margin:10px 0 38px}.sim-label{display:inline-block;border:1px solid #ad7549;padding:8px 14px;font-size:10px;color:#f1ba8c;letter-spacing:1.8px}.planet-nav{flex:0 1 710px;display:flex;align-items:start;justify-content:space-between;gap:12px}.planet{width:118px;display:flex;flex-direction:column;align-items:center;gap:9px;letter-spacing:2px;font-size:10px;color:#ecaf7e;transition:transform .2s}.planet img{display:block;object-fit:cover;width:112px;height:112px;border-radius:50%;border:2px solid #a96b48;box-shadow:0 0 0 6px #09131eb3}.planet:hover{transform:translateY(-5px)}.planet:hover img,.planet.active img{box-shadow:0 0 0 5px #09131eb3,0 0 19px 4px #ffc17e;border-color:#ffce92}.content{max-width:1400px;margin:0 auto;padding:0 clamp(24px,4vw,70px)}.content section{border-bottom:1px solid #a97c4930}.overview{padding:58px 0 66px}.content h2{font-size:clamp(27px,2.4vw,39px);font-weight:400;color:#f8d7bd;margin:18px 0 24px}.content p{max-width:1050px;line-height:2;color:#c1d2e6}.disclaimer,.footnote{font-size:12px;color:#9db2c4}.select-btn{cursor:pointer;border:1px solid #e09e58;border-radius:5px;background:#122a36;color:#ffcf9a;font-size:11px;letter-spacing:1px;font-weight:700;padding:14px 24px;box-shadow:0 0 14px #cb925b66;transition:box-shadow .2s}.select-btn:hover{box-shadow:0 0 22px #eeb56d}.selection-status{font-size:12px}.reference{padding:60px 0 52px}.hex-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 24px;margin:38px auto 28px}.fact-hex{display:block;aspect-ratio:1.155;filter:drop-shadow(0 0 0 #de9854);transition:filter .2s,transform .2s}.fact-hex:hover,.fact-hex:focus-visible{filter:drop-shadow(0 0 13px #e5a5618c);transform:translateY(-3px)}.hex-border,.hex-content{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}.hex-border{background:#b2764c;padding:2px}.hex-content{background:#192432;gap:15px;padding:34px 22px;text-align:center}.hex-content small{font-size:10px;letter-spacing:1.3px;color:#e2a268}.hex-content strong{font-size:clamp(17px,1.65vw,25px);line-height:1.35;color:#f4e8df;max-width:300px}.hex-content em{font-size:10px;line-height:1.5;color:#a8c0d3;font-style:normal;letter-spacing:.5px}.hex-content .source{font-size:10px;color:#ec9c52;letter-spacing:1.1px}.reading{padding:54px 0 62px}.reading p{max-width:1000px}.source-link{color:#f8b570;border-bottom:1px solid #a67550;font-size:12px;letter-spacing:1px}.archive{padding:54px 0 60px}.mission-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:25px}.mission-cards article{display:flex;flex-direction:column;background:#182534;border:1px solid #765843;border-radius:5px;padding:28px;min-height:310px}.mission-cards small{font-size:11px;color:#f1a86d;letter-spacing:2px}.mission-cards h3{font-size:22px;color:#ffdfc5;margin:24px 0 14px}.mission-cards article p{font-size:13px;line-height:1.9}.mission-cards article a,.resource-links a{align-self:flex-start;margin-top:auto;border:1px solid #d28d53;padding:13px 16px;font-size:10px;color:#ffc184;letter-spacing:1px}.mission-cards a:hover,.resource-links a:hover{box-shadow:0 0 14px #e8a56480}.resource-links{display:flex;gap:18px;flex-wrap:wrap}.resource-links a{margin-top:0}footer{font-size:10px;color:#91abba;text-align:center;letter-spacing:1.5px;padding:40px 0}@media(max-width:1130px){.hero-inner{flex-direction:column}.planet-nav{flex:none;width:100%;justify-content:flex-start;flex-wrap:wrap}.hero{min-height:650px}.hex-grid{gap:12px}.hex-content{gap:8px;padding:24px 12px}}@media(max-width:780px){.topbar .brand{display:none}.hero{min-height:610px}.hero-inner{padding:55px 22px}.hero h1{font-size:clamp(63px,14vw,100px)}.planet{width:80px}.planet img{width:68px;height:68px}.hex-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.hex-content{padding:16px 9px}.hex-content strong{font-size:16px}.hex-content em,.hex-content .source{font-size:9px}.mission-cards{grid-template-columns:1fr}}@media(max-width:450px){.hex-grid{grid-template-columns:1fr;max-width:360px}.topbar{gap:12px;padding:12px}.topbar a{font-size:9px}.planet-nav{gap:12px}.content{padding:0 20px}}
+
+/* VITALS UNIFIED DESTINATION HERO V1 */
+@media (min-width:1101px) {
+    .hero {
+        width:100%;
+        max-width:1600px;
+        height:620px;
+        min-height:620px;
+        margin-left:auto;
+        margin-right:auto;
+        background-size:cover;
+        background-position:center center;
+    }
+
+    .shell {
+        max-width:1600px;
+    }
+
+    .hero-inner,
+    .hero-top {
+        padding-top:68px;
+    }
+
+    .hero-inner {
+        min-height:620px;
+    }
+
+    .hero h1 {
+        max-width:100%;
+    }
+}
+
+@media (max-width:1100px) {
+    .hero {
+        height:auto;
+        min-height:650px;
+    }
+}
+/* END VITALS UNIFIED DESTINATION HERO V1 */
+
+/* VITALS IDENTICAL HERO FRAME V2 */
+
+/* Same external frame for every destination */
+.shell,
+.page {
+    width: 100% !important;
+    max-width: 1600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Same hero dimensions and photograph fitting */
+.hero {
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    width: 100% !important;
+    max-width: 1600px !important;
+
+    height: 620px !important;
+    min-height: 620px !important;
+    max-height: 620px !important;
+
+    margin: 0 auto !important;
+    overflow: hidden !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Prevent inner wrappers from enlarging the frame */
+.hero-inner,
+.hero-top {
+    box-sizing: border-box !important;
+    min-height: 0 !important;
+}
+
+/* Same dimensions at intermediate screen widths */
+@media (min-width: 701px) and (max-width: 1250px) {
+    .hero {
+        height: 760px !important;
+        min-height: 760px !important;
+        max-height: 760px !important;
+    }
+
+    .hero-top,
+    .hero-inner {
+        flex-direction: column !important;
+    }
+}
+
+/* Same dimensions on small screens */
+@media (max-width: 700px) {
+    .hero {
+        height: 850px !important;
+        min-height: 850px !important;
+        max-height: 850px !important;
+    }
+
+    .hero-top,
+    .hero-inner {
+        flex-direction: column !important;
+    }
+}
+
+/* END VITALS IDENTICAL HERO FRAME V2 */
+
+/* VITALS HERO ALIGNMENT V3 */
+
+/* One identical panoramic frame */
+@media (min-width:1251px) {
+    .shell,
+    .page {
+        width:100% !important;
+        max-width:1600px !important;
+        margin:0 auto !important;
+    }
+
+    .hero {
+        position:relative !important;
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-start !important;
+        align-items:stretch !important;
+
+        width:100% !important;
+        max-width:1600px !important;
+        height:620px !important;
+        min-height:620px !important;
+        max-height:620px !important;
+
+        padding:0 !important;
+        margin:0 auto !important;
+        overflow:hidden !important;
+
+        background-size:cover !important;
+        background-position:center center !important;
+        background-repeat:no-repeat !important;
+    }
+
+    /* Same vertical position for all destinations */
+    .hero > .hero-top,
+    .hero > .hero-inner {
+        box-sizing:border-box !important;
+        position:relative !important;
+
+        display:flex !important;
+        flex-direction:row !important;
+        align-items:flex-start !important;
+        justify-content:space-between !important;
+
+        width:100% !important;
+        max-width:none !important;
+        height:auto !important;
+        min-height:0 !important;
+
+        flex:0 0 auto !important;
+
+        margin:0 !important;
+        padding:65px 72px 0 !important;
+        gap:24px !important;
+    }
+
+    .hero-heading,
+    .hero-copy {
+        flex:1 1 0 !important;
+        min-width:0 !important;
+        max-width:none !important;
+        margin:0 !important;
+    }
+
+    /* Title can shrink, planet buttons cannot */
+    .hero h1 {
+        font-size:clamp(60px,6.2vw,106px) !important;
+        line-height:1.08 !important;
+        max-width:100% !important;
+    }
+
+    .hero .planet-nav {
+        display:flex !important;
+        flex:0 0 auto !important;
+        flex-wrap:nowrap !important;
+        align-items:flex-start !important;
+        justify-content:flex-start !important;
+
+        width:auto !important;
+        max-width:none !important;
+        min-width:0 !important;
+        gap:12px !important;
+
+        margin:0 !important;
+        padding:0 !important;
+    }
+
+    .hero .planet-nav .planet {
+        box-sizing:border-box !important;
+        flex:0 0 112px !important;
+        width:112px !important;
+        min-width:112px !important;
+        max-width:112px !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:center !important;
+        justify-content:flex-start !important;
+        gap:9px !important;
+
+        margin:0 !important;
+        text-align:center !important;
+    }
+
+    .hero .planet-nav .planet img {
+        box-sizing:border-box !important;
+        display:block !important;
+        flex:none !important;
+        width:112px !important;
+        height:112px !important;
+        min-width:112px !important;
+        max-width:112px !important;
+
+        object-fit:contain !important;
+        border-radius:50% !important;
+    }
+
+    .hero .planet-nav .planet span {
+        display:block !important;
+        margin:0 !important;
+        line-height:1.4 !important;
+        text-align:center !important;
+    }
+}
+
+/* Shared layout for medium and small screens */
+@media (max-width:1250px) {
+    .hero {
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-start !important;
+        height:760px !important;
+        min-height:760px !important;
+        max-height:760px !important;
+        padding:0 !important;
+        overflow:hidden !important;
+    }
+
+    .hero > .hero-top,
+    .hero > .hero-inner {
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:flex-start !important;
+        justify-content:flex-start !important;
+
+        flex:0 0 auto !important;
+        width:100% !important;
+        min-height:0 !important;
+        margin:0 !important;
+        padding:42px 32px 0 !important;
+        gap:30px !important;
+    }
+
+    .hero-heading,
+    .hero-copy {
+        flex:0 0 auto !important;
+        min-width:0 !important;
+        width:100% !important;
+    }
+
+    .hero .planet-nav {
+        display:flex !important;
+        flex:0 0 auto !important;
+        flex-wrap:nowrap !important;
+        justify-content:flex-start !important;
+        gap:12px !important;
+
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:auto !important;
+        padding:4px 4px 14px !important;
+        margin:0 !important;
+    }
+
+    .hero .planet-nav .planet {
+        flex:0 0 100px !important;
+        width:100px !important;
+        min-width:100px !important;
+        max-width:100px !important;
+        text-align:center !important;
+    }
+
+    .hero .planet-nav .planet img {
+        width:96px !important;
+        height:96px !important;
+        min-width:96px !important;
+        max-width:96px !important;
+        object-fit:contain !important;
+    }
+}
+
+@media (max-width:700px) {
+    .hero {
+        height:850px !important;
+        min-height:850px !important;
+        max-height:850px !important;
+    }
+}
+
+/* END VITALS HERO ALIGNMENT V3 */

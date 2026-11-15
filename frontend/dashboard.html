@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>V.I.T.A.L.S. | Mission Access</title>
+  <link rel="stylesheet" href="./dashboard.css">
+  <script src="./dashboard.js" defer></script>
+</head>
+
+<body>
+
+  <main class="dashboard">
+
+    <header class="system-bar">
+      <a href="./index.html" class="home-link">V.I.T.A.L.S.</a>
+      <div class="system-status">
+        <span class="status-light"></span>
+        <span id="connectionStatus">CONNECTION NOT CHECKED</span>
+      </div>
+    </header>
+
+    <section class="main-frame">
+
+      <div class="dashboard-heading">
+        <h1>V.I.T.A.L.S.</h1>
+        <p>YOUR PERSONAL AND CREW HEALTH INTERFACE
+        FOR SPACE MISSIONS</p>
+      </div>
+
+      <section class="identity-section"
+               aria-label="Astronaut and role selection">
+
+        <div class="identity-flow">
+
+          <button class="action-button"
+                  id="selectAstronaut"
+                  type="button">
+            <span class="action-icon">&#9678;</span>
+            <span>SELECT ASTRONAUT</span>
+          </button>
+
+          <span class="flow-arrow" aria-hidden="true">
+            &#10142;
+          </span>
+
+          <button class="action-button"
+                  id="createAstronaut"
+                  type="button">
+            <span class="action-icon">+</span>
+            <span>CREATE NEW ASTRONAUT</span>
+          </button>
+
+          <span class="flow-arrow" aria-hidden="true">
+            &#10142;
+          </span>
+
+          <button class="action-button"
+                  id="chooseRole"
+                  type="button">
+            <span class="action-icon">&#9672;</span>
+            <span>CHOOSE YOUR ROLE</span>
+          </button>
+
+        </div>
+
+        <p id="identityStatus" class="identity-status">
+          SELECT OR CREATE AN ASTRONAUT TO BEGIN
+        </p>
+
+        <button class="console-button"
+                id="accessConsole"
+                type="button">
+          ACCESS MISSION CONSOLE
+          <span aria-hidden="true">&#10142;</span>
+        </button>
+
+      </section>
+
+      <section class="modules-section"
+               aria-label="Mission and health modules">
+
+        <h2>MISSION &amp; HEALTH CONTROL MODULES</h2>
+
+        <div class="hex-scroll">
+          <nav class="hex-row" aria-label="VITALS modules">
+
+            <button class="hex-button"
+                    data-module="mission" type="button">
+              <span>MISSION</span>
+              <small>MODULE</small>
+            </button>
+
+            <button class="hex-button"
+                    data-module="crew" type="button">
+              <span>CREW</span>
+              <small>ON BOARD</small>
+            </button>
+
+            <button class="hex-button"
+                    data-module="medical" type="button">
+              <span>MEDICAL</span>
+              <small>MODULE</small>
+            </button>
+
+            <button class="hex-button"
+                    data-module="psychological" type="button">
+              <span>PSYCHOLOGICAL</span>
+              <small>NEUROLOGICAL</small>
+            </button>
+
+            <button class="hex-button"
+                    data-module="devices" type="button">
+              <span>DEVICES</span>
+            </button>
+
+            <button class="hex-button"
+                    data-module="environment" type="button">
+              <span>ENVIRONMENT</span>
+            </button>
+
+            <button class="hex-button"
+                    data-module="alerts" type="button">
+              <span>ALERTS</span>
+            </button>
+
+          </nav>
+        </div>
+
+      </section>
+
+      <p id="dashboardMessage"
+         class="dashboard-message"
+         role="status"
+         aria-live="polite">
+        V.I.T.A.L.S. INTERFACE READY
+      </p>
+
+    </section>
+  </main>
+<script src="./select-astronaut-link.js" defer></script>
+<!-- VITALS CREW ON BOARD ROUTE V2 -->
+<script>
+window.addEventListener("click", function(event) {
+  const button = event.target &&
+    event.target.closest &&
+    event.target.closest('button[data-module="crew"]');
+
+  if (!button) return;
+
+  event.preventDefault();
+  event.stopImmediatePropagation();
+
+  window.location.assign(
+    new URL("./modules/crew-on-board/crew-on-board.html",
+            document.baseURI).href
+  );
+}, true);
+</script>
+<!-- END VITALS CREW ON BOARD ROUTE V2 -->
+<script defer src="./dashboard-mission-console-v1.js"></script></body>
+</html>
+
+

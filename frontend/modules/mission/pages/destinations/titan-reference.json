@@ -1,0 +1,49 @@
+{
+  "schema": "vitals.destination.reference.v1",
+  "destination": "titan",
+  "scientific_status": "reference_not_live",
+  "source_date_checked": "2026-11-14",
+  "measurements": [
+    {
+      "id": "gravity",
+      "value": 1.35,
+      "unit": "m/s^2",
+      "type": "approximate",
+      "source": "https://tfaws.nasa.gov/wp-content/uploads/TFAWS23-AT-15-Presentation.pdf"
+    },
+    {
+      "id": "surface_temperature",
+      "value": -179,
+      "unit": "degree_C",
+      "type": "approximate",
+      "source": "https://science.nasa.gov/saturn/moons/titan/facts/"
+    },
+    {
+      "id": "surface_pressure",
+      "value": 1.5,
+      "unit": "bar",
+      "type": "approximate",
+      "source": "https://solarsystem.nasa.gov/system/downloadable_items/1948_TitanPoster_backPages.pdf"
+    },
+    {
+      "id": "atmosphere",
+      "value": "nitrogen_methane",
+      "type": "qualitative",
+      "source": "https://science.nasa.gov/saturn/moons/titan/facts/"
+    },
+    {
+      "id": "radiation",
+      "value": null,
+      "unit": null,
+      "type": "qualitative_no_astronaut_dose",
+      "source": "https://science.nasa.gov/saturn/moons/titan/facts/"
+    },
+    {
+      "id": "lakes",
+      "value": "methane_ethane",
+      "type": "qualitative",
+      "source": "https://science.nasa.gov/mission/cassini/science/titan/"
+    }
+  ],
+  "clinical_inference": false
+}

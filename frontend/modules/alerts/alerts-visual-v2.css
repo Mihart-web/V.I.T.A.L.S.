@@ -1,0 +1,53 @@
+/* V.I.T.A.L.S. / Alerts visual V2. Only visual and layout rules. */
+#vitals-alert-app .vitals-trigger-head-v2 {
+ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
+ gap:16px; margin:6px 0 23px;
+}
+#vitals-alert-app .vitals-trigger-head-v2 h3 {margin:0;}
+#vitals-alert-app #aeCreate.vitals-trigger-v2 {
+ flex:none; min-height:56px; padding:15px 24px;
+ font-size:13px; font-weight:900; letter-spacing:1px;
+ background:linear-gradient(120deg,rgba(30,119,120,.88),rgba(9,39,51,.96));
+ color:#f8fdfb; border:2px solid #6affdf; border-radius:9px;
+ box-shadow:0 0 8px #53ffe3,0 0 26px #2efbceaa,0 0 54px #1af5ce6b,inset 0 0 18px #62ffcf44;
+ text-shadow:0 0 8px #58ffe1;
+ animation:vitals-trigger-glow-v2 3.5s ease-in-out infinite alternate;
+}
+#vitals-alert-app #aeCreate.vitals-trigger-v2:hover,
+#vitals-alert-app #aeCreate.vitals-trigger-v2:focus-visible {
+ outline:2px solid #c6fff2;outline-offset:3px;
+ box-shadow:0 0 14px #b6fff1,0 0 38px #47ffe3,0 0 70px #20eec9,inset 0 0 24px #6affdf66;
+}
+@keyframes vitals-trigger-glow-v2 {
+ from {box-shadow:0 0 8px #53ffe3,0 0 22px #2efbce99,0 0 42px #1af5ce55,inset 0 0 12px #62ffcf33;}
+ to {box-shadow:0 0 12px #7dffe9,0 0 34px #3effd5cc,0 0 62px #27ffe17a,inset 0 0 22px #62ffcf55;}
+}
+#vitals-alert-modal {--c:#4ad7f5;}
+#vitals-alert-modal .modal {
+ border:3px solid var(--c) !important;
+ box-shadow:0 0 14px var(--c),0 0 38px color-mix(in srgb,var(--c) 76%,transparent),0 0 85px color-mix(in srgb,var(--c) 42%,transparent),inset 0 0 33px color-mix(in srgb,var(--c) 15%,transparent) !important;
+ animation:vitals-alert-card-glow-v2 3.2s ease-in-out infinite alternate;
+}
+#vitals-alert-modal .modal:before {content:"";position:absolute;top:0;left:17px;right:17px;height:3px;background:var(--c);box-shadow:0 0 19px 6px var(--c);opacity:.8;pointer-events:none;}
+#vitals-alert-modal #amLevel {color:var(--c);text-shadow:0 0 10px var(--c);}
+#vitals-alert-modal #amTitle {color:var(--c);text-shadow:0 0 13px color-mix(in srgb,var(--c) 56%,transparent);}
+#vitals-alert-modal .actions button:not(:disabled) {
+ border:1.5px solid var(--c);color:var(--c);background:color-mix(in srgb,var(--c) 11%,#071824);
+ text-shadow:0 0 6px color-mix(in srgb,var(--c) 65%,transparent);
+ box-shadow:0 0 11px color-mix(in srgb,var(--c) 30%,transparent),inset 0 0 10px color-mix(in srgb,var(--c) 10%,transparent);
+ transition:box-shadow .2s,transform .2s,background .2s;
+}
+#vitals-alert-modal .actions button:not(:disabled):hover,
+#vitals-alert-modal .actions button:not(:disabled):focus-visible {
+ background:color-mix(in srgb,var(--c) 22%,#071824);
+ box-shadow:0 0 15px color-mix(in srgb,var(--c) 75%,transparent),0 0 26px color-mix(in srgb,var(--c) 35%,transparent);
+ transform:translateY(-2px);
+}
+#vitals-alert-modal .actions button:disabled {opacity:.43;box-shadow:none;}
+#vitals-alert-app .alert-card:hover {box-shadow:0 0 16px color-mix(in srgb,var(--c) 45%,transparent);}
+@keyframes vitals-alert-card-glow-v2 {
+ from {filter:drop-shadow(0 0 0px color-mix(in srgb,var(--c) 16%,transparent));}
+ to {filter:drop-shadow(0 0 12px color-mix(in srgb,var(--c) 34%,transparent));}
+}
+@media (max-width:680px){#vitals-alert-app .vitals-trigger-head-v2{align-items:stretch;flex-direction:column}#vitals-alert-app #aeCreate.vitals-trigger-v2{width:100%}}
+@media (prefers-reduced-motion:reduce){#vitals-alert-app #aeCreate.vitals-trigger-v2,#vitals-alert-modal .modal{animation:none!important;transition:none!important}}

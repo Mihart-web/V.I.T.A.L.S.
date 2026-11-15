@@ -1,0 +1,411 @@
+{
+  "OSD-344": {
+    "source": "s_OSD-344.txt",
+    "samples": [
+      {
+        "Source Name": "Neonatal Clone 1_mRNA_ground_control",
+        "Sample Name": "GSM3001053",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Neonatal Clone 1_mRNA_ISS-cultured",
+        "Sample Name": "GSM3001054",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Neonatal Clone 2_mRNA_ground_control",
+        "Sample Name": "GSM3001055",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Neonatal Clone 2_mRNA_ISS-cultured",
+        "Sample Name": "GSM3001056",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Neonatal Clone 3_mRNA_ground_control",
+        "Sample Name": "GSM3001057",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Neonatal Clone 3_mRNA_ISS-cultured",
+        "Sample Name": "GSM3001058",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Adult Clone 1_mRNA_ground_control",
+        "Sample Name": "GSM3001059",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Adult Clone 1_mRNA_ISS-cultured",
+        "Sample Name": "GSM3001060",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Adult Clone 2_mRNA_ground_control",
+        "Sample Name": "GSM3001061",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Adult Clone 2_mRNA_ISS-cultured",
+        "Sample Name": "GSM3001062",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Adult Clone 3_mRNA_ground_control",
+        "Sample Name": "GSM3001063",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Adult Clone 3_mRNA_ISS-cultured",
+        "Sample Name": "GSM3001064",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Neonatal Clone 1_miRNA_ground_control",
+        "Sample Name": "GSM3001065",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Neonatal Clone 1_miRNA_ISS-cultured",
+        "Sample Name": "GSM3001066",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Neonatal Clone 2_miRNA_ground_control",
+        "Sample Name": "GSM3001067",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Neonatal Clone 2_miRNA_ISS-cultured",
+        "Sample Name": "GSM3001068",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Neonatal Clone 3_miRNA_ground_control",
+        "Sample Name": "GSM3001069",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Neonatal Clone 3_miRNA_ISS-cultured",
+        "Sample Name": "GSM3001070",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Adult Clone 1_miRNA_ground_control",
+        "Sample Name": "GSM3001071",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Adult Clone 1_miRNA_ISS-cultured",
+        "Sample Name": "GSM3001072",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Adult Clone 2_miRNA_ground_control",
+        "Sample Name": "GSM3001073",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Adult Clone 2_miRNA_ISS-cultured",
+        "Sample Name": "GSM3001074",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Adult Clone 3_miRNA_ground_control",
+        "Sample Name": "GSM3001075",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Parameter Value[duration]": "12"
+      },
+      {
+        "Source Name": "Adult Clone 3_miRNA_ISS-cultured",
+        "Sample Name": "GSM3001076",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[Material Type]": "cardiovascular progenitor cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Parameter Value[duration]": "12"
+      }
+    ]
+  },
+  "OSD-431": {
+    "source": "s_OSD-431.txt",
+    "samples": [
+      {
+        "Source Name": "GSM4781322",
+        "Sample Name": "GSM4781322",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "dermal microvascular endothelial cell",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Factor Value[Altered Gravity]": "uG"
+      },
+      {
+        "Source Name": "GSM4781323",
+        "Sample Name": "GSM4781323",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "dermal microvascular endothelial cell",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Factor Value[Altered Gravity]": "uG"
+      },
+      {
+        "Source Name": "GSM4781324",
+        "Sample Name": "GSM4781324",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "dermal microvascular endothelial cell",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Factor Value[Altered Gravity]": "uG"
+      },
+      {
+        "Source Name": "GSM4781325",
+        "Sample Name": "GSM4781325",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "dermal microvascular endothelial cell",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Factor Value[Altered Gravity]": "1G by centrifugation"
+      },
+      {
+        "Source Name": "GSM4781326",
+        "Sample Name": "GSM4781326",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "dermal microvascular endothelial cell",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Factor Value[Altered Gravity]": "1G by centrifugation"
+      },
+      {
+        "Source Name": "GSM4781327",
+        "Sample Name": "GSM4781327",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "dermal microvascular endothelial cell",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Factor Value[Altered Gravity]": "1G on Earth"
+      },
+      {
+        "Source Name": "GSM4781328",
+        "Sample Name": "GSM4781328",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "dermal microvascular endothelial cell",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Factor Value[Altered Gravity]": "1G on Earth"
+      },
+      {
+        "Source Name": "GSM4781329",
+        "Sample Name": "GSM4781329",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "dermal microvascular endothelial cell",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Factor Value[Altered Gravity]": "1G on Earth"
+      }
+    ]
+  },
+  "OSD-546": {
+    "source": "s_OSD-546.txt",
+    "samples": [
+      {
+        "Source Name": "Total RNA from flight cells, Osteogenic medium, biological replicate 1_array",
+        "Sample Name": "GSM2696758",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Factor Value[Treatment]": "osteogenic",
+        "Parameter Value[duration]": "14"
+      },
+      {
+        "Source Name": "Total RNA from flight cells, Osteogenic medium, biological replicate 2_array",
+        "Sample Name": "GSM2696759",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Factor Value[Treatment]": "osteogenic",
+        "Parameter Value[duration]": "14"
+      },
+      {
+        "Source Name": "Total RNA from flight cells, Osteogenic medium, biological replicate 3_array",
+        "Sample Name": "GSM2696760",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Factor Value[Treatment]": "osteogenic",
+        "Parameter Value[duration]": "14"
+      },
+      {
+        "Source Name": "Total RNA from flight cells, Standard medium, biological replicate 1_array",
+        "Sample Name": "GSM2696761",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Factor Value[Treatment]": "standard",
+        "Parameter Value[duration]": "14"
+      },
+      {
+        "Source Name": "Total RNA from flight cells, Standard medium, biological replicate 2_array",
+        "Sample Name": "GSM2696762",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Factor Value[Treatment]": "standard",
+        "Parameter Value[duration]": "14"
+      },
+      {
+        "Source Name": "Total RNA from flight cells, Standard medium, biological replicate 3_array",
+        "Sample Name": "GSM2696763",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Factor Value[Treatment]": "standard",
+        "Parameter Value[duration]": "14"
+      },
+      {
+        "Source Name": "Total RNA from flight cells, Standard medium, biological replicate 4_array",
+        "Sample Name": "GSM2696764",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Space Flight",
+        "Factor Value[Treatment]": "standard",
+        "Parameter Value[duration]": "14"
+      },
+      {
+        "Source Name": "Total RNA from ground cells, Osteogenic medium, biological replicate 1_array",
+        "Sample Name": "GSM2696765",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Factor Value[Treatment]": "osteogenic",
+        "Parameter Value[duration]": "14"
+      },
+      {
+        "Source Name": "Total RNA from ground cells, Osteogenic medium, biological replicate 2_array",
+        "Sample Name": "GSM2696766",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Factor Value[Treatment]": "osteogenic",
+        "Parameter Value[duration]": "14"
+      },
+      {
+        "Source Name": "Total RNA from ground cells, Osteogenic medium, biological replicate 3_array",
+        "Sample Name": "GSM2696767",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Factor Value[Treatment]": "osteogenic",
+        "Parameter Value[duration]": "14"
+      },
+      {
+        "Source Name": "Total RNA from ground cells, Standard medium, biological replicate 1_array",
+        "Sample Name": "GSM2696768",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Factor Value[Treatment]": "standard",
+        "Parameter Value[duration]": "14"
+      },
+      {
+        "Source Name": "Total RNA from ground cells, Standard medium, biological replicate 2_array",
+        "Sample Name": "GSM2696769",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Factor Value[Treatment]": "standard",
+        "Parameter Value[duration]": "14"
+      },
+      {
+        "Source Name": "Total RNA from ground cells, Standard medium, biological replicate 3_array",
+        "Sample Name": "GSM2696770",
+        "Characteristics[Organism]": "Homo sapiens",
+        "Characteristics[cell type]": "bone marrow mesenchymal stem cells",
+        "Characteristics[Material Type]": "Cells",
+        "Factor Value[Spaceflight]": "Ground Control",
+        "Factor Value[Treatment]": "standard",
+        "Parameter Value[duration]": "14"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+﻿*.backup_*
+*.bak_*
+*.db
+*.sqlite
+*.sqlite3
+*.env
+*.pem
+*.key
+*.ps1
+__pycache__/

@@ -1,0 +1,10 @@
+/* V.I.T.A.L.S. V10: 3D first, simulation immediately below, clearly identified demo plots. */
+.maincol > .stage{order:0}
+.maincol > #dtv9Control{order:1}
+.maincol > .panel:not(.stage):not(#dtv9Control){order:2}
+.dtv10-note{margin:15px 0 5px;font-size:11px;color:#a5dbe0;line-height:1.55;border-left:3px solid #5ce4c6;background:#0d303a;padding:10px 12px}
+.dtv10-note a{color:#7af9e7;text-decoration:underline}
+.dtv10-recorded{margin-bottom:14px;border-left-color:#d6a66a;background:#112b37}
+.dtv9-livecharts article{min-height:175px}
+.dtv9-livecharts svg{height:133px;max-height:133px}
+#dtv9Control{scroll-margin-top:25px}

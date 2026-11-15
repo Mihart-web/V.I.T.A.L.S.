@@ -1,0 +1,137 @@
+﻿* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at center,
+      #103b42 0%, #071b25 48%, #02080e 100%);
+  color: #e8fffc;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.welcome {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#logoButton {
+  position: relative;
+  width: min(90vw, 760px);
+  height: min(60vh, 560px);
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+#logoButton::before {
+  content: "";
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(0, 255, 220, 0.24),
+    rgba(0, 200, 190, 0.07) 40%,
+    transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+#logoButton:focus-visible {
+  outline: 2px solid #65fff0;
+  border-radius: 18px;
+}
+
+#logo3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  margin: -5px 0 0;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #ccfff7;
+  text-shadow: 0 0 24px rgba(0, 255, 225, 0.45);
+}
+
+.subtitle {
+  color: #60cfc8;
+  font-size: clamp(0.6rem, 1.2vw, 0.85rem);
+  letter-spacing: 0.3em;
+}
+
+#status {
+  margin-top: 25px;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #63aaa6;
+}
+
+@media (max-width: 600px) {
+  #logoButton {
+    width: 95vw;
+    height: 42vh;
+  }
+}
+
+/* VITALS_GRAPHIC_V2 */
+
+/* Space Age - local development only */
+@font-face {
+  font-family: "Fauna";
+  src: url("../assets/fonts/fauna/Fauna%20Thin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Logo glow enhancement */
+#logoButton::before {
+  inset: 0%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 220, 0.75) 0%,
+    rgba(0, 240, 225, 0.38) 28%,
+    rgba(0, 190, 200, 0.16) 52%,
+    transparent 75%
+  );
+  filter: blur(42px);
+}
+
+/* VITALS title */
+h1 {
+  font-family: "Fauna", Arial, sans-serif;
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  color: #dbfffa;
+  text-shadow:
+    0 0 12px rgba(0, 255, 225, 0.75),
+    0 0 35px rgba(0, 220, 210, 0.35);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  #logoButton {
+    width: 100vw;
+    height: 48vh;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+  }
+}
+
+/* VITALS_FAUNA_V1 */
+

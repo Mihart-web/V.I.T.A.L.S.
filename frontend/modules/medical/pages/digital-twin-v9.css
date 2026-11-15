@@ -1,0 +1,23 @@
+/* V.I.T.A.L.S. V9 mission simulation UI: supplements approved V1-V8 styling. */
+.dtv9-panel{border-color:#25898b;box-shadow:0 0 16px #05a9a512}.dtv9-panel .sectionline h2{margin-bottom:5px}
+.dtv9-chip{border:1px solid #42727c;padding:8px 10px;color:#b9d5df;font-size:10px;letter-spacing:.7px;white-space:nowrap}
+.dtv9-chip.live{border-color:#56edca;color:#79ffdc;box-shadow:0 0 9px #36ffd330}
+.dtv9-actions{display:flex;gap:10px;align-items:end;flex-wrap:wrap;margin:16px 0 12px}
+.dtv9-actions label{display:grid;gap:5px;font-size:10px;letter-spacing:.8px;font-weight:bold;color:#81d9e0;min-width:180px;flex:1}
+.dtv9-actions select{width:100%;min-height:40px;padding:9px;color:#e3fff5;border:1px solid #477f87;border-radius:6px;background:#0e2e3d}
+.dtv9-actions button{min-height:40px}.dtv9-banner{border-left:3px solid #60efc9;background:#0a313a;padding:13px 15px;font-size:12px;color:#cbf5e9;min-height:44px}
+.dtv9-readouts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.dtv9-readouts>div{background:#0b2b39;border:1px solid #28626b;border-radius:8px;padding:11px;display:grid;gap:3px}
+.dtv9-readouts small{font-size:9px;letter-spacing:.7px;color:#83cad1}.dtv9-readouts strong{font-size:25px;font-weight:600;color:#f9cb9b;font-variant-numeric:tabular-nums}
+.dtv9-readouts span{font-size:10px;color:#79bebf}.dtv9-context{margin-top:10px;color:#7fc9cc;font-size:11px}
+.dtv9-context strong{color:#d0eeec}.dtv9-livecharts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:15px}
+.dtv9-livecharts article{min-width:0;border:1px solid #245c69;border-radius:9px;background:#071f2e;padding:10px}
+.dtv9-livecharts h3{font-size:13px;font-weight:400;color:#ffd0a4;margin:2px 0 6px}
+.dtv9-livecharts h3 small{font-size:10px;color:#8fc6ca}.dtv9-livecharts svg{width:100%;display:block}
+body.dtv9-running .stageframe .metricpanel strong{color:#80ffdd;text-shadow:0 0 8px #61f5cf55}
+body.dtv9-running #humanModel .dtv2-point{display:none!important}
+.dtv9-hotspot{width:21px;height:21px;border-radius:50%;color:#061923;background:#f5c26e;border:2px solid #fff9d2;box-shadow:0 0 0 7px #ffb44c3c,0 0 25px 10px #f4b55c70;cursor:pointer;font-weight:800;font-size:11px;display:grid;place-items:center;animation:dtv9Pulse 2s infinite}
+.dtv9-hotspot.red{background:#ff6580;box-shadow:0 0 0 7px #ff65803c,0 0 25px 10px #ff658077}
+@keyframes dtv9Pulse{50%{filter:brightness(1.35);transform:scale(1.06)}}
+@media(max-width:1200px){.dtv9-readouts{grid-template-columns:repeat(2,minmax(0,1fr))}.dtv9-livecharts{grid-template-columns:1fr}}
+@media(max-width:700px){.dtv9-readouts{grid-template-columns:repeat(2,minmax(0,1fr))}.dtv9-actions label{flex:1 1 100%}}

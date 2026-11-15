@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V.I.T.A.L.S. | Cognitive Twin</title>
+<link rel="stylesheet" href="./cognitive-twin.css">
+<script src="./cognitive-twin.js" defer></script>
+</head>
+<body>
+<main class="shell">
+<header class="header"><h1>COGNITIVE TWIN</h1><p>V.I.T.A.L.S. / PSYCHOLOGICAL &amp; NEUROLOGICAL / PERSONAL PERFORMANCE HISTORY</p></header>
+<nav class="navigation"><label for="backTo">BACK TO</label><select id="backTo"><option value="">Select destination...</option><option value="../../../dashboard.html">Dashboard</option><option value="../psychological-health.html">Psychological &amp; Neurological Module</option></select></nav>
+<section class="game-panel">
+<div class="bar"><div><h2>ASTRONAUT PROFILE</h2><p class="sub">Select an existing local profile, or create a synthetic demonstration profile. Games save future sessions under the active profile.</p></div><div class="profile-controls"><label for="profileSelect">ACTIVE ASTRONAUT</label><select id="profileSelect"><option value="">No astronaut selected</option></select></div></div>
+<div class="profile-new"><label for="profileId">ID<input id="profileId" maxlength="40" placeholder="e.g. DEMO-01" autocomplete="off"></label><label for="profileName">DISPLAY NAME<input id="profileName" maxlength="80" placeholder="Synthetic crew profile" autocomplete="off"></label><button id="addProfile">ADD LOCAL PROFILE</button></div>
+<p id="profileStatus" class="status" role="status">No profile selected. Historical sessions without an ID remain unassigned.</p>
+<div class="hud"><div><span>COGNITIVE TASKS AVAILABLE</span><strong id="coverage">0 / 5</strong></div><div><span>OBSERVED TASK SUCCESS</span><strong id="overall">—</strong></div><div><span>LOGGED SESSIONS</span><strong id="totalSessions">0</strong></div><div><span>SELF-REPORT CHECK-INS</span><strong id="checkins">0</strong></div></div>
+<p class="caution">Experimental task-performance summary, not a diagnosis, psychological health percentage or medical fitness-to-fly clearance. The overall value is a simple mean of the latest available five cognitive-task percentages; see coverage.</p>
+<div class="tabs" id="tabs" role="tablist" aria-label="Assessment results">
+<button role="tab" aria-selected="true" data-tab="focus">FOCUS</button><button role="tab" aria-selected="false" data-tab="memory">WORKING MEMORY</button><button role="tab" aria-selected="false" data-tab="categories">CATEGORY MATCH</button><button role="tab" aria-selected="false" data-tab="flexibility">COGNITIVE FLEXIBILITY</button><button role="tab" aria-selected="false" data-tab="reaction">REACTION TIME</button><button role="tab" aria-selected="false" data-tab="wellbeing">PSYCHOLOGICAL WELLBEING</button>
+</div>
+<section class="detail" aria-live="polite"><div class="detail-top"><div><h2 id="tabTitle">FOCUS</h2><p id="tabDesc" class="sub"></p></div><a id="openGame" class="nav-action" href="./focus.html">OPEN GAME</a></div>
+<div class="metrics"><div><span>LAST RESULT</span><strong id="currentPct">—</strong></div><div><span>ERRORS</span><strong id="currentErrors">—</strong></div><div><span>RESPONSE</span><strong id="currentRt">—</strong></div><div><span>SESSIONS</span><strong id="currentCount">0</strong></div></div>
+<div class="chart-panel"><h3>INDIVIDUAL PERFORMANCE TREND</h3><svg id="trend" role="img" aria-label="Accuracy trend chart" viewBox="0 0 760 230" preserveAspectRatio="xMidYMid meet"></svg><p id="chartNote" class="sub"></p></div>
+<div class="split"><div><h3>SESSION HISTORY</h3><div id="sessionList" class="scroll-list">No results.</div></div><div><h3>SESSION DETAIL / ERRORS</h3><div id="sessionDetail" class="scroll-list">Choose a session to inspect all available records.</div></div></div>
+</section>
+<section class="advice"><div class="bar"><div><h2>PERSONALIZED PERFORMANCE SUGGESTIONS</h2><p class="sub">Suggestions are selected from a library of 72+ conditional prompts using actual results, available baselines and self-reports. They are optional operational prompts, not clinical prescriptions.</p></div><button id="refreshAdvice">REFRESH</button></div><div id="suggestions" class="suggestions"></div></section>
+<section class="tools"><h2>RESEARCH DATA &amp; PROVENANCE</h2><p class="sub">Results are associated with the active local profile. Older unassigned sessions are not automatically claimed. Select a historical session below to assign it explicitly. This browser storage is unencrypted; do not use real health or confidential journal data.</p><div class="buttons"><button id="showUnassigned">SHOW UNASSIGNED SESSIONS</button><button id="exportProfile">EXPORT SELECTED PROFILE RESULTS</button></div><div id="unassignedPanel" hidden></div><p id="actionStatus" class="status" role="status"></p></section>
+<footer>V.I.T.A.L.S. | EXPERIMENTAL COGNITIVE PERFORMANCE · NEVER A SOLE FITNESS-TO-FLY DECISION</footer>
+</section></main>
+</body></html>

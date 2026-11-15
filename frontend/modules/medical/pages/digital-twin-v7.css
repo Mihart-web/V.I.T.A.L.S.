@@ -1,0 +1,8 @@
+/* Review Signals now appears directly below Available Evidence in the left column. */
+.dtv7-review-left{margin-top:0}
+.dtv7-review-left .sectionline{align-items:flex-start}
+.dtv7-review-left .sectionline .pill{font-size:9px}
+.dtv7-review-left .alerts{margin-top:12px}
+.dtv7-review-left .alerts .alert{padding:11px}
+.dtv7-review-left .alerts strong{line-height:1.35}
+.dtv7-review-left .alerts p{line-height:1.45}

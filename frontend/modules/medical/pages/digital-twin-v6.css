@@ -1,0 +1,11 @@
+/* V.I.T.A.L.S. Digital Twin V6 - inspectable source integration, no layout changes elsewhere. */
+.dtv6-panel{border-color:#227c82}
+.dtv6-head{border-left:3px solid #68ebc9;background:#0c3340;padding:10px 12px;color:#a8efe0;letter-spacing:.5px;font-size:11px;margin:12px 0}
+.dtv6-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.dtv6-card{border:1px solid #285e6a;border-radius:8px;padding:13px;background:#0b2938;min-width:0}
+.dtv6-title{display:flex;align-items:start;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.dtv6-title strong{color:#ffcd9e;font-size:12px}.dtv6-state{font-size:9px;padding:4px 6px;border:1px solid #3b6970;color:#96b7bd;letter-spacing:.4px}
+.dtv6-state.recent{color:#79efc2;border-color:#46b78d}.dtv6-state.saved{color:#73d5ec;border-color:#55a5c6}.dtv6-state.context{color:#ffcf8f;border-color:#ac8455}.dtv6-state.unassigned{color:#f0be78;border-color:#be975b}
+.dtv6-card p{font-size:11px;color:#acd3d7;line-height:1.6;min-height:33px}.dtv6-card a{font-size:10px;letter-spacing:.5px;color:#77ead5}
+.dtv6-note{margin:13px 0 0;padding:10px 12px;border-radius:6px;background:#0b3040;color:#a7cfd7;font-size:11px}
+@media(max-width:700px){.dtv6-grid{grid-template-columns:1fr}}

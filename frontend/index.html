@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V.I.T.A.L.S.</title>
+  <link rel="stylesheet" href="./style.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="welcome">
+    <button id="logoButton" type="button" aria-label="Enter VITALS">
+      <div id="logo3d"></div>
+    </button>
+
+    <h1>V.I.T.A.L.S.</h1>
+    <p class="subtitle">ASTRONAUT HEALTH MONITORING SYSTEM</p>
+    <p id="status" role="status">LOADING SYSTEM...</p>
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

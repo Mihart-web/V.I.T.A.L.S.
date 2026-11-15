@@ -1,0 +1,356 @@
+{
+  "schema": "vitals.earth.regions.v1",
+  "status": "static_scientific_reference",
+  "missionDestination": "earth",
+  "regionData": [
+    {
+      "id": "south-pole",
+      "title": "SOUTH POLE",
+      "tag": "ANTARCTICA / GEOGRAPHIC SOUTH POLE",
+      "subtitle": "Extreme cold, altitude and polar isolation",
+      "desc": "A high-altitude Antarctic research scenario modeled on Amundsen–Scott South Pole Station. The values below describe that reference station, not all of Antarctica.",
+      "facts": [
+        [
+          "ANNUAL MEAN AIR TEMPERATURE",
+          "−49 °C",
+          "Approximate station climatology"
+        ],
+        [
+          "ELEVATION",
+          "2,835 m",
+          "Station elevation above sea level"
+        ],
+        [
+          "AIR PRESSURE",
+          "Reduced",
+          "High-altitude; measure locally"
+        ],
+        [
+          "DAYLIGHT",
+          "Polar day / night",
+          "Season-dependent extended cycles"
+        ],
+        [
+          "AIR HUMIDITY",
+          "Very low",
+          "Polar desert conditions"
+        ],
+        [
+          "OPERATIONAL HAZARD",
+          "Cold exposure",
+          "Isolation and limited winter access"
+        ]
+      ],
+      "notes": [
+        "Severe cold requires layered protection, thermal management and shelter access.",
+        "Station elevation creates reduced oxygen partial pressure compared with sea level.",
+        "Polar day and polar night can challenge circadian rhythms and sleep.",
+        "Weather and seasonal access can constrain emergency evacuation."
+      ],
+      "sources": [
+        [
+          "USAP — South Pole climate and altitude",
+          "https://www.usap.gov/aboutthecontinent/?m=2"
+        ],
+        [
+          "NASA — Why the South Pole is colder",
+          "https://science.nasa.gov/kids/earth/which-pole-is-colder/"
+        ]
+      ],
+      "ref": "Amundsen–Scott South Pole Station",
+      "type": "climate reference"
+    },
+    {
+      "id": "hot-desert",
+      "title": "HOT DESERT",
+      "tag": "DESERT / ARID FIELD OPERATIONS",
+      "subtitle": "Heat load, dehydration and airborne dust",
+      "desc": "An illustrative hot-desert field mission; day-night temperature and precipitation are biome-level educational references, not observations at a selected coordinate.",
+      "facts": [
+        [
+          "TYPICAL DAY AIR TEMPERATURE",
+          "~38 °C",
+          "NASA desert biome illustration"
+        ],
+        [
+          "TYPICAL NIGHT AIR TEMPERATURE",
+          "~−3.9 °C",
+          "Illustrative, highly site-dependent"
+        ],
+        [
+          "ANNUAL PRECIPITATION",
+          "~250 mm",
+          "Biome-level educational reference"
+        ],
+        [
+          "SURFACE HEAT",
+          "Highly variable",
+          "Land-surface vs air temperature differ"
+        ],
+        [
+          "DUST",
+          "Wind-dependent",
+          "Airborne particles and visibility"
+        ],
+        [
+          "PERSONNEL HAZARD",
+          "Heat strain",
+          "Hydration and exertion management"
+        ]
+      ],
+      "notes": [
+        "Skin/land-surface temperatures can be far above nearby air temperature.",
+        "Sweat losses, sun exposure and effort alter physiological heat strain.",
+        "Wind-driven dust may reduce visibility and affect respiratory protection.",
+        "Water and medical evacuation planning are mission-specific."
+      ],
+      "sources": [
+        [
+          "NASA — Desert biome references",
+          "https://science.nasa.gov/kids/earth/mission-biomes/biodesert/"
+        ],
+        [
+          "NASA — Land versus air temperatures",
+          "https://science.nasa.gov/earth/earth-observatory/where-is-the-hottest-place-on-earth/"
+        ]
+      ],
+      "ref": "Generic hot-desert training scenario",
+      "type": "biome illustrative"
+    },
+    {
+      "id": "earthquake-zone",
+      "title": "EARTHQUAKE ZONE",
+      "tag": "SEISMIC REGION / RESPONSE OPERATIONS",
+      "subtitle": "Shaking, aftershocks and unstable infrastructure",
+      "desc": "No fixed quake magnitude or ground acceleration is assigned. Earthquake intensity and secondary hazards change with event, site geology and building conditions.",
+      "facts": [
+        [
+          "SHAKING INTENSITY",
+          "Event-specific",
+          "USGS ShakeMap input"
+        ],
+        [
+          "AFTERSHOCKS",
+          "Possible",
+          "Time-varying event sequence"
+        ],
+        [
+          "GROUND FAILURE",
+          "Site-dependent",
+          "Landslides and liquefaction"
+        ],
+        [
+          "STRUCTURE STATUS",
+          "Unverified",
+          "Requires engineer assessment"
+        ],
+        [
+          "ACCESS ROUTES",
+          "May be blocked",
+          "Debris and damaged bridges"
+        ],
+        [
+          "CREW HAZARD",
+          "Trauma / rescue",
+          "Exposure and operational stress"
+        ]
+      ],
+      "notes": [
+        "Shaking intensity is not the same as earthquake magnitude.",
+        "Weak sediments can amplify local ground motion.",
+        "Liquefaction requires susceptible water-saturated soils.",
+        "Assessment and rescue actions must follow actual site safety protocols."
+      ],
+      "sources": [
+        [
+          "USGS — ShakeMap hazard products",
+          "https://earthquake.usgs.gov/data/shakemap/index.php"
+        ],
+        [
+          "USGS — Ground failure and liquefaction",
+          "https://earthquake.usgs.gov/data/ground-failure/background.php"
+        ]
+      ],
+      "ref": "Variable seismic response environment",
+      "type": "hazard model inputs"
+    },
+    {
+      "id": "tsunami-coast",
+      "title": "TSUNAMI COAST",
+      "tag": "COASTAL HAZARD / TSUNAMI",
+      "subtitle": "Inundation, currents and delayed wave trains",
+      "desc": "A tsunami-prone coast has no universal wave height or arrival time. A tsunami can consist of multiple waves and conditions depend on the source and coastal geometry.",
+      "facts": [
+        [
+          "ARRIVAL TIME",
+          "Source-dependent",
+          "No universal forecast"
+        ],
+        [
+          "WAVE HEIGHT",
+          "Coast-dependent",
+          "Bathymetry and run-up vary"
+        ],
+        [
+          "INUNDATION",
+          "Mapped locally",
+          "Topography controls exposure"
+        ],
+        [
+          "WAVE TRAIN",
+          "Multiple waves",
+          "Do not assume first is largest"
+        ],
+        [
+          "CURRENT HAZARD",
+          "Strong / variable",
+          "Ports and channels vulnerable"
+        ],
+        [
+          "EVACUATION",
+          "High ground",
+          "Use local official warnings"
+        ]
+      ],
+      "notes": [
+        "Local sources can leave very little time for official alerts.",
+        "Multiple waves may continue for hours; never treat the first wave as the all-clear.",
+        "Run-up and flooding differ by coastline and bathymetry.",
+        "This prototype does not issue tsunami warnings or route evacuations."
+      ],
+      "sources": [
+        [
+          "NOAA — Tsunami FAQ and warnings",
+          "https://www.tsunami.gov/?page=tsunamiFAQ"
+        ],
+        [
+          "NOAA — Historical tsunami database",
+          "https://www.ncei.noaa.gov/products/natural-hazards/tsunamis-earthquakes-volcanoes/tsunamis"
+        ]
+      ],
+      "ref": "Coastal exposure planning",
+      "type": "hazard qualitative"
+    },
+    {
+      "id": "volcanic-region",
+      "title": "VOLCANIC REGION",
+      "tag": "VOLCANIC TERRAIN / FIELD OPERATIONS",
+      "subtitle": "Ash, gases and hazardous access corridors",
+      "desc": "Volcanic exposure is event-, wind- and distance-dependent. No fixed plume concentration, lava temperature at a site or gas dose is assigned.",
+      "facts": [
+        [
+          "VOLCANIC ASH",
+          "Variable loading",
+          "Abrasive fine particles"
+        ],
+        [
+          "SO₂ / CO₂",
+          "Monitor locally",
+          "Gas concentrations event-specific"
+        ],
+        [
+          "VISIBILITY",
+          "Ash dependent",
+          "Wind / plume orientation"
+        ],
+        [
+          "AIR QUALITY",
+          "Potentially hazardous",
+          "Respiratory protection may be needed"
+        ],
+        [
+          "AVIATION",
+          "Ash hazard",
+          "Air traffic can be disrupted"
+        ],
+        [
+          "THERMAL HAZARD",
+          "Proximity-dependent",
+          "Hot materials and terrain"
+        ]
+      ],
+      "notes": [
+        "Fine ash is abrasive and can disrupt mechanical equipment and engines.",
+        "SO₂, CO₂ and other volcanic gases vary with volcanic system and weather.",
+        "Protective equipment must be based on measured concentrations.",
+        "Evacuation corridors can be affected by ash and lahars."
+      ],
+      "sources": [
+        [
+          "USGS — Ash and gas properties",
+          "https://volcanoes.usgs.gov/volcanic_ash/ash_gas.html"
+        ],
+        [
+          "USGS — Volcanic gas exposure guidelines",
+          "https://volcanoes.usgs.gov/volcanic_ash/volcanic_gas_guidelines.html"
+        ]
+      ],
+      "ref": "Variable volcanic mission scenario",
+      "type": "hazard qualitative"
+    },
+    {
+      "id": "floodplain",
+      "title": "FLOODPLAIN",
+      "tag": "FLOOD / EXTREME RAINFALL RESPONSE",
+      "subtitle": "Floodwater, precipitation and disrupted logistics",
+      "desc": "A floodplain response mission depends on rainfall, watershed, terrain, hydrology and changing local forecasts. Satellite precipitation estimates are not ground-truth water-depth readings.",
+      "facts": [
+        [
+          "RAIN RATE",
+          "Location / time",
+          "IMERG satellite estimates"
+        ],
+        [
+          "WATER DEPTH",
+          "Not assigned",
+          "Requires on-site measurements"
+        ],
+        [
+          "CURRENT VELOCITY",
+          "Site-dependent",
+          "Moving water is hazardous"
+        ],
+        [
+          "CONTAMINATION",
+          "Possible",
+          "Water quality not verified"
+        ],
+        [
+          "ACCESSIBILITY",
+          "Disrupted",
+          "Road / bridge closure risk"
+        ],
+        [
+          "CREW HAZARD",
+          "Injury / exposure",
+          "Operational fatigue and infection risk"
+        ]
+      ],
+      "notes": [
+        "Satellite rainfall estimates are a monitoring input, not a flood-depth sensor.",
+        "Fast-moving water and submerged obstacles can be dangerous.",
+        "Water contamination and electrical hazards need separate evaluation.",
+        "No live flood forecast or automated rescue routing is provided."
+      ],
+      "sources": [
+        [
+          "NASA GPM — Precipitation visualizations",
+          "https://gpm.nasa.gov/data/visualization"
+        ],
+        [
+          "NASA GPM — IMERG and landslide viewer",
+          "https://gpm.nasa.gov/data/visualization/precip-apps"
+        ]
+      ],
+      "ref": "Flood response planning scenario",
+      "type": "environmental time-varying"
+    }
+  ],
+  "noLiveTelemetry": true,
+  "noMedicalInterpretation": true,
+  "readByFuture": [
+    "Mission Configuration",
+    "Environmental Risk Assessment",
+    "Medical Module"
+  ]
+}

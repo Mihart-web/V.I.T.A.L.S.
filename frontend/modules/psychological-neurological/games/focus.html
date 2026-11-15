@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V.I.T.A.L.S. | Focus Radar</title>
+  <link rel="stylesheet" href="./focus.css">
+  <script src="./focus.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="header">
+      <h1>FOCUS</h1>
+      <p>PSYCHOLOGICAL &amp; NEUROLOGICAL / SIGNAL DETECTION RADAR</p>
+      <nav class="navigation" aria-label="Back to navigation">
+        <label for="backTo">BACK TO</label>
+        <select id="backTo" aria-label="Back to navigation">
+          <option value="">Select destination…</option>
+          <option value="../../../dashboard.html">Dashboard</option>
+          <option value="../psychological-health.html">Psychological &amp; Neurological Module</option>
+        </select>
+      </nav>
+    </header>
+
+    <section class="game-panel" aria-label="Focus radar game">
+      <div class="hud">
+        <div><span>LEVEL</span><strong id="level">1 / 5</strong></div>
+        <div><span>POINTS</span><strong id="score">0</strong></div>
+        <div><span>HITS</span><strong id="hits">0</strong></div>
+        <div><span>ERRORS</span><strong id="errors">0</strong></div>
+        <div><span>TIME</span><strong id="clock">00:00</strong></div>
+      </div>
+      <div class="target-instruction">
+        <span>DETECT ONLY</span>
+        <strong id="targetColor" class="target-color">YELLOW</strong>
+        <span>targets illuminated by the sweeping radar beam. Ignore all other colors.</span>
+      </div>
+      <div class="radar-wrap">
+        <canvas id="radar" width="620" height="620" aria-label="Interactive radar: click the illuminated target-colored dots" role="img"></canvas>
+        <span class="radar-label radar-label-n">N</span>
+        <span class="radar-label radar-label-e">E</span>
+        <span class="radar-label radar-label-s">S</span>
+        <span class="radar-label radar-label-w">W</span>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite">Press START to calibrate the radar.</p>
+      <div class="controls">
+        <button id="start" type="button">START</button>
+        <button id="pause" type="button" disabled>PAUSE</button>
+        <button id="restart" type="button">RESTART</button>
+        <button id="next" type="button" hidden>NEXT LEVEL</button>
+        <button id="review" type="button" hidden>REVIEW ERRORS</button>
+      </div>
+      <section id="results" class="results" hidden aria-live="polite">
+        <h2>SESSION RESULTS</h2>
+        <div id="summary"></div>
+        <div id="mistakes" hidden></div>
+      </section>
+    </section>
+    <footer>V.I.T.A.L.S. / EXPERIMENTAL COGNITIVE TASK — NOT A MEDICAL DIAGNOSIS</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "schema": "vitals.destination.environment.v1",
+  "id": "vitals.destination.mars.v1",
+  "destinationId": "mars",
+  "body": "Mars",
+  "mode": "published_reference_not_live_telemetry",
+  "notes": "Planetary-level references and historical rover measurements. Never treat these as location-specific conditions or astronaut exposure.",
+  "parameters": {
+    "gravity": {
+      "value": 3.7,
+      "unit": "m/s2",
+      "statistic": "approx_mean",
+      "source": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html"
+    },
+    "surfaceTemperature": {
+      "value": -65,
+      "unit": "degC",
+      "statistic": "planetary_median",
+      "source": "https://science.nasa.gov/solar-system/temperatures-across-our-solar-system/"
+    },
+    "surfacePressure": {
+      "value": 600,
+      "unit": "Pa",
+      "statistic": "approximate_typical_order_of_magnitude",
+      "source": "https://science.nasa.gov/resource/wind-flow-on-mars/",
+      "note": "Highly variable by altitude, season and weather; illustrative reference, not live measurement"
+    },
+    "atmosphere": {
+      "value": "Carbon dioxide dominant",
+      "unit": "text",
+      "source": "https://science.nasa.gov/mars/facts/"
+    },
+    "surfaceAbsorbedRadiationDoseRate": {
+      "value": 210,
+      "unit": "microGy/day",
+      "statistic": "historical_msl_rad_gcr_approx",
+      "source": "https://science.nasa.gov/resource/radiation-measurements-on-mars/",
+      "note": "Historical absorbed dose rate at Curiosity rover location, not astronaut effective dose"
+    },
+    "dust": {
+      "value": "Variable",
+      "unit": "qualitative",
+      "source": "https://science.nasa.gov/solar-system/10-things-dust-in-the-wind-on-mars-and-well-beyond/"
+    }
+  }
+}

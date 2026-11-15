@@ -1,0 +1,9 @@
+/* Crew Identity & Console Duty V3 - additive only */
+#vitalsStationPanel{margin-top:24px;border-color:#32bdb5;box-shadow:0 0 20px #00c9c326}
+#vitalsStationPanel .station-status{font-size:19px;font-weight:700;color:#71f8df;background:#103b42;border-left:4px solid #52e6cd;padding:14px 16px;margin:12px 0}
+#vitalsStationPanel[data-console="true"] .station-status{box-shadow:0 0 18px #23e4b957}
+#vitalsStationPanel .station-note{color:#c3e6eb}
+#vitalsStationPanel .station-action{display:inline-flex;align-items:center;text-decoration:none;background:#125059;color:white;border:2px solid #52e6cd;border-radius:9px;padding:13px 18px;box-shadow:0 0 18px #47f0db88;font-weight:800;letter-spacing:.7px}
+#vitalsStationPanel .station-action:hover,#vitalsStationPanel .station-action:focus-visible{box-shadow:0 0 25px #47f0db}
+#vitalsStationPanel .station-implications{border:1px solid #466a78;background:#0b2b39;padding:13px 16px;border-radius:9px;margin:12px 0}
+#vitalsStationPanel h2{color:#ffcea0}
