@@ -1,7 +1,7 @@
-﻿"use strict";
+"use strict";
 
 // V.I.T.A.L.S. - ASTRONAUT PROFILE V1
-// Frontend demonstration. No clinical data is uploaded or saved.
+// Synthetic demo ranges/categories are stored locally; no medical files or free-text notes are stored.
 
 const avatarFiles = [
   "av1.png",
@@ -152,7 +152,7 @@ medicalFile.addEventListener("change", () => {
     : "No document selected";
 });
 
-// Form validation - saving requires a future backend.
+// Demo-only form validation and browser-local storage.
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -204,14 +204,76 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  // Custom profiles are synthetic training records, never clinical records.
+  // Medical uploads and free-text clinical notes are deliberately NOT stored.
+  const rangeMap = {
+    heartRate: ["heartRateBpm", "restingHeartRateBpm"],
+    systolicBP: ["systolicBPmmHg", "systolicBpMmHg"],
+    diastolicBP: ["diastolicBPmmHg", "diastolicBpMmHg"],
+    spo2: ["oxygenSaturationPct", "oxygenSaturationPct"],
+    glucose: ["glucoseMgDl", "fastingGlucoseMgDl"],
+    skinTemperature: ["skinTemperatureC", "skinTemperatureC"],
+    respiratoryRate: ["respiratoryRatePerMin", "respiratoryRatePerMin"]
+  };
+  const physiologicalBaselineRangesSimulation = {};
+  const metrics = {};
+  for (const [key, label] of baselineDefinitions) {
+    const minRaw = field(`${key}Min`);
+    const maxRaw = field(`${key}Max`);
+    if ((minRaw === "") !== (maxRaw === "")) {
+      saveStatus.textContent = `ENTER BOTH MIN AND MAX: ${label.toUpperCase()}`;
+      form.elements.namedItem(`${key}${minRaw === "" ? "Min" : "Max"}`).focus();
+      return;
+    }
+    if (minRaw === "") continue;
+    const min = Number(minRaw), max = Number(maxRaw);
+    if (!Number.isFinite(min) || !Number.isFinite(max) || min > max) {
+      saveStatus.textContent = `INVALID DEMO RANGE: ${label.toUpperCase()}`;
+      return;
+    }
+    const [rangeName, metricName] = rangeMap[key];
+    physiologicalBaselineRangesSimulation[rangeName] = {min, max};
+    // Midpoint is a SYNTHETIC DEMO reference, not a real measured baseline.
+    metrics[metricName] = (min + max) / 2;
+  }
+  const selectedConditions = Array.from(
+    form.querySelectorAll('input[name="clinicalConditions"]:checked'),
+    checkbox => checkbox.value
+  ).filter(value => clinicalConditions.includes(value));
+  const heightRaw = field("height"), weightRaw = field("weight");
+  const height = heightRaw === "" ? null : Number(heightRaw);
+  const weight = weightRaw === "" ? null : Number(weightRaw);
+  if ((height !== null && (!Number.isFinite(height) || height <= 0)) ||
+      (weight !== null && (!Number.isFinite(weight) || weight <= 0))) {
+    saveStatus.textContent = "INVALID DEMONSTRATION HEIGHT OR WEIGHT";
+    return;
+  }
   const profile = {
     astronautId,
     fullName,
     age: field("age"),
+    height,
+    weight,
+    bloodType: field("bloodType"),
     avatarIndex: Number(avatarMatch[1]),
     avatar: avatarFile,
     avatarFile,
     image: avatarFile,
+    recordType: "fictional-demo",
+    dataProvenance: "synthetic-simulation-not-clinical",
+    simulationNotice: "Synthetic training profile. Values are not medical observations.",
+    clinicalConditions: selectedConditions,
+    clinicalHistory: {
+      conditions: selectedConditions.map(name => ({
+        name, status: "synthetic training category", severity: "not assessed"
+      })),
+      classification: "fictional-demo",
+      clinicalApproval: false,
+      medicalClearance: "not_assessed",
+      humanAuthorizationRequired: true
+    },
+    physiologicalBaselineRangesSimulation,
+    metrics,
     updatedAt: new Date().toISOString()
   };
 
@@ -256,7 +318,28 @@ form.addEventListener("submit", (event) => {
         return;
       }
 
-      profiles[index] = profile;
+      if (matches[0].p.protected || matches[0].p.isDefault) {
+        saveStatus.textContent = "PROTECTED DEFAULT PROFILE - NO CHANGES MADE";
+        return;
+      }
+      const previous = matches[0].p;
+      profiles[index] = {
+        ...previous, ...profile,
+        height: profile.height ?? previous.height ?? null,
+        weight: profile.weight ?? previous.weight ?? null,
+        bloodType: profile.bloodType || previous.bloodType || "",
+        clinicalConditions: selectedConditions.length ? selectedConditions : (previous.clinicalConditions || []),
+        createdAt: previous.createdAt || profile.updatedAt,
+        metrics: {...(previous.metrics || {}), ...profile.metrics},
+        physiologicalBaselineRangesSimulation: {
+          ...(previous.physiologicalBaselineRangesSimulation || {}),
+          ...profile.physiologicalBaselineRangesSimulation
+        },
+        clinicalHistory: {
+          ...(previous.clinicalHistory || {}), ...profile.clinicalHistory,
+          conditions: selectedConditions.length ? profile.clinicalHistory.conditions : (previous.clinicalHistory?.conditions || [])
+        }
+      };
     } else {
       profiles.push({
         ...profile,
@@ -267,7 +350,7 @@ form.addEventListener("submit", (event) => {
     localStorage.setItem(storageKey, JSON.stringify(profiles));
 
     saveStatus.textContent =
-      "ASTRONAUT PROFILE SAVED LOCALLY - " + astronautId;
+      "SYNTHETIC PROFILE SAVED LOCALLY - " + astronautId + ". Medical documents and free-text notes were NOT stored.";
 
   } catch (error) {
     console.error("VITALS astronaut save failed:", error);

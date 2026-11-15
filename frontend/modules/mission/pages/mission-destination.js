@@ -1,8 +1,8 @@
-﻿"use strict";
+"use strict";
 // A click explicitly chooses a destination for other V.I.T.A.L.S. mission modules.
 const DESTINATION_KEY = "vitals.mission.destination.v1";
 const destinationLabels = {
-  earth: "EARTH â€” REMOTE REGIONS", moon: "MOON", mars: "MARS",
+  earth: "EARTH — REMOTE REGIONS", moon: "MOON", mars: "MARS",
   europa: "EUROPA", titan: "TITAN"
 };
 const destinationStatus = document.getElementById("destinationStatus");

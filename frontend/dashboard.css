@@ -483,3 +483,46 @@ body {
     background-attachment: fixed !important;
 }
 
+
+/* DASHBOARD MODULE ICONS V1 */
+
+.hex-button {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+}
+
+.hex-button .module-hex-icon {
+    display: block !important;
+    width: 65px !important;
+    height: 65px !important;
+    max-width: 48% !important;
+    object-fit: contain !important;
+    flex-shrink: 1 !important;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+.hex-button span,
+.hex-button small {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.hex-button span {
+    font-size: clamp(10px, 1vw, 13px) !important;
+    line-height: 1.1 !important;
+}
+
+.hex-button small {
+    font-size: 9px !important;
+}
+
+@media (max-width: 700px) {
+    .hex-button .module-hex-icon {
+        width: 42px !important;
+        height: 42px !important;
+    }
+}

@@ -1,6 +1,83 @@
 <!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>V.I.T.A.L.S. | SYSTEMS READINESS</title><link rel="stylesheet" href="../mission.css"></head>
-<body><main class="placeholder-page"><header class="module-header"><h1>V.I.T.A.L.S.</h1><p>MISSION MODULE</p></header>
-<nav class="back-links"><a href="../../../dashboard.html">BACK TO DASHBOARD</a><a href="../mission.html">BACK TO MISSION MODULE</a></nav>
-<section class="placeholder-content"><h2>SYSTEMS READINESS</h2><p>Medical, environmental and emergency systems</p><p>This page is reserved for the next development step. No mission operation or simulation has been started.</p></section></main></body></html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V.I.T.A.L.S. | Systems Readiness</title>
+<style>
+:root{--bg:#031521;--panel:rgba(5,32,44,.91);--border:#326875;--aqua:#5ce3e5;--bronze:#ffbd78;--green:#5de2af;--yellow:#ffcd65;--red:#ff667f;--muted:#a4c5cc}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(125deg,rgba(0,11,20,.8),rgba(2,17,28,.68)),url('../../../../assets/start%20mission%20background.png') center/cover fixed;color:#defaff;font-family:Arial,Helvetica,sans-serif}
+main{max-width:1500px;padding:28px 28px 60px;margin:auto}
+nav{display:flex;gap:24px;flex-wrap:wrap;padding:12px 0 26px;border-bottom:1px solid #406274}a{color:var(--bronze);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.7px}
+.kicker{margin-top:40px;color:var(--aqua);font-size:12px;letter-spacing:3px;font-weight:700}h1{margin:12px 0;font-size:clamp(32px,5vw,60px);color:#ffddbd;letter-spacing:.15em;font-weight:400}p{line-height:1.55}.sub{color:var(--muted);font-size:14px;max-width:950px}
+.systems{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:11px;margin:29px 0}.system{min-height:124px;padding:17px 12px;background:var(--panel);border:1px solid var(--border);border-radius:12px;min-width:0}.system-header{display:flex;gap:8px;align-items:center}.dot{height:12px;width:12px;flex:0 0 12px;border-radius:50%;background:var(--muted);box-shadow:0 0 13px currentColor}.green{background:var(--green);color:var(--green)}.yellow{background:var(--yellow);color:var(--yellow)}.red{background:var(--red);color:var(--red)}.grey{background:#7ba0af;color:#7ba0af}.system h3{font-size:12px;margin:0;color:#dffaff;letter-spacing:1px;line-height:1.35}.system strong{display:block;margin:15px 0 6px;font-size:16px;color:#ffddbd;overflow-wrap:anywhere}.system small{font-size:11px;color:var(--muted);line-height:1.4;display:block}
+.layout{display:grid;grid-template-columns:1.35fr 1fr;gap:18px}.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;min-width:0}h2{font-size:18px;font-weight:500;color:#ffddbd;letter-spacing:1.5px;margin:4px 0 12px}.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}.metric{border:1px solid #315e6c;background:#0b2e3c;border-radius:9px;padding:14px}.metric span{display:block;color:var(--aqua);font-size:10px;letter-spacing:1px}.metric strong{display:block;margin-top:8px;font-size:22px;overflow-wrap:anywhere}.note{font-size:12px;color:var(--muted)}.chart{width:100%;height:auto;display:block;min-height:170px;background:#072535;border-radius:9px;margin-top:12px}.chart text{font-family:Arial,Helvetica,sans-serif}.legend{font-size:11px;color:var(--muted)}.log{max-height:320px;overflow:auto;margin-top:12px}.event{border-left:3px solid var(--aqua);padding:9px 12px;margin:6px 0;background:#103745;font-size:12px}.event strong{display:block;color:#e2faff;margin-bottom:4px}.event small{color:var(--muted)}.status{font-size:12px;font-weight:700;letter-spacing:1.2px}.foot{margin-top:22px;font-size:11px;color:#98b8c2;line-height:1.7}.tag{color:#ffe1bc}
+@media(max-width:1100px){.systems{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:760px){.systems{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}.meta{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:420px){.systems,.meta{grid-template-columns:1fr}}
+</style>
+<style id="vitals-fauna-title">
+@font-face {
+    font-family: "Fauna";
+    src: url("../../../../assets/fonts/fauna/Fauna%20Thin.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+h1 {
+    font-family: "Fauna", Arial, sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.25 !important;
+    font-size: clamp(30px, 4vw, 65px) !important;
+}
+</style>
+
+</head><body><main>
+<nav><a href="../../../dashboard.html">DASHBOARD</a><a href="../mission.html">MISSION MODULE</a><a href="./start-mission.html">START MISSION</a><a href="./simulation-control.html">SIMULATION CONTROL</a></nav>
+<div class="kicker">V.I.T.A.L.S. / MISSION SYSTEMS / TRAINING MODE</div><h1>SYSTEMS READINESS</h1>
+<p class="sub">Read-only mission status and illustrative communications model. Link interruptions, packet buffering and recovery shown here are <b>simulated</b>; no radio equipment, biomedical sensors or spacecraft systems are connected.</p>
+<section id="systemCards" class="systems" aria-label="System status indicators"></section>
+<div class="layout">
+<section class="panel"><h2>MISSION COMMUNICATION / SYNTHETIC SIGNAL</h2><div class="meta"><div class="metric"><span>MISSION</span><strong id="missionTitle">—</strong></div><div class="metric"><span>DESTINATION / LINK PROFILE</span><strong id="destination">—</strong></div><div class="metric"><span>SIMULATION CLOCK</span><strong id="clock">00:00:00</strong></div><div class="metric"><span>LINK STATUS</span><strong id="linkStatus">NO DATA</strong></div><div class="metric"><span>SYNTHETIC SIGNAL</span><strong id="quality">—</strong></div><div class="metric"><span>MISSION STATE</span><strong id="phase">NOT STARTED</strong></div></div>
+<svg id="signalChart" class="chart" viewBox="0 0 660 220" role="img" aria-label="Simulated signal quality over time"></svg><p class="legend">Signal quality (%) against elapsed training time. Oscillations and outages are illustrative scenario assumptions, not measured telecommunications performance.</p></section>
+<section class="panel"><h2>ONBOARD STORE & FORWARD</h2><div class="meta"><div class="metric"><span>LOCALLY STORED</span><strong id="saved">0</strong></div><div class="metric"><span>AWAITING LINK</span><strong id="pending">0</strong></div><div class="metric"><span>MARKED REPLAYED</span><strong id="replayed">0</strong></div></div>
+<svg id="bufferChart" class="chart" viewBox="0 0 660 220" role="img" aria-label="Synthetic onboard packet buffer over time"></svg>
+<p class="note">During a simulated dropout, generated <em>training packets</em> are retained in browser localStorage. On reconnection they are marked <b>replayed in the local simulation</b>. No packets are sent to an external server. Existing medical records are not modified.</p></section>
+<section class="panel"><h2>COMMUNICATION EVENTS</h2><div class="log" id="eventLog" aria-live="polite"></div></section>
+<section class="panel"><h2>READINESS INTERPRETATION</h2><p class="note" id="interpretation">No mission information available.</p><p class="note">Green = ready in this demo / linked configuration. Yellow = degraded or unverified. Red = simulated failure or not ready. Unknown information must never be treated as normal or operationally certified.</p><p class="note"><a href="./start-mission.html">OPEN START MISSION</a> to start, pause or end the actual browser-local training clock.</p></section>
+</div><p class="foot">V.I.T.A.L.S. TRAINING SIMULATION · LOCAL BROWSER RECORDS ONLY · NO REAL TELEMETRY · NO ACTUAL TRANSMISSION · NOT A SAFETY CERTIFICATION</p>
+</main>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id),KEY='vitals.systemsReadiness.demo.v1.';
+const read=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')}catch{return null}};
+const t=v=>String(v??'').trim();
+let lastMission='',memory=null,lastSavedSecond=-1,storageError=false;
+const safeSave=(key,data)=>{try{localStorage.setItem(key,JSON.stringify(data));storageError=false;return true}catch(e){storageError=true;return false}};
+function clock(run){let ms=Math.max(0,Number(run?.accumulatedMs||0));if(run?.phase==='RUNNING'){const start=Date.parse(run.startedAt||'');if(Number.isFinite(start))ms+=Math.max(0,Date.now()-start)}return Math.floor(ms/1000)}
+function hhmmss(n){return [Math.floor(n/3600),Math.floor(n%3600/60),n%60].map(x=>String(x).padStart(2,'0')).join(':')}
+function linkModel(sec,mission){const dest=t(mission?.destination).toLowerCase(),setting=t(mission?.communication).toLowerCase();const deep=['mars','europa','titan'].includes(dest),moon=dest==='moon';const base=deep?72:moon?85:94;const period=deep?36:moon?46:60;const dropout=(sec%period)>=(period-(deep?11:moon?8:6));const wobble=9*Math.sin(sec/6)+5*Math.sin(sec/13);const quality=dropout?Math.max(0,6+3*Math.sin(sec)):Math.max(24,Math.min(100,base+wobble));return {quality:Math.round(quality),connected:!dropout,profile:setting||'SCENARIO / NOT CONFIGURED',note:deep?'Deep-space illustration; no actual Earth-space link budget':moon?'Lunar-distance illustration; no actual relay model':'Nearby/terrestrial illustration; no actual hardware link'};}
+function getRoster(m){const dest=t(m.destination).toLowerCase();for(const k of ['vitals.mission.crew.v1.'+dest,'vitals.mission.crew.v1']){const r=read(k);if(r&&Array.isArray(r.members)&&t(r.destination).toLowerCase()===dest&&t(r.missionName)===t(m.name)&&(!r.missionId||t(r.missionId)===t(m.id)))return r.members}return []}
+function getArchive(m){const key=KEY+encodeURIComponent(m.id);if(lastMission!==m.id){lastMission=m.id;const stored=read(key);memory=stored&&stored.missionId===m.id&&Array.isArray(stored.samples)?stored:{schema:'vitals.systemsReadiness.demo.v1',missionId:m.id,samples:[],events:[],replayedTotal:0};lastSavedSecond=memory.samples.length?memory.samples[memory.samples.length-1].missionSecond:-1}return [key,memory]}
+function addEvent(obj,label,detail,kind){obj.events.push({at:new Date().toISOString(),label,detail,kind});obj.events=obj.events.slice(-45)}
+function sampleTick(m,run,sec,model){const [key,obj]=getArchive(m);if(run?.phase!=='RUNNING'||sec===lastSavedSecond)return obj;
+// One illustrative record per displayed 2-second interval, not a retrospective reconstruction.
+const prev=obj.samples.at(-1),prevConnected=prev?.connected;
+if(prevConnected===true&&!model.connected)addEvent(obj,'SIMULATED LINK LOSS','Training packets retained in browser storage','red');
+if(prevConnected===false&&model.connected){let n=0;for(const x of obj.samples){if(x.state==='BUFFERED'){x.state='REPLAYED_LOCAL';n++}}obj.replayedTotal+=n;addEvent(obj,'SIMULATED LINK RESTORED',n+' buffered packets marked replayed locally; no remote transfer','green')}
+const pendingNow=obj.samples.filter(x=>x.state==='BUFFERED').length+(model.connected?0:1);
+obj.samples.push({at:new Date().toISOString(),missionSecond:sec,quality:model.quality,connected:model.connected,state:model.connected?'LOCAL_SAMPLE':'BUFFERED',pendingAtSample:pendingNow});
+obj.samples=obj.samples.slice(-240);lastSavedSecond=sec;
+safeSave(key,obj);return obj}
+function indicator(label,status,detail,color){const card=document.createElement('article');card.className='system';const head=document.createElement('div');head.className='system-header';const dot=document.createElement('i');dot.className='dot '+color;const h=document.createElement('h3');h.textContent=label;head.append(dot,h);const st=document.createElement('strong');st.textContent=status;const sub=document.createElement('small');sub.textContent=detail;card.append(head,st,sub);return card}
+function drawChart(id,samples,key,color,caption){const svg=$(id),ns='http://www.w3.org/2000/svg';svg.replaceChildren();const el=(tag,attrs,txt)=>{const n=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,v);if(txt!==undefined)n.textContent=txt;svg.append(n)};for(let i=0;i<5;i++)el('line',{x1:40,x2:632,y1:22+i*38,y2:22+i*38,stroke:'#315667','stroke-width':1});if(!samples.length){el('text',{x:330,y:105,'text-anchor':'middle',fill:'#98bdc8','font-size':15},'NO TRAINING SAMPLES RECORDED');return}
+const xs=samples.map(s=>s.missionSecond),ys=samples.map(s=>key==='quality'?s.quality:s.pendingAtSample||0),mn=Math.min(...xs),mx=Math.max(...xs),maxY=key==='quality'?100:Math.max(5,...ys)+1,px=(v,i)=>mx===mn?40+i*(592/Math.max(1,samples.length-1)):40+(v-mn)/(mx-mn)*592,py=v=>174-Math.max(0,v)/maxY*150;
+const pts=samples.map((s,i)=>px(xs[i],i)+','+py(ys[i])).join(' ');el('polyline',{points:pts,fill:'none',stroke:color,'stroke-width':3,'stroke-linejoin':'round'});el('text',{x:40,y:201,fill:'#a3c8d2','font-size':11},caption+' · '+samples.length+' saved synthetic points');el('text',{x:626,y:201,'text-anchor':'end',fill:'#a3c8d2','font-size':11},'T+'+hhmmss(xs.at(-1)))}
+function render(){const mission=read('vitals.mission.active.v1'),host=$('systemCards');if(!mission?.id){host.replaceChildren(indicator('ACTIVE MISSION','NOT READY','Configure a mission first','red'),indicator('COMMUNICATION','NO PROFILE','No active simulation','yellow'),indicator('ONBOARD CACHE','STANDBY','No training packets yet','yellow'),indicator('DATA REPLAY','STANDBY','No linked records','yellow'),indicator('CREW ASSIGNMENT','NOT VERIFIED','No active mission','yellow'),indicator('SENSOR VALIDATION','UNKNOWN','No hardware evidence','yellow'));$('missionTitle').textContent='NONE';$('destination').textContent='—';$('clock').textContent='00:00:00';$('linkStatus').textContent='NO MISSION';$('quality').textContent='—';$('phase').textContent='NOT STARTED';$('saved').textContent='0';$('pending').textContent='0';$('replayed').textContent='0';drawChart('signalChart',[],'quality','#5ce3e5','LINK');drawChart('bufferChart',[],'pendingAtSample','#ffcd65','BUFFER');$('eventLog').textContent='No active mission to monitor.';$('interpretation').textContent='Configure a mission and begin Start Mission to generate illustrative communication samples.';return}
+const run=read('vitals.mission.runState.v1.'+encodeURIComponent(mission.id));const phase=run?.missionId===mission.id?run.phase:'NOT_STARTED';const sec=clock(phase==='NOT_STARTED'?null:run),model=linkModel(sec,mission);const [key,obj]=getArchive(mission);if(phase==='RUNNING'&&sec!==lastSavedSecond){sampleTick(mission,run,sec,model)}
+const samples=obj.samples;const buffered=samples.filter(s=>s.state==='BUFFERED').length;
+const live=phase==='RUNNING',paused=phase==='PAUSED',active=live||paused;const connected=live&&model.connected,crew=getRoster(mission);host.replaceChildren(indicator('MISSION EXECUTION',live?'RUNNING':paused?'PAUSED':phase==='ENDED'?'ENDED':'NOT READY',live?'Clock running':paused?'Clock frozen':'No active run',live?'green':paused?'yellow':'red'),indicator('COMMUNICATION LINK',!active?'STANDBY':paused?'PAUSED':connected?'CONNECTED':'SIGNAL LOST','Illustrative '+model.profile,connected?'green':active?'red':'yellow'),indicator('LOCAL DATA CACHE',storageError?'WRITE ERROR':'AVAILABLE',storageError?'Browser storage unavailable':'Training packets stored on this browser',storageError?'red':'green'),indicator('STORE & FORWARD',buffered?'BUFFERING':obj.replayedTotal?'REPLAYED':'IDLE',buffered+' pending / '+obj.replayedTotal+' marked replayed',buffered?'yellow':storageError?'red':'green'),indicator('CREW ASSIGNMENT',crew.length?crew.length+' ASSIGNED':'NOT READY',crew.length?'Roster matches this mission':'No verified crew roster',crew.length?'green':'red'),indicator('MEDICAL / SENSORS','UNVERIFIED','No live biomedical or environment hardware connection','yellow'));
+$('missionTitle').textContent=t(mission.name)||t(mission.id);$('destination').textContent=t(mission.destination).toUpperCase()+' / '+model.profile.toUpperCase();$('clock').textContent=hhmmss(sec);$('linkStatus').textContent=!active?'STANDBY':paused?'PAUSED':connected?'CONNECTED / DEMO':'OFFLINE / DEMO';$('linkStatus').style.color=connected?'#5de2af':live?'#ff667f':'#ffcd65';$('quality').textContent=active?model.quality+'% / DEMO':'—';$('phase').textContent=phase||'NOT STARTED';$('saved').textContent=String(samples.length);$('pending').textContent=String(buffered);$('replayed').textContent=String(obj.replayedTotal||0);
+drawChart('signalChart',samples,'quality','#62e4ee','SIGNAL');drawChart('bufferChart',samples,'pendingAtSample','#ffbd78','BUFFER');const log=$('eventLog');log.replaceChildren();const events=[...(obj.events||[])].reverse().slice(0,16);if(!events.length)log.textContent='No link interruptions or recovery events recorded in this local training session.';else for(const e of events){const row=document.createElement('div');row.className='event';row.style.borderLeftColor=e.kind==='red'?'#ff667f':'#5de2af';const strong=document.createElement('strong');strong.textContent=e.label;const small=document.createElement('small');small.textContent=new Date(e.at).toLocaleString()+' · '+e.detail;row.append(strong,small);log.append(row)}$('interpretation').textContent=model.note+'. All link quality values and outage timings are illustrative assumptions, not equipment qualification. No real medical or environmental sensor readiness has been verified.';
+}
+render();setInterval(render,2000);window.addEventListener('pageshow',render);window.addEventListener('storage',render);
+})();
+</script></body></html>

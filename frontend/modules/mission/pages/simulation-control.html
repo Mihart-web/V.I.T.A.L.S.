@@ -1,6 +1,175 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>V.I.T.A.L.S. | SIMULATION CONTROL</title><link rel="stylesheet" href="../mission.css"></head>
-<body><main class="placeholder-page"><header class="module-header"><h1>V.I.T.A.L.S.</h1><p>MISSION MODULE</p></header>
-<nav class="back-links"><a href="../../../dashboard.html">BACK TO DASHBOARD</a><a href="../mission.html">BACK TO MISSION MODULE</a></nav>
-<section class="placeholder-content"><h2>SIMULATION CONTROL</h2><p>Simulation configuration and operational controls</p><p>This page is reserved for the next development step. No mission operation or simulation has been started.</p></section></main></body></html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V.I.T.A.L.S. | Simulation Control</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;color:#dcfaff;
+ font-family:Arial,sans-serif;
+ background:linear-gradient(#03121bd9,#03121beb),
+ url("../../../../assets/start%20mission%20background.png")
+ center/cover fixed no-repeat;
+}
+main{max-width:1380px;margin:auto;padding:42px 28px}
+nav{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:75px}
+a{color:#ffbe79;text-decoration:none;font-size:12px;font-weight:bold}
+.kicker{color:#58e5e6;letter-spacing:3px;font-size:12px;font-weight:bold}
+h1{font-size:clamp(30px,5vw,68px);font-weight:300;letter-spacing:5px;color:#ffe0b9;margin:16px 0}
+.subtitle{color:#a1bec9;line-height:1.6}
+.panel{
+ margin-top:45px;padding:28px;border:1px solid #317c8d;
+ border-radius:15px;background:#062433e0;
+}
+.panel-head{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}
+h2{font-size:20px;font-weight:400;letter-spacing:2px;color:#ffe0b9}
+.status{color:#57e6c7;font-weight:bold;letter-spacing:1px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:25px}
+.metric{background:#0b3040;border:1px solid #326575;border-radius:9px;padding:20px}
+.metric small{display:block;color:#65dfe9;letter-spacing:1px;margin-bottom:14px}
+.metric strong{font-size:22px;overflow-wrap:anywhere}
+.note{color:#9ac0cb;font-size:12px;line-height:1.8;margin-top:25px}
+.empty{text-align:center;padding:60px 15px;color:#9bc3cb;letter-spacing:2px}
+.live{color:#62e8ad}
+.paused{color:#ffcb6c}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:450px){.grid{grid-template-columns:1fr}}
+</style>
+
+<style id="vitals-fauna-title">
+@font-face {
+    font-family: "Fauna";
+    src: url("../../../../assets/fonts/fauna/Fauna%20Thin.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Mission Timeline / Simulation Control title */
+h1 {
+    font-family: "Fauna", Arial, sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.25 !important;
+    font-size: clamp(30px, 4vw, 65px) !important;
+}
+</style>
+
+</head>
+<body>
+<main>
+<nav>
+<a href="../../../dashboard.html">DASHBOARD</a>
+<a href="../mission.html">MISSION MODULE</a>
+<a href="./start-mission.html">START MISSION</a>
+</nav>
+
+<div class="kicker">V.I.T.A.L.S. / MISSION MONITORING</div>
+<h1>SIMULATION CONTROL</h1>
+<p class="subtitle">Active training simulations and mission execution status.</p>
+
+<section class="panel">
+<div class="panel-head">
+<h2>MISSION SIMULATION STATUS</h2>
+<span id="status" class="status">CHECKING</span>
+</div>
+<div id="content" aria-live="polite"></div>
+<p class="note">
+READ-ONLY MONITORING · SYNTHETIC TRAINING ENVIRONMENT
+· NO LIVE SPACECRAFT TELEMETRY · NO CLINICAL MEASUREMENTS
+</p>
+</section>
+</main>
+
+<script>
+(()=>{
+"use strict";
+
+const $=id=>document.getElementById(id);
+
+function read(k){
+ try{return JSON.parse(localStorage.getItem(k)||"null")}
+ catch{return null}
+}
+
+function elapsed(run){
+ let ms=Number(run.accumulatedMs)||0;
+ if(run.phase==="RUNNING"&&run.startedAt){
+  const start=Date.parse(run.startedAt);
+  if(Number.isFinite(start))ms+=Math.max(0,Date.now()-start);
+ }
+ const s=Math.floor(Math.max(0,ms)/1000);
+ return [
+  Math.floor(s/3600),
+  Math.floor(s%3600/60),
+  s%60
+ ].map(n=>String(n).padStart(2,"0")).join(":");
+}
+
+function update(){
+ const mission=read("vitals.mission.active.v1");
+ const host=$("content");
+ const status=$("status");
+
+ if(!mission?.id){
+  status.textContent="NO ACTIVE SIMULATIONS";
+  host.className="empty";
+  host.textContent="NO ACTIVE MISSION CONFIGURED";
+  return;
+ }
+
+ const key="vitals.mission.runState.v1."+
+  encodeURIComponent(mission.id);
+ const run=read(key);
+
+ if(!run||run.missionId!==mission.id||
+    !["RUNNING","PAUSED"].includes(run.phase)){
+  status.textContent="NO ACTIVE SIMULATIONS";
+  status.className="status";
+  host.className="empty";
+  host.textContent="NO RUNNING OR PAUSED MISSION SIMULATION";
+  return;
+ }
+
+ status.textContent=run.phase;
+ status.className="status "+(run.phase==="RUNNING"?"live":"paused");
+ host.className="grid";
+
+ const destination=String(mission.destination||"NOT RECORDED");
+ const name=String(mission.name||mission.id);
+ const fields=[
+  ["MISSION",name],
+  ["DESTINATION",destination.toUpperCase()],
+  ["ELAPSED",elapsed(run)],
+  ["EXECUTION",run.phase]
+ ];
+
+ if(host.children.length!==fields.length){
+  host.replaceChildren();
+  fields.forEach(()=>{
+   const box=document.createElement("div");
+   box.className="metric";
+   const label=document.createElement("small");
+   const value=document.createElement("strong");
+   box.append(label,value);
+   host.append(box);
+  });
+ }
+
+ fields.forEach(([label,value],i)=>{
+  host.children[i].children[0].textContent=label;
+  host.children[i].children[1].textContent=value;
+ });
+}
+
+update();
+setInterval(update,1000);
+window.addEventListener("storage",update);
+window.addEventListener("pageshow",update);
+})();
+</script>
+</body>
+</html>

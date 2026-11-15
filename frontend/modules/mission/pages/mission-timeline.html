@@ -1,6 +1,40 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>V.I.T.A.L.S. | MISSION TIMELINE</title><link rel="stylesheet" href="../mission.css"></head>
-<body><main class="placeholder-page"><header class="module-header"><h1>V.I.T.A.L.S.</h1><p>MISSION MODULE</p></header>
-<nav class="back-links"><a href="../../../dashboard.html">BACK TO DASHBOARD</a><a href="../mission.html">BACK TO MISSION MODULE</a></nav>
-<section class="placeholder-content"><h2>MISSION TIMELINE</h2><p>Mission phases, EVAs and schedule</p><p>This page is reserved for the next development step. No mission operation or simulation has been started.</p></section></main></body></html>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V.I.T.A.L.S. | Mission Timeline</title>
+<link rel="stylesheet" href="./mission-timeline-v1.css">
+<script src="./mission-timeline-v1.js" defer></script>
+
+<style id="vitals-fauna-title">
+@font-face {
+    font-family: "Fauna";
+    src: url("../../../../assets/fonts/fauna/Fauna%20Thin.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Mission Timeline / Simulation Control title */
+h1 {
+    font-family: "Fauna", Arial, sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.25 !important;
+    font-size: clamp(30px, 4vw, 65px) !important;
+}
+</style>
+
+</head>
+<body>
+<main>
+<nav><a href="../../../dashboard.html">DASHBOARD</a><a href="../mission.html">MISSION MODULE</a><a href="./start-mission.html">START MISSION</a></nav>
+<header><p class="eyebrow">V.I.T.A.L.S. / MISSION OPERATIONS</p><h1>MISSION TIMELINE</h1><p>Current mission, archived simulation sessions, and mission-to-mission comparison.</p></header>
+<div class="ribbon" id="scope">BROWSER-LOCAL TRAINING RECORDS Â· NOT LIVE SPACECRAFT TELEMETRY</div>
+<section class="panel"><div class="heading"><h2>CURRENT MISSION</h2><span id="currentStatus" class="chip">CHECKING</span></div><div id="current"></div></section>
+<section class="panel"><div class="heading"><h2>MISSION HISTORY</h2><span id="historyCount" class="muted"></span></div><p class="helper">Completed sessions are kept in this browser until you delete them or clear site data. Other devices and website origins have separate histories.</p><div class="tools"><button id="exportHistory" type="button">EXPORT HISTORY JSON</button><button id="deleteHistory" type="button" class="danger">DELETE ALL HISTORY</button></div><div id="history"></div></section>
+<section class="panel"><div class="heading"><h2>MISSION COMPARISON</h2><span class="muted">DESCRIPTIVE Â· NON-CLINICAL</span></div><p class="helper">Compares the last two completed training sessions. Duration is simulated elapsed time; counts are stored training alerts, not clinical events.</p><div id="compare"></div></section>
+<footer>SYNTHETIC TRAINING Â· NO REAL HARDWARE Â· NO MEDICAL VALIDATION Â· HUMAN REVIEW REQUIRED</footer>
+</main>
+</body></html>

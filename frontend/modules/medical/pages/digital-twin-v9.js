@@ -25,8 +25,20 @@ const SCENARIOS={
 };
 let active=false,elapsed=0,timer=null,current=null,series=[],contextKey='',lastRender=0,paintedBarsSignature='';
 function key(){return `${mission()?.id||''}::${selected()}`}
-function extractBaseline(){const p=profile(selected()),m=p?.metrics||{};return {
- hr:category(m.restingHeartRateBpm,72),spo:category(m.oxygenSaturationPct,97),resp:category(m.respiratoryRatePerMin,16),temp:category(m.skinTemperatureC,33.5),
+function extractBaseline(){const p=profile(selected()),m=p?.metrics||{},ranges=p?.physiologicalBaselineRangesSimulation||{};
+ const ref=(primary,alias,fallback,lo,hi)=>{
+  const direct=numerical(m[primary]??(alias?m[alias]:null));
+  if(direct!==null&&direct>=lo&&direct<=hi)return direct;
+  const r=ranges[alias||primary]||ranges[primary];
+  const a=numerical(r?.min),b=numerical(r?.max);
+  if(a!==null&&b!==null&&a<b&&a>=lo&&b<=hi)return (a+b)/2;
+  return fallback;
+ };
+ return {
+ hr:ref('restingHeartRateBpm','heartRateBpm',72,30,220),
+ spo:ref('oxygenSaturationPct',null,97,70,100),
+ resp:ref('respiratoryRatePerMin',null,16,4,60),
+ temp:ref('skinTemperatureC',null,33.5,25,42),
  focus:numerical(m.focusTaskAccuracyPct),stress:numerical(m.stressSelfReport10),name:name(p||{id:selected()}),hasProfile:!!p};}
 function storage(){return safe(KEY,{})}
 function previous(){const x=storage()[key()];return arr(x?.samples).filter(r=>r?.classification==='synthetic_training_v9'&&r?.missionId===mission()?.id&&r?.astronautId===selected()).slice(-160)}

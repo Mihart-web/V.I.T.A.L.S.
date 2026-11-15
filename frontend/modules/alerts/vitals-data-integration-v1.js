@@ -25,6 +25,51 @@ const categories={
  asymmetry:{label:'Left / right muscle difference',unit:'%',high:14,above:'ALR-023'},
  motion:{label:'Motion activity',unit:'a.u.',low:12,below:'ALR-024'}
 };
+/* BASELINE CONTEXT V2 — individual illustrative reference, never clinical triage.
+   Does not override the existing general demonstration limits. */
+const BASELINE_ALIASES={
+ heart_rate:['heartRateBpm'],
+ spo2:['oxygenSaturationPct'],
+ respiratory_rate:['respiratoryRatePerMin']
+};
+const BASELINE_LIMITS={heart_rate:[30,220],spo2:[70,100],respiratory_rate:[4,60]};
+function personalRange(astronautId,metric){
+ const raw=read('vitals.astronauts.v1');
+ const profiles=Array.isArray(raw)?raw:array(raw?.profiles||raw?.astronauts);
+ const p=profiles.find(x=>str(x?.id||x?.astronautId)===str(astronautId));
+ const keys=BASELINE_ALIASES[metric];if(!p||!keys)return null;
+ const ranges=p.physiologicalBaselineRangesSimulation||{};
+ const item=keys.map(k=>ranges[k]).find(x=>x&&typeof x==='object');
+ if(!item)return null;
+ const min=finite(item.min),max=finite(item.max),limits=BASELINE_LIMITS[metric];
+ if(min===null||max===null||min>=max||min<limits[0]||max>limits[1])return null;
+ return {min,max};
+}
+function personalReview(row,source,metric,value,c,ruleMap,missionId,entries){
+ const n=finite(value);if(n===null)return;
+ // HR and respiration change with exercise; only REST samples can be reviewed
+ // against an unqualified individual baseline. Unknown activity is not presumed rest.
+ const context=str(row.scenario||row.activity||row.activityMode||'').toLowerCase();
+ if(!['rest','rest / habitat','resting','sleep','sleeping'].includes(context))return;
+ const range=personalRange(row.astronautId,metric);if(!range)return;
+ // An established fixed demo threshold is handled by the original engine.
+ if((c.low!==undefined&&n<c.low)||(c.high!==undefined&&n>c.high))return;
+ const direction=n<range.min?'below':n>range.max?'above':null;
+ if(!direction)return;
+ const ruleId=c[direction];if(!ruleId)return;
+ const rule=ruleMap.get(ruleId);if(!rule)return;
+ const bound=direction==='below'?range.min:range.max;
+ const ts=str(row.timestamp||row.recordedAt);
+ const astronautId=str(row.astronautId);
+ entries.push({ruleId:rule.id,category:rule.category,level:'yellow',
+  title:'Personal baseline review — '+c.label,
+  message:`${c.label}: ${n.toFixed(1)} ${c.unit}, ${direction} individual synthetic reference (${range.min}–${range.max} ${c.unit}); resting training scenario. Request human context review; no clinical interpretation.`,
+  source,sourceKey:'DIL1-PERSONAL:'+str(missionId)+':'+source+':'+astronautId+':'+metric+':'+direction,
+  provenance:'SYNTHETIC / INDIVIDUAL TRAINING REFERENCE',astronautId,
+  threshold:`Individual synthetic baseline ${range.min}–${range.max} ${c.unit}; not a validated clinical range or alarm.`,
+  action:'Review the simulated observation, activity context and baseline quality with a human operator. No diagnosis or treatment.',
+  sampleTimestamp:ts,integration:'vitals.integration.v1',referenceType:'synthetic_individual_baseline'});
+}
 function collection(key){return array(read(key))}
 function scan(missionId,crewIds,ruleMap){
  const allow=new Set(array(crewIds).map(str).filter(Boolean));
@@ -68,6 +113,7 @@ function scan(missionId,crewIds,ruleMap){
   const v=finite(r[field]);if(v===null)continue;const c=categories[metric];observations.push({source:'Digital Twin V9',astronautId:r.astronautId,metric,value:v,timestamp:r.timestamp,provenance:'synthetic_training_v9'});
   if(c.low!==undefined&&v<c.low&&c.below)push(r,'Digital Twin V9',c.label,v,c.below,'below',c.low,c.unit);
   else if(c.high!==undefined&&v>c.high&&c.above)push(r,'Digital Twin V9',c.label,v,c.above,'above',c.high,c.unit);
+  else personalReview(r,'Digital Twin V9',metric,v,c,ruleMap,missionId,entries);
  }
  stats.push({name:'Digital Twin V9',samples:twins.length,latest:Math.max(0,...twins.map(x=>time(x.timestamp)))});
  // Cognitive records are informational input here: no unvalidated cognitive diagnosis from test scores.

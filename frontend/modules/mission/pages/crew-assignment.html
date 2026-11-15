@@ -5,17 +5,42 @@
 <title>V.I.T.A.L.S. | Crew Assignment</title>
 <link rel="stylesheet" href="./crew-assignment.css">
 <script defer src="./crew-assignment.js"></script>
+<style id="vitals-flow-style">
+.vitals-flow{margin:20px 0 24px;padding:20px 16px 23px;border:2px solid #2ef4ff;border-radius:17px;background:linear-gradient(110deg,rgba(0,65,77,.93),rgba(4,29,46,.96));box-shadow:0 0 17px rgba(0,238,255,.42),inset 0 0 24px rgba(0,238,255,.12)}
+.vitals-flow-heading{text-align:center;color:#a9ffff;font:800 14px Arial,sans-serif;letter-spacing:.22em;margin-bottom:18px;text-shadow:0 0 12px #00efff}
+.vitals-flow-steps{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px}
+.vitals-flow-steps a{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:49px;max-width:220px;padding:11px 13px;border:1px solid #32edff;border-radius:9px;background:#00475b;color:#e5ffff!important;text-decoration:none;font:800 11px/1.35 Arial,sans-serif;letter-spacing:.035em;box-shadow:0 0 13px rgba(20,224,255,.64),inset 0 0 13px rgba(0,220,255,.13);transition:background .15s}
+.vitals-flow-steps a:hover,.vitals-flow-steps a:focus-visible{background:#006981;outline:2px solid #a7faff;outline-offset:2px}
+.vitals-flow-steps a.vitals-flow-current{background:#007e92;box-shadow:0 0 22px rgba(35,245,255,.95),inset 0 0 16px rgba(53,238,255,.27)}
+.vitals-flow-arrow{font-size:22px;color:#ffbf77;text-shadow:0 0 11px #ffad49;font-weight:900}
+.vitals-flow-note{color:#b8edf0;text-align:center;font:12px Arial,sans-serif;margin-top:14px}
+.vitals-assessment-next{display:inline-flex!important;align-items:center;gap:9px;border:2px solid #48dfff!important;color:#eaffff!important;background:#005668!important;box-shadow:0 0 15px rgba(46,223,255,.5);text-decoration:none!important}
+.vitals-assessment-next:hover{background:#007488!important}
+.vitals-action-arrow{font-size:24px;color:#ffc47d;font-weight:800}
+@media(max-width:800px){.vitals-flow-steps a{flex:1 1 40%;max-width:none}.vitals-flow-arrow{font-size:17px}}
+</style>
 </head>
 <body>
 <main class="shell">
 <header class="hero"><h1>V.I.T.A.L.S.</h1><p>MISSION MODULE / CREW ASSIGNMENT</p></header>
+<section class="vitals-flow" aria-label="Mission start sequence">
+  <div class="vitals-flow-heading">MISSION START SEQUENCE</div>
+  <div class="vitals-flow-steps">
+    <a href="../../astronaut-profile/select-astronaut.html">CHOOSE ASTRONAUT</a><span class="vitals-flow-arrow" aria-hidden="true">&#8594;</span>
+    <a href="../../choose-role/choose-role.html">CHOOSE YOUR ROLE</a><span class="vitals-flow-arrow" aria-hidden="true">&#8594;</span>
+    <a href="./crew-assignment.html" class="vitals-flow-current" aria-current="step">ASSIGN CREW TO MISSION</a><span class="vitals-flow-arrow" aria-hidden="true">&#8594;</span>
+    <a href="./mission-configuration.html">MISSION CONFIGURATION</a><span class="vitals-flow-arrow" aria-hidden="true">&#8594;</span>
+    <a href="./start-mission.html">START MISSION</a>
+  </div>
+  <div class="vitals-flow-note">Complete each step before starting the mission. Crew changes must be saved.</div>
+</section>
 <div class="toolbar"><label for="backTo">BACK TO</label><select id="backTo" aria-label="Back to"><option value="">Select destination...</option><option value="../../../dashboard.html">DASHBOARD</option><option value="../mission.html">MISSION MODULE</option><option value="../../../modules/psychological-neurological/psychological-health.html">PSYCHOLOGICAL &amp; NEUROLOGICAL MODULE</option><option value="../../astronaut-profile/astronaut-create.html">CREATE ASTRONAUT</option></select><div class="mission-info" id="missionInfo">MISSION / NOT STARTED</div></div>
 <p class="intro">Build your mission crew from registered astronaut profiles. Select a role, then assign the astronaut to the mission.</p>
 <div class="columns">
 <section class="panel" aria-labelledby="availableTitle"><div class="panel-title"><h2 id="availableTitle">AVAILABLE ASTRONAUTS</h2><span id="availableCount" class="count">0</span></div><p class="muted">Registered profiles not yet assigned to this crew.</p><div class="search-line"><label for="profileSearch">FIND ASTRONAUT</label><input id="profileSearch" type="search" placeholder="Search name or ID" autocomplete="off"/></div><div id="availableList" class="crew-list" aria-live="polite"></div><div class="secondary-links"><a class="btn" href="../../astronaut-profile/astronaut-create.html">+ CREATE ASTRONAUT</a><button id="reloadProfiles" class="btn" type="button">REFRESH PROFILES</button></div></section>
 <section class="panel" aria-labelledby="assignedTitle"><div class="panel-title"><h2 id="assignedTitle">ASSIGNED CREW</h2><span id="assignedCount" class="count">0</span></div><p class="muted">Mission roster and operational roles.</p><div id="assignedList" class="crew-list" aria-live="polite"></div><div class="operator-info"><strong>CONSOLE OPERATOR</strong><p>Assign exactly one ONBOARD CONSOLE OPERATOR using the checkbox on an assigned crew member, then click SAVE CREW TO MISSION. Console duty is separate from the 16 mission roles and prevents EVA participation while assigned. The role itself never authorizes real medical treatment.</p></div></section>
 </div>
-<div class="action-bar"><button id="saveCrew" class="btn primary" type="button">SAVE CREW TO MISSION</button><a class="btn" href="../../astronaut-profile/astronaut-create.html">MANAGE ASTRONAUT PROFILES</a><a class="btn" href="../mission.html">BACK TO MISSION MODULE</a></div>
+<div class="action-bar"><button id="saveCrew" class="btn primary" type="button">SAVE CREW TO MISSION</button><span class="vitals-action-arrow" aria-hidden="true">&#8594;</span><a class="btn vitals-assessment-next" href="./mission-configuration.html">MISSION CONFIGURATION &#8594;</a><a class="btn" href="../../astronaut-profile/astronaut-create.html">MANAGE ASTRONAUT PROFILES</a><a class="btn" href="../mission.html">BACK TO MISSION MODULE</a></div>
 <p class="feedback" id="feedback" role="status" aria-live="polite">Crew not yet saved for this mission.</p>
 <section class="contract"><h2>MODULE DATA LINK</h2><p>Mission crew assignments are stored locally under <code>vitals.mission.crew.v1</code>. Future Mission Control, Crew On Board, Medical, Devices and Psychological modules can read this roster. No database or medication authorization has been activated.</p><button id="exportRoster" class="btn" type="button">EXPORT CREW JSON</button></section>
 </main>

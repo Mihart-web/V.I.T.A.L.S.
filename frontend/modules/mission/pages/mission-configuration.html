@@ -2,6 +2,10 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>V.I.T.A.L.S. | Mission Configuration</title><link rel="stylesheet" href="./mission-configuration.css"><script defer src="./mission-configuration.js"></script></head>
 <body><nav class="topbar"><a href="../mission.html">&larr; MISSION MODULE</a><a href="../../../dashboard.html">DASHBOARD</a><span>V.I.T.A.L.S. / MISSION OPERATIONS</span></nav>
 <header class="heading"><p class="eyebrow">MISSION OPERATIONS / STEP 01</p><h1>MISSION CONFIGURATION</h1><p>Define mission parameters, operational requirements and crew limits.</p></header>
+
+<div id="missionConfigFlowMount"></div>
+<div id="missionConfigTopNav"></div>
+
 <main class="layout">
 <section class="panel"><h2>00 &mdash; SAVED MISSIONS</h2><p>Three protected, read-only demonstration missions are provided. Select USE MISSION to activate one, or create a separate custom mission. Data is stored locally in this browser.</p><button type="button" id="newMission">+ NEW MISSION</button><div id="missionList" class="mission-list" aria-live="polite"></div></section>
 <form id="missionForm" novalidate>
@@ -11,4 +15,123 @@
 <section class="panel"><h2>04 &mdash; ENVIRONMENT &amp; MEDICAL PARAMETERS</h2><p>These are scenario inputs, not live measurements, diagnoses or validated individual forecasts.</p><div class="fields"><label>Gravity Reference (m/s²)<input name="gravity" type="number" step="any" min="0" max="30" required></label><label>Atmospheric Environment<select name="atmosphere"><option value="earth-air">Breathable Earth atmosphere / local limits</option><option value="thin-co2">Thin CO₂ atmosphere (Mars)</option><option value="vacuum">Vacuum / extremely tenuous exosphere</option><option value="nitrogen-methane">Nitrogen/methane atmosphere (Titan)</option></select></label><label>Radiation Scenario<select name="radiation"><option value="terrestrial">Terrestrial reference</option><option value="lunar">Lunar environment</option><option value="martian">Martian surface environment</option><option value="jovian">Jovian radiation environment</option><option value="unknown">Unknown / pending assessment</option></select></label><label>Temperature / Weather Scenario<input name="weather" maxlength="150" placeholder="Reference environment (not telemetry)"></label><label>Emergency Evacuation<select name="evacuation"><option value="restricted">Restricted / delayed</option><option value="not-available">Not available during mission</option><option value="available">Available</option><option value="unknown">To be determined</option></select></label><label>Medical Autonomy Level<select name="medicalAutonomy"><option value="crew-supported">Crew-led, remote support where available</option><option value="high-autonomy">High autonomy / delayed ground support</option><option value="ground-support">Ground medical support available</option></select></label></div><label>Environmental Hazards<textarea name="hazards" rows="3" maxlength="3000"></textarea></label><div class="info" id="exposureInfo">The future Environment module will supply scenario-dependent exposure inputs; the medical module will use individual baseline data.</div></section>
 <section class="panel"><h2>05 &mdash; MISSION &amp; CREW INTEGRATION</h2><div class="stat-grid"><div class="stat"><small>MISSION STATUS</small><strong id="missionStatus">PLANNED</strong></div><div class="stat"><small>ASSIGNED CREW / CAPACITY</small><strong id="crewCounter">0 / 4</strong></div><div class="stat"><small>MEDICAL OPERATIONS</small><strong>SIMULATION ONLY</strong></div></div><h3>CONTROL STATION OPERATOR</h3><p>The operator must belong to the assigned crew and stays at the mission control station during EVA. Operator duty does not grant medication authorization.</p><label>Designated Console Operator<select id="operatorSelect" name="operatorId"><option value="">Select an assigned crew member</option></select></label><div class="info" id="operatorInfo">Assign crew members in Crew Assignment first. This module will prevent choosing an unassigned operator.</div><p class="note">The crew-capacity limit is checked when this configuration is saved. Enforcement inside Crew Assignment will be integrated separately after its save code is reviewed.</p></section>
 <div class="actions"><button type="submit" class="primary">SAVE MISSION CONFIGURATION</button><a class="action-link" href="./crew-assignment.html">CONTINUE TO CREW ASSIGNMENT</a><a class="action-link" href="../mission.html">BACK TO MISSION MODULE</a></div><p class="feedback" id="feedback" role="status" aria-live="polite"></p>
-</form></main></body></html>
+</form></main>
+<script>
+/* MISSION CONFIG FLOW SCRIPT V1 */
+document.addEventListener('DOMContentLoaded', function () {
+  const flowMount = document.getElementById('missionConfigFlowMount');
+  const topNav = document.getElementById('missionConfigTopNav');
+
+  if (flowMount && !flowMount.dataset.ready) {
+    flowMount.dataset.ready = '1';
+
+    const box = document.createElement('section');
+    box.className = 'mission-flow-box';
+
+    box.innerHTML = `
+      <h3>MISSION START SEQUENCE</h3>
+      <div class="mission-flow-row">
+        <a class="mission-flow-step" href="../../astronaut-profile/select-astronaut.html">CHOOSE ASTRONAUT</a>
+        <span class="mission-flow-arrow">-&gt;</span>
+        <a class="mission-flow-step" href="../../choose-role/choose-role.html">CHOOSE YOUR ROLE</a>
+        <span class="mission-flow-arrow">-&gt;</span>
+        <a class="mission-flow-step" href="./crew-assignment.html">ASSIGN CREW TO MISSION</a>
+        <span class="mission-flow-arrow">-&gt;</span>
+        <a class="mission-flow-step is-current" href="./mission-configuration.html">MISSION CONFIGURATION</a>
+        <span class="mission-flow-arrow">-&gt;</span>
+        <a class="mission-flow-step" href="./start-mission.html">START MISSION</a>
+      </div>
+      <p class="mission-flow-note">Follow the steps in order. Save mission and crew changes before starting.</p>
+    `;
+
+    flowMount.appendChild(box);
+  }
+
+  if (topNav && !topNav.dataset.ready) {
+    topNav.dataset.ready = '1';
+
+    const labels = [
+      'BACK TO MISSION MODULE',
+      'MISSION DESTINATION',
+      'CREW ASSIGNMENT',
+      'MISSION TIMELINE'
+    ];
+
+    const normalize = (s) => (s || '').replace(/\s+/g, ' ').trim().toUpperCase();
+    const found = [];
+    const seen = new Set();
+
+    document.querySelectorAll('a,button').forEach(function(el){
+      const txt = normalize(el.textContent);
+      if (!txt) return;
+      if (labels.some(label => txt.includes(label)) && !seen.has(txt)) {
+        seen.add(txt);
+        found.push(el);
+      }
+    });
+
+    if (found.length) {
+      const wrap = document.createElement('div');
+      wrap.className = 'mc-top-links';
+
+      found.forEach(function(el){
+        wrap.appendChild(el);
+      });
+
+      topNav.appendChild(wrap);
+    }
+  }
+});
+</script>
+
+
+<script>
+/* MISSION CONFIGURATION FLOW FIX V2 */
+document.addEventListener("DOMContentLoaded", function(){
+
+  const flow = document.querySelector(
+    "#missionConfigFlowMount .mission-flow-row"
+  );
+
+  const topNav = document.getElementById("missionConfigTopNav");
+
+  if(!flow || !topNav) return;
+
+  // Recupera START MISSION se spostato nella navigazione inferiore
+  const links = Array.from(
+    document.querySelectorAll("a,button")
+  );
+
+  let start = links.find(el =>
+    el.textContent.trim().toUpperCase() === "START MISSION"
+    && el.closest("#missionConfigTopNav")
+  );
+
+  if(start){
+    flow.appendChild(start);
+  }
+
+  // Assicura il collegamento corretto
+  start = Array.from(flow.querySelectorAll("a")).find(el =>
+    el.textContent.trim().toUpperCase() === "START MISSION"
+  );
+
+  if(start){
+    start.href = "./start-mission.html";
+    start.classList.add("mission-flow-step");
+  }
+
+  // Rimuove il pulsante giallo ridondante
+  document.querySelectorAll("a,button").forEach(el => {
+    if(
+      el.textContent.trim().toUpperCase() ===
+      "CONTINUE TO CREW ASSIGNMENT"
+    ){
+      el.remove();
+    }
+  });
+
+});
+</script>
+
+</body></html>

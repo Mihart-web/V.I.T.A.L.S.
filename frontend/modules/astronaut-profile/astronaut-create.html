@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -146,6 +146,122 @@
       </form>
     </section>
   </main>
+<script id="vitals-profile-verify-v1">
+document.addEventListener("DOMContentLoaded", function () {
+  const save = document.getElementById("saveAstronaut");
+  if (!save) return;
+
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.textContent = "VERIFY SAVED PROFILE";
+  btn.style.cssText =
+    "display:block;margin:18px auto;padding:14px 24px;" +
+    "background:#073849;color:#bdfcff;border:1px solid #28dfe8;" +
+    "border-radius:9px;cursor:pointer";
+
+  const result = document.createElement("div");
+  result.style.cssText =
+    "max-width:700px;margin:20px auto;text-align:left;" +
+    "color:#d7faff;font:14px/1.8 Arial,sans-serif";
+
+  save.insertAdjacentElement("afterend", btn);
+  btn.insertAdjacentElement("afterend", result);
+
+  btn.onclick = function () {
+    const id = prompt("Astronaut ID:", "0034");
+    if (id === null) return;
+
+    let profiles;
+    try {
+      profiles = JSON.parse(
+        localStorage.getItem("vitals.astronauts.v1") || "[]"
+      );
+      if (!Array.isArray(profiles)) throw Error("Invalid data");
+    } catch (e) {
+      result.textContent = "Unable to read saved profiles.";
+      return;
+    }
+
+    const p = profiles.find(x =>
+      String(x.id || x.astronautId || "").trim() === id.trim()
+    );
+
+    if (!p) {
+      result.textContent = "Astronaut not found: " + id;
+      return;
+    }
+
+    const ranges = p.physiologicalBaselineRangesSimulation || {};
+    const metrics = p.metrics || {};
+    const conditions = Array.isArray(p.clinicalConditions)
+      ? p.clinicalConditions : [];
+
+    const labels = {
+      heartRateBpm: "Heart rate (bpm)",
+      systolicBpMmHg: "Systolic blood pressure (mmHg)",
+      diastolicBpMmHg: "Diastolic blood pressure (mmHg)",
+      skinTemperatureC: "Skin temperature (C)",
+      oxygenSaturationPct: "Oxygen saturation (%)",
+      respiratoryRatePerMin: "Respiratory rate (/min)"
+    };
+
+    result.replaceChildren();
+
+    function line(label, value) {
+      const row = document.createElement("div");
+      row.style.cssText =
+        "padding:8px 12px;border-bottom:1px solid #245469";
+
+      const name = document.createElement("strong");
+      name.textContent = label + ": ";
+      name.style.color = "#ffc184";
+
+      row.append(name, document.createTextNode(String(value)));
+      result.append(row);
+    }
+
+    line("PROFILE", p.name || p.fullName || id.trim());
+    line("ASTRONAUT ID", p.id || p.astronautId);
+
+    const heading = document.createElement("h3");
+    heading.textContent = "SAVED PHYSIOLOGICAL BASELINES";
+    heading.style.cssText =
+      "color:#65f4ed;letter-spacing:2px;margin:22px 0 8px";
+    result.append(heading);
+
+    const keys = Object.keys(ranges);
+
+    if (!keys.length) {
+      line("Baseline data", "No saved ranges");
+    }
+
+    keys.forEach(key => {
+      const r = ranges[key];
+      if (!r || typeof r !== "object") return;
+
+      const baseline = metrics[key];
+
+      line(
+        labels[key] || key,
+        "Min " + r.min +
+        "  |  Max " + r.max +
+        (baseline !== undefined
+          ? "  |  Reference " + baseline
+          : "")
+      );
+    });
+
+    line(
+      "CLINICAL CONDITIONS",
+      conditions.length ? conditions.join(", ") : "None recorded"
+    );
+
+    line("DATA SOURCE", "Saved locally in this browser");
+    line("STATUS", "Profile found and readable");
+    line("VALIDATION", "Synthetic demonstration only");
+  };
+});
+</script>
 </body>
 </html>
 

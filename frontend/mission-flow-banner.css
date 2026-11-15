@@ -1,0 +1,11 @@
+/* V.I.T.A.L.S. mission flow banner: same styling as Crew Assignment */
+.vitals-flow{box-sizing:border-box;margin:20px 0 24px;padding:20px 16px 23px;border:2px solid #2ef4ff;border-radius:17px;background:linear-gradient(110deg,rgba(0,65,77,.93),rgba(4,29,46,.96));box-shadow:0 0 17px rgba(0,238,255,.42),inset 0 0 24px rgba(0,238,255,.12)}
+.vitals-flow *{box-sizing:border-box}
+.vitals-flow-heading{text-align:center;color:#a9ffff;font:800 14px Arial,sans-serif;letter-spacing:.22em;margin-bottom:18px;text-shadow:0 0 12px #00efff}
+.vitals-flow-steps{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px}
+.vitals-flow-steps a{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:49px;max-width:220px;padding:11px 13px;border:1px solid #32edff;border-radius:9px;background:#00475b;color:#e5ffff!important;text-decoration:none;font:800 11px/1.35 Arial,sans-serif;letter-spacing:.035em;box-shadow:0 0 13px rgba(20,224,255,.64),inset 0 0 13px rgba(0,220,255,.13);transition:background .15s}
+.vitals-flow-steps a:hover,.vitals-flow-steps a:focus-visible{background:#006981;outline:2px solid #a7faff;outline-offset:2px}
+.vitals-flow-steps a.vitals-flow-current{background:#007e92;box-shadow:0 0 22px rgba(35,245,255,.95),inset 0 0 16px rgba(53,238,255,.27)}
+.vitals-flow-arrow{font-size:22px;color:#ffbf77;text-shadow:0 0 11px #ffad49;font-weight:900}
+.vitals-flow-note{color:#b8edf0;text-align:center;font:12px Arial,sans-serif;margin:14px 0 0}
+@media(max-width:800px){.vitals-flow-steps a{flex:1 1 40%;max-width:none}.vitals-flow-arrow{font-size:17px}}
